@@ -1,0 +1,107 @@
+# ==============================================================================
+# GUIA RÁPIDO DE SINTAXE DO .GITIGNORE:
+#   #              -> Comentário (linhas iniciadas com # são ignoradas pelo Git)
+#   pasta/         -> Ignora uma pasta inteira e tudo dentro dela
+#   *.extensao     -> Ignora todos os arquivos que terminam com essa extensão
+#   !arquivo.ext   -> Regra de exceção: NÃO ignora este arquivo específico
+#   /arquivo.ext   -> Ignora o arquivo apenas se estiver exatamente na raiz do projeto
+#   arquivo*.txt   -> Ignora qualquer arquivo que comece com 'arquivo' e termine em .txt
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. ARQUIVOS DE COMPILAÇÃO E EXECUTÁVEIS (C / C++ / GCC / Clang / MinGW)
+# ------------------------------------------------------------------------------
+# Arquivos objeto gerados durante a compilação intermediária:
+*.o
+*.obj
+
+# Bibliotecas estáticas e dinâmicas geradas localmente:
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+
+# Executáveis compilados (Windows, Linux, macOS):
+*.exe
+*.out
+*.app
+
+# Pastas de saída comuns de build (crie estas pastas quando compilar seu projeto):
+build/
+bin/
+obj/
+dist/
+target/
+out/
+cmake-build-*/
+
+# ------------------------------------------------------------------------------
+# 2. EDITORES E IDES (CONFIGURAÇÕES LOCAIS PESSOAIS)
+# ------------------------------------------------------------------------------
+# VS Code (arquivos de histórico e estados locais; se quiser salvar as configs de debug, adicione !.vscode/launch.json):
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Visual Studio e CLion / JetBrains:
+.vs/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Code::Blocks e Dev-C++:
+*.depend
+*.layout
+*.dev.bak
+
+# ------------------------------------------------------------------------------
+# 3. SISTEMA OPERACIONAL (WINDOWS / MAC / LINUX)
+# ------------------------------------------------------------------------------
+# Arquivos de índice e thumbnails do Windows:
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS:
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ------------------------------------------------------------------------------
+# 4. SCRIPTS AUXILIARES / PYTHON (CASO USE NA PASTA /scripts)
+# ------------------------------------------------------------------------------
+# Arquivos de cache e bytecode do Python:
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais (para pacotes Python):
+.venv/
+env/
+venv/
+ENV/
+
+# ------------------------------------------------------------------------------
+# 5. ARQUIVOS TEMPORÁRIOS, LOGS E BACKUPS
+# ------------------------------------------------------------------------------
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------------------------
+# 6. EXEMPLOS PRÁTICOS PARA O SEU PROJETO (AEDS-Graph / database / scripts)
+# ------------------------------------------------------------------------------
+# EXEMPLO A: Ignorar arquivos de dados de grafos muito pesados (ex: grafos gigantes de benchmark)
+# mas manter o diretório database versionado no git:
+# database/*.bin
+# database/grafos_pesados/
+# database/*.csv
+
+# EXEMPLO B: Não ignorar um arquivo específico dentro de uma pasta ignorada (exceção):
+# !database/grafo_exemplo.txt
