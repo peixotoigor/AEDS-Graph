@@ -1,0 +1,94 @@
+% =============================================================================
+% TRABALHO FINAL: ESTRUTURAS EM ÁRVORES E TEORIA DOS GRAFOS
+% Disciplina: Algoritmos e Estruturas de Dados II (AEDS II)
+% Orientador: Prof. Michel Pires da Silva (CEFET-MG / UFCI-MG)
+% Modelo: IEEE Conference Template
+% =============================================================================
+
+\documentclass[conference]{IEEEtran}
+
+% --- Pacotes Básicos e Idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+
+% --- Pacotes Matemáticos e Algoritmos ---
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+
+% --- Pacotes Gráficos e Tabelas ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{textcomp}
+
+% --- Citações e Links ---
+\usepackage{cite}
+\usepackage{url}
+
+\begin{document}
+
+% =============================================================================
+% TÍTULO DO ARTIGO
+% =============================================================================
+\title{Análise de Contratações Públicas Através da Teoria dos Grafos: congluios, monopólios e oligopólios}
+
+% =============================================================================
+% AUTORIA (Regras da Seção 3.1 do edital):
+% 1. Primeiros autores: Alunos da equipe (até 3 integrantes), ordenados por
+%    nível de contribuição (ou ordem alfabética se contribuição igualitária).
+% 2. Último autor: OBRIGATORIAMENTE o professor orientador (Michel Pires da Silva).
+% =============================================================================
+\author{
+    \IEEEauthorblockN{Igor Peixoto Rodrigues}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    igorpeixoto@cefetmg.br.com}
+    \and
+    \IEEEauthorblockN{Pedro Henrique de Araújo Carvalho}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    ypedroaraujo@gmail.com}
+    \and
+    \IEEEauthorblockN{Michel Pires da Silva}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    michel@cefetmg.br}
+}
+
+\maketitle
+
+% =============================================================================
+% ESTRUTURA MODULAR DO ARTIGO (SEÇÕES INDIVIDUAIS EM report/sections/)
+% =============================================================================
+
+% Resumo e Palavras-chave
+\input{sections/00_abstract.tex}
+
+% 1. Introdução (Técnica do Funil, Relevância, Motivação, Objetivos e Roteiro)
+\input{sections/01_introducao.tex}
+
+% 2. Referencial Teórico (Fundamentos de Grafos/Árvores e Estado da Arte)
+\input{sections/02_referencial.tex}
+
+% 3. Metodologia (Dataset, Modelagem V e E, Algoritmos e Fluxograma Obrigatório)
+\input{sections/03_metodologia.tex}
+
+% 4. Resultados e Discussão (Tabelas, Gráficos, Gargalos e Análise Crítica)
+\input{sections/04_resultados.tex}
+
+% 5. Conclusão e Próximas Etapas (Contribuições, Limitações e Trabalhos Futuros)
+\input{sections/05_conclusao.tex}
+
+% =============================================================================
+% REFERÊNCIAS BIBLIOGRÁFICAS (Arquivo references.bib)
+% Regra do edital: Somente citações científicas reais (scholar.google.com).
+% Deve conter link do repositório (GitHub) e base de dados (Zenodo).
+% =============================================================================
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
