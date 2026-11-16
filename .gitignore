@@ -141,3 +141,4 @@ outputs/01_analise_socios/*.json
 !outputs/01_analise_socios/*.md
 !outputs/01_analise_socios/*.txt
 
+skills/
