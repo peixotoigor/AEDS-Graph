@@ -125,6 +125,7 @@ database/2025/processed/01_analise_socios/alertas_vinculos_concorrentes.csv
 docs/
 
 # Ignora todo o conteúdo dessas pastas...
+report/*
 outputs/*
 scripts/*
 database/2025/processed/*
@@ -142,3 +143,14 @@ outputs/01_analise_socios/*.json
 !outputs/01_analise_socios/*.txt
 
 skills/
+
+# Ignora arquivos de compilação LaTeX em qualquer pasta
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.synctex.gz
+.texbuild/
