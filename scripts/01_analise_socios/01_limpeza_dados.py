@@ -1,7 +1,10 @@
-import pandas as pd
-import numpy as np
-import re
 import os
+import re
+import unicodedata
+from collections import Counter, defaultdict
+
+import numpy as np
+import pandas as pd
 
 # ==========================================
 # 1. FUNÇÕES DE LIMPEZA E FORMATAÇÃO
@@ -34,10 +37,67 @@ def limpar_documento(doc):
             
     return doc_str
 
+
+def _normalizar_ascii(texto):
+    """Normaliza string para ASCII maiúsculo sem acentos para classificação temática."""
+    if texto is None or pd.isna(texto):
+        return ""
+    norm = unicodedata.normalize('NFKD', str(texto)).encode('ascii', 'ignore').decode('ascii')
+    return re.sub(r'\s+', ' ', norm).upper().strip()
+
+
+def classificar_segmento_objeto(dsc_objeto, dsc_natureza=""):
+    """Mapeia o objeto licitado para rótulo setorial macro livre de PII."""
+    obj = _normalizar_ascii(dsc_objeto)
+    nat = _normalizar_ascii(dsc_natureza)
+
+    if 'ODONTOLOG' in obj or 'DENTAR' in obj:
+        return 'Materiais odontológicos'
+    if 'CIRURGIC' in obj:
+        return 'Materiais médico-cirúrgicos'
+    if ('HOSPITALAR' in obj or 'AMBULATOR' in obj or 'LABORATOR' in obj) and any(
+        k in obj for k in ('EQUIPAMENTO', 'APARELHO', 'CAMARA', 'DIAGNOST', 'RAIO', 'MONITOR', 'AUTOCLAVE')
+    ):
+        return 'Equipamentos hospitalares'
+    if any(k in obj for k in ('MEDICAMENTO', 'REMUME', 'FARMAC', 'IMUNOBIOLOG')):
+        return 'Medicamentos e insumos farmacêuticos'
+    if any(k in obj for k in ('MEDICO', 'CURATIVO', 'HOSPITALAR', 'SAUDE', 'LABORATOR')):
+        return 'Materiais médicos diversos'
+    if 'TRANSPORTE ESCOLAR' in obj:
+        return 'Transporte escolar'
+    if any(k in obj for k in ('TRANSPORTE', 'FRETE', 'VEICULO', 'AMBULANCIA', 'LOCACAO DE VEICULO')):
+        return 'Transporte e locação de veículos'
+    if any(k in obj for k in ('TECNOLOGIA DA INFORMACAO', '(TI)', 'INFORMATICA', 'COMPUTADOR', 'SOFTWARE', 'TELECOMUNICAC', 'ELETRONIC')):
+        return 'Equipamentos e insumos (informática/eletrônicos)'
+    if nat.startswith('1 -') or any(
+        k in obj for k in ('OBRAS CIVIS', 'PAVIMENTACAO', 'DRENAGEM', 'CALCAMENTO', 'ASFALT', 'ENGENHARIA', 'REFORMA DE', 'CONSTRUCAO DE')
+    ):
+        return 'Obras e serviços de engenharia'
+    if any(k in obj for k in ('ALIMENT', 'MERENDA', 'HORTIFRUTI', 'GENERO', 'PANIFIC')):
+        return 'Gêneros alimentícios e merenda'
+    if any(k in obj for k in ('PAPEL', 'IMPRESSO', 'ESCRITORIO', 'COPA', 'LIMPEZA', 'HIGIENE', 'MOBILIARIO', 'ESCOLAR')):
+        return 'Materiais de expediente, consumo e mobiliário'
+    if any(k in obj for k in ('MANUTENCAO', 'LOCACAO', 'EVENTO', 'ARBITRAGEM', 'PRESTACAO DE SERVICO')):
+        return 'Serviços gerais, locação e manutenção'
+    if nat.startswith('6 -'):
+        return 'Alienação de bens'
+    return 'Compras e outros serviços'
+
+
+def resumir_segmentos_par(seqs_lic, mapa_segmento_lic):
+    """Consolida os segmentos dos certames em comum entre dois licitantes."""
+    if not seqs_lic:
+        return ''
+    contagem = Counter(mapa_segmento_lic.get(str(s), 'Compras e outros serviços') for s in seqs_lic)
+    ordenados = [seg for seg, _ in contagem.most_common()]
+    if len(ordenados) <= 3:
+        return ' ; '.join(ordenados)
+    return ' ; '.join(ordenados[:3]) + f" (+{len(ordenados) - 3})"
+
 # ==========================================
 # 2. CARREGAMENTO DAS BASES DE DADOS
 # ==========================================
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PASTA_ORIGEM = os.path.join(BASE_DIR, 'database', '2025', 'raw', 'SICOM.2025.3122306.licitacao')
 
 # Forçamos a leitura como string (dtype=str) para proteger IDs numéricos e CNPJs
@@ -88,6 +148,14 @@ for _, row in df_part.iterrows():
         'Weight': 1
     })
 
+# Mapa seq_licitacao -> Segmento_Objeto macro (sem PII)
+mapa_segmento_lic = {
+    str(r['seq_licitacao']).strip(): classificar_segmento_objeto(
+        r.get('dsc_objeto_licitacao', ''), r.get('dsc_nat_objeto', '')
+    )
+    for _, r in df_licitacao[['seq_licitacao', 'dsc_objeto_licitacao', 'dsc_nat_objeto']].dropna(subset=['seq_licitacao']).iterrows()
+}
+
 # B. Projeção Monopartida: Empresa -> Concorreu_Contra -> Empresa 
 # 1) Empresas habilitadas/participantes na mesma licitação (seq_licitacao)
 df_part_lic = pd.concat([
@@ -95,10 +163,15 @@ df_part_lic = pd.concat([
     df_julgamento[['seq_licitacao', 'num_doc_licitante']].rename(columns={'num_doc_licitante': 'doc'})
 ], ignore_index=True).dropna(subset=['seq_licitacao', 'doc']).drop_duplicates()
 
-for _, empresas_lic in df_part_lic.groupby('seq_licitacao')['doc']:
+certames_por_par = defaultdict(set)
+itens_por_par = defaultdict(set)
+
+for seq_lic, empresas_lic in df_part_lic.groupby('seq_licitacao')['doc']:
     lista_emp = sorted(empresas_lic.unique())
+    seq_str = str(seq_lic).strip()
     for i in range(len(lista_emp)):
         for j in range(i + 1, len(lista_emp)):
+            certames_por_par[(lista_emp[i], lista_emp[j])].add(seq_str)
             arestas.append({
                 'Source': lista_emp[i],
                 'Target': lista_emp[j],
@@ -112,6 +185,7 @@ itens_disputados = df_julgamento_valido.groupby('seq_item_licitacao')['num_doc_l
 
 for item, empresas in itens_disputados.items():
     if len(empresas) > 1:
+        item_str = str(item).strip()
         # Cria aresta para todos os pares de empresas que disputaram este item
         for i in range(len(empresas)):
             for j in range(i + 1, len(empresas)):
@@ -119,6 +193,7 @@ for item, empresas in itens_disputados.items():
                     continue
                 # Ordenar para evitar duplicidade direcional (A->B ser diferente de B->A)
                 emp1, emp2 = sorted([empresas[i], empresas[j]])
+                itens_por_par[(emp1, emp2)].add(item_str)
                 arestas.append({
                     'Source': emp1,
                     'Target': emp2,
@@ -139,8 +214,23 @@ for _, row in df_soc.iterrows():
 
 tabela_arestas_bruta = pd.DataFrame(arestas)
 
-# Agrupa arestas repetidas para somar o Peso (Weight)
+# Agrupa arestas repetidas para somar o Peso (Weight) mantendo valor idêntico ao original
 tabela_arestas = tabela_arestas_bruta.groupby(['Source', 'Target', 'Tipo_Relacao'], as_index=False).agg({'Weight': 'sum'})
+
+
+def _metadados_concorrencia(row):
+    if row['Tipo_Relacao'] != 'Concorreu_Contra':
+        return pd.Series([0, 0, ''])
+    par = tuple(sorted([str(row['Source']).strip(), str(row['Target']).strip()]))
+    certs = certames_por_par.get(par, set())
+    itens = itens_por_par.get(par, set())
+    seg = resumir_segmentos_par(certs, mapa_segmento_lic)
+    return pd.Series([int(len(certs)), int(len(itens)), seg])
+
+
+tabela_arestas[['Qtd_Certames_Comuns', 'Qtd_Itens_Comuns', 'Segmento_Objeto']] = tabela_arestas.apply(
+    _metadados_concorrencia, axis=1
+)
 
 # ==========================================
 # 5. EXPORTAÇÃO PARA O GEPHI
@@ -159,4 +249,15 @@ caminho_arestas = os.path.join(pasta_destino, 'tabela_arestas_gephi.csv')
 tabela_nos.to_csv(caminho_nos, index=False, encoding='utf-8')
 tabela_arestas.to_csv(caminho_arestas, index=False, encoding='utf-8')
 
+docs_mascarados = sorted(
+    d for d in nos_empresas['ID'].dropna().unique() if not str(d).isdigit()
+)
+arestas_mascarado = int(
+    (tabela_arestas['Source'].isin(docs_mascarados) | tabela_arestas['Target'].isin(docs_mascarados)).sum()
+) if docs_mascarados else 0
+
 print(f"Processamento concluído! Arquivos gerados com sucesso na pasta '{pasta_destino}': tabela_nos_gephi.csv e tabela_arestas_gephi.csv")
+print(
+    f"Resumo saneamento: {len(tabela_nos)} nós | {len(tabela_arestas)} arestas | "
+    f"docs não numéricos/mascarados={len(docs_mascarados)} (arestas={arestas_mascarado})"
+)

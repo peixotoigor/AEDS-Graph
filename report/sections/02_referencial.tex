@@ -1,73 +1,47 @@
 \section{Referencial Teórico e Estado da Arte}
 \label{sec:referencial}
 
-A investigação de fraudes concorrenciais, desvios orçamentários e anomalias estruturais em compras públicas situa-se na convergência entre a Ciência da Computação (Algoritmos e Estruturas de Dados Avançados), a Teoria das Redes Complexas e a Economia Antitruste e Forense. Esta seção estabelece o arcabouço conceitual e matemático que fundamenta a modelagem e os algoritmos desenvolvidos neste estudo.
+A análise automatizada de riscos em contratações públicas articula fundamentos da Ciência da Computação (algoritmos em grafos e estruturas de dados), da Ciência das Redes Complexas e da regulação jurídica e antitruste das licitações. Esta seção consolida o arcabouço normativo, a literatura científica e as formulações matemáticas que sustentam os três eixos do estudo.
 
-\subsection{Economia do Conluio e Tipologias de Cartéis Licitatórios}
-As contratações públicas são institucionalmente desenhadas como leilões competitivos, sob a premissa de que a rivalidade entre agentes econômicos independentes forçará os preços em direção ao custo marginal, maximizando o benefício coletivo (conforme os ditames da Lei nº 14.133/2021)~\cite{brasil2021licitacoes}. Todavia, certames públicos constituem ambientes propícios ao surgimento de equilíbrios cooperativos ilícitos, caracterizando os cartéis em licitações (\textit{bid rigging})~\cite{fazekas2016corruption, imhof2018bid}.
+\subsection{Arcabouço Jurídico e Tipologias de Risco Licitatório}
 
-Segundo as diretrizes internacionais da OCDE~\cite{oecd2016guidelines} e a doutrina do Conselho Administrativo de Defesa Econômica (CADE)~\cite{cade2022guia}, o conluio em compras públicas manifesta-se através de quatro tipologias mecânicas canônicas:
+As licitações públicas visam assegurar a isonomia entre competidores e selecionar a proposta mais vantajosa para a Administração, conforme os princípios expressos nos arts.~5º, 9º, inciso~I, alínea ``a'', e 11, incisos~I a III, da Lei nº 14.133/2021~\cite{brasil2021licitacoes}. O mesmo diploma impõe pesquisa de preços compatível com o mercado e consideração da economia de escala (art.~23, §§~1º e 4º), tipifica infrações administrativas graves (art.~155, incisos~VIII a XII), estabelece a dosimetria das sanções conforme o dano apurado (art.~156, §~1º, incisos~I e IV), autoriza a desconsideração da personalidade jurídica para alcançar sócios e empresas coligadas (art.~160) e inclui o art.~337-F no Código Penal para coibir a frustração do caráter competitivo.
+
+Sob a ótica concorrencial, a Lei nº 12.529/2011 (art.~36, \textit{caput}, §~3º, incisos~I, alíneas ``c'' e ``d'', e II)~\cite{brasil2011concorrencia} enquadra como infrações à ordem econômica a divisão concertada de mercados e a combinação de preços ou abstenções em certames. Complementarmente, a Lei Anticorrupção (Lei nº 12.846/2013, art.~5º, inciso~IV)~\cite{brasil2013anticorrupcao} responsabiliza objetivamente pessoas jurídicas por atos lesivos em licitações, enquanto a Lei Complementar nº 123/2006 (art.~3º, §~4º, incisos~III a V)~\cite{brasil2006lc123} veda a fruição de tratamento diferenciado de microempresas (ME) e empresas de pequeno porte (EPP) quando há participação societária cruzada que exceda o teto legal. Já a Lei de Improbidade Administrativa (Lei nº 8.429/1992, com redação dada pela Lei nº 14.230/2021, art.~10 e art.~12, inciso~II)~\cite{brasil1992improbidade} exige demonstração de dolo específico e de perda patrimonial efetiva para responsabilização, o que fundamenta o cruzamento entre indícios estruturais e materialidade financeira. Por fim, a jurisprudência do TCU~\cite{tcu2011acordao2341,tcu2024acordao1798} consolida o entendimento de que a existência isolada de sócio em comum ou parentesco não configura ilícito por si só, exigindo a convergência de múltiplos indícios objetivos para justificar apuração aprofundada.
+
+Na literatura econômica e nos guias da Organização para a Cooperação e Desenvolvimento Econômico (OCDE)~\cite{oecd2025guidelines} e do Conselho Administrativo de Defesa Econômica (CADE)~\cite{cade2019guia}, os arranjos restritivos à competição em compras públicas manifestam-se em quatro mecanismos principais: (i) \textit{cover bidding} (propostas de cobertura), em que licitantes submetem lances elevados para simular disputa e viabilizar a vitória de um parceiro~\cite{carbone2024bidrigging,aaltio2025complementary}; (ii) supressão de propostas, caracterizada pela abstenção coordenada de concorrentes aptos; (iii) \textit{bid rotation} (rodízio de vencedores), marcado pela alternância cíclica de vitórias ao longo de certames sucessivos~\cite{imhof2018screening,imhof2021detecting}; e (iv) alocação setorial ou territorial, na qual fornecedores dividem secretarias ou nichos específicos, elevando artificialmente a concentração orçamentária~\cite{wachs2019cartel,wachs2020corruption}. Como os participantes costumam cumprir formalmente os requisitos habilitatórios, a detecção preventiva depende de métricas objetivas e relacionais capazes de rastrear padrões anômalos em grandes volumes de registros~\cite{fazekas2016objective}.
+
+\subsection{Modelagem em Redes Complexas para Auditoria Pública}
+
+A Ciência das Redes permite traduzir bases administrativas relacionais em estruturas formais analisáveis algoritmicamente~\cite{newman2018networks}. Em contratações públicas municipais brasileiras, estudos recentes demonstram a eficácia de projeções empresa--empresa de co-disputa~\cite{lyra2021characterization} e de grafos heterogêneos que acoplam co-participação em certames a vínculos societários do QSA~\cite{villamil2024collusion,pompeu2025collusion}. Para capturar integralmente o ciclo das despesas municipais sem distorcer a semântica de cada etapa, este trabalho adota três representações complementares:
+
 \begin{enumerate}
-  \item \textbf{Propostas de Cobertura (\textit{Cover Bidding}):} Licitantes combinam previamente a adjudicatária de cada lote; para simular competição e assegurar a validade do certame, empresas parceiras submetem lances intencionalmente elevados ou com vícios para desclassificação;
-  \item \textbf{Supressão de Propostas (\textit{Bid Suppression}):} Acordos tácitos nos quais concorrentes concordam em abster-se de cotar ou retiram propostas habilitadas mediante promessas de compensação futura;
-  \item \textbf{Rodízio de Licitantes (\textit{Bid Rotation}):} Esquema cíclico de alocação de mercado em que as empresas alternam vitórias de forma coordenada entre certames sucessivos, estabilizando cotas homogêneas de faturamento ao longo do tempo~\cite{imhof2018bid};
-  \item \textbf{Alocação Setorial e Territorial de Mercado (\textit{Market Allocation}):} Licitantes dividem órgãos ou nichos econômicos específicos (e.g., Saúde ou Educação), abstendo-se de disputar o domínio de seus parceiros e criando monopólios locais artificiais~\cite{wachs2019network}.
+  \item \textbf{Grafo Heterogêneo Multicamada ($G_{\text{soc}}$):} definido como $G_{\text{soc}} = (V_{\text{soc}}, E_{\text{soc}}, \tau, \varphi, w)$, em que $\tau$ particiona $V_{\text{soc}}$ nas classes \textit{Órgão}, \textit{Empresa} e \textit{Sócio Real}, e $\varphi$ distingue arestas de participação, co-concorrência, propriedade societária (\textit{É\_Dono\_De}) e vínculo cadastral ou societário suspeito (\textit{Vinculo\_Suspeito}), permitindo arestas paralelas ponderadas por $w: E_{\text{soc}} \to \mathbb{R}_{>0}$.
+  \item \textbf{Dígrafo Ponderado de Disputas ($G_{\text{dir}}$):} definido como $G_{\text{dir}} = (V_{\text{emp}}, E_{P \to V}, w_{\text{dir}})$, em que uma aresta direcionada $u \to v$ registra que a empresa perdedora $u$ foi superada pela vencedora $v$ em itens multi-participante. Em bases públicas como o SICOM~\cite{tcemg2025in01}, nas quais os lances perdedores frequentemente aparecem zerados nos registros de julgamento, a modelagem direcionada preserva a assimetria vitória/derrota e viabiliza a análise de reciprocidade temporal e supressão de desconto frente à cotação prévia~\cite{imhof2021detecting,wachs2019cartel}.
+  \item \textbf{Grafo Bipartido Unidade--Credor ($G_{\text{bip}}$):} modelado como rede de dois modos $G_{\text{bip}} = (U \cup C, E_{\text{emp}}, w_{\text{fin}})$~\cite{borgatti1997network}, ligando unidades orçamentárias $u \in U$ aos credores $c \in C$ com peso igual ao valor líquido empenhado. Aplicações similares na América Latina evidenciam que a análise bipartida revela dependência crônica e fornecedores-ponte em administrações descentralizadas~\cite{herrera2020characterization,alcazar2026supplier}.
 \end{enumerate}
 
-A detecção dessas práticas esbarra no desafio da \textit{opacidade informacional}: membros do cartel cumprem formalmente as exigências cadastrais e editais. A materialidade do conluio, portanto, não reside em um documento isolado, mas na topologia das relações intertemporais entre os participantes.
+\subsection{Algoritmos de Grafos e Métricas Aplicadas}
 
-\subsection{Modelagem em Redes Complexas e Projeções Bipartidas}
-A Ciência das Redes fornece a linguagem formal para transpor registros administrativos tabulares em objetos computáveis~\cite{newman2018networks}. Define-se um grafo ponderado como uma 3-tupla:
+Para processar as três representações dentro de limites determinísticos de complexidade assintótica, emprega-se o seguinte conjunto de algoritmos e métricas:
+
+\subsubsection{Redução por $1$-Core, Union-Find e Listagem de Triângulos $K_3$}
+Dado o grafo heterogêneo $G_{\text{soc}}$, filtra-se o subgrafo induzido pelas arestas \textit{Vinculo\_Suspeito} acima do limiar de risco e suas respectivas arestas de propriedade. Em seguida, aplica-se a decomposição $k$-core com $k=1$~\cite{seidman1983network} via fila em busca em largura ($\mathcal{O}(|V| + |E|)$), podando vértices isolados. Sobre o subgrafo resultante, a estrutura \textit{Disjoint-Set Union} (Union-Find) com compressão de caminhos e união por posto~\cite{tarjan1975efficiency} extrai as componentes conexas em tempo quase linear $\mathcal{O}(|E|\,\alpha(|V|))$, onde $\alpha$ é a inversa da função de Ackermann. Por fim, para cada par suspeito $(a,b)$, interseccionam-se as listas de adjacência de sócios em tempo $\mathcal{O}(|E|\,d_{\max})$ para enumerar triângulos societários fechados ($K_3$: Sócio--Empresa$_A$--Empresa$_B$).
+
+\subsubsection{Componentes Fortemente Conexas (Tarjan), Ciclos Curtos e Comunidades de Louvain}
+No dígrafo $G_{\text{dir}}$, o algoritmo de Tarjan~\cite{tarjan1972depth} identifica todas as Componentes Fortemente Conexas (SCCs) em uma única travessia em profundidade com complexidade $\mathcal{O}(|V| + |E|)$. Enquanto relacionamentos acíclicos geram SCCs unitárias ($|C| = 1$), a alternância de vitórias entre concorrentes produz SCCs não triviais ($|C| \ge 2$). Para isolar alternâncias restritas a múltiplas licitações, executa-se uma busca em profundidade limitada para ciclos simples $C_3$ e $C_4$ ($\mathcal{O}((|V|+|E|)c)$, sendo $c$ o fator de ramificação local). Complementarmente, o algoritmo de Louvain~\cite{blondel2008fast} maximiza a modularidade $Q$ na projeção não direcionada de $G_{\text{dir}}$:
 \begin{equation}
-  G = (V, E, W)
+  Q = \frac{1}{2m} \sum_{x, y \in V_{\text{emp}}} \left[ A_{xy} - \frac{k_x k_y}{2m} \right] \delta(g_x, g_y),
 \end{equation}
-onde $V$ é o conjunto finito de vértices (empresas, secretarias ou itens), $E \subseteq V \times V$ representa as arestas de interação fática, e $W: E \rightarrow \mathbb{R}^+$ é a função de ponderação que atribui grandezas escalares às conexões (e.g., frequência de co-disputas ou valores monetários empenhados).
+onde $A_{xy}$ é o peso da aresta, $k_x = \sum_y A_{xy}$, $m = \frac{1}{2}\sum_{xy} A_{xy}$, $g_x$ é a comunidade do vértice $x$ e $\delta$ é a função delta de Kronecker. Ressalta-se que valores elevados de $Q$ e a presença de ciclos $C_3/C_4$ indicam apenas segmentação de mercado ou disputa recorrente entre especialistas de um mesmo nicho, exigindo confronto com razões de preço e datas distintas de certames~\cite{imhof2018screening,aaltio2025complementary}. Para caracterização estrutural comparativa da rede de co-disputas no painel de síntese, utiliza-se também a centralidade de intermediação não ponderada $C_B(v)$~\cite{freeman1977set}, computada pelo algoritmo de Brandes~\cite{brandes2001faster} em tempo $\mathcal{O}(|V|\cdot|E|)$.
 
-Os dados de contratações públicas originam-se em estruturas naturalmente \textit{bipartidas} (2-modos) $G_{\text{bip}} = (V_{\text{emp}} \cup V_{\text{item}}, E_{\text{disp}})$, em que as arestas conectam exclusivamente uma empresa $u \in V_{\text{emp}}$ a um item licitado $i \in V_{\text{item}}$ se a empresa submeteu lance para aquele lote~\cite{borgatti1997network}. Como o objetivo forense reside em avaliar o acoplamento concorrencial direto entre as empresas, realiza-se uma \textbf{Projeção Unimodal (1-modo)} sobre a partição $V_{\text{emp}}$:
+\subsubsection{Concentração Orçamentária (HHI, Entropia de Shannon e PageRank Bipartido)}
+No grafo bipartido $G_{\text{bip}}$, para cada unidade orçamentária $u \in U$ com orçamento empenhado total $W_u = \sum_{c \in N(u)} w_{u,c}$ e participação relativa do credor $s_{u,c} = w_{u,c} / W_u$, calcula-se o Índice Herfindahl--Hirschman ($\text{HHI}_u$) em $\mathcal{O}(|E|)$~\cite{rhoades1993herfindahl}:
 \begin{equation}
-\begin{aligned}
-  (u, v) \in E_{\text{proj}} \iff \exists i \in V_{\text{item}} : \; & (u, i) \in E_{\text{disp}} \ \land \\
-                                                                     & (v, i) \in E_{\text{disp}}
-\end{aligned}
+  \text{HHI}_u = 10.000 \sum_{c \in N(u)} s_{u,c}^2 \in (0,\, 10.000].
 \end{equation}
-com $u \neq v$. O peso da aresta projetada $W(u, v)$ quantifica o número acumulado de itens disputados conjuntamente:
+Seguindo as faixas referenciais do DOJ/FTC~\cite{doj2010horizontal}, valores abaixo de $1.500$ indicam baixa concentração, de $1.500$ a $2.499$ concentração moderada e $\ge 2.500$ alta concentração. Para detectar dispersão versus dependência em poucos fornecedores, calcula-se a Entropia de Shannon Normalizada~\cite{shannon1948mathematical} sobre a distribuição orçamentária da unidade ($N_u = |N(u)| > 1$):
 \begin{equation}
-  W(u, v) = \left| \{i \in V_{\text{item}} \mid (u, i) \in E_{\text{disp}} \land (v, i) \in E_{\text{disp}}\} \right|
+  H_{\text{norm}}(u) = \frac{-\sum_{c \in N(u)} s_{u,c} \ln(s_{u,c})}{\ln(N_u)} \in [0,\, 1],
 \end{equation}
-Essa projeção permite mapear densidades de cliques, clusters coesos e centralidades diretamente sobre o mercado de fornecedores.
-
-\subsection{Algoritmos Clássicos e Estruturas de Dados de AEDS II}
-Para responder às hipóteses de auditoria e conformidade, mobiliza-se um conjunto de algoritmos fundamentais de AEDS II:
-
-\subsubsection{Detecção de Comunidades por Modularidade (Algoritmo de Louvain)}
-Para identificar grupos coesos de fornecedores que atuam sistematicamente em bloco, aplica-se o Algoritmo de Louvain~\cite{blondel2008fast}, fundamentado na maximização da \textit{Modularidade de Newman-Girvan} ($Q$):
-\begin{equation}
-  Q = \frac{1}{2m} \sum_{i, j \in V} \left[ A_{ij} - \frac{k_i k_j}{2m} \right] \delta(c_i, c_j)
-\end{equation}
-onde $A_{ij}$ representa o peso da aresta entre $i$ e $j$, $k_i = \sum_j A_{ij}$ denota o grau ponderado do vértice $i$, $m = \frac{1}{2} \sum_{ij} A_{ij}$, $c_i$ indica a comunidade do nó $i$, e $\delta$ é a função delta de Kronecker. Com complexidade empírica quase-linear $\mathcal{O}(|V| \log |V|)$, o algoritmo detecta partições densas de co-concorrência. Valores de $Q \ge 0{,}40$ indicam estruturação em cartéis e nichos fechados.
-
-\subsubsection{Centralidade de Intermediação (Algoritmo de Brandes)}
-Para descobrir empresas que operam como articuladoras centrais (\textit{brokers}) conectando diferentes nichos econômicos, emprega-se a \textit{Betweenness Centrality} formalizada por Freeman~\cite{freeman1977set}:
-\begin{equation}
-  C_B(v) = \sum_{s \neq v \neq t \in V} \frac{\sigma_{st}(v)}{\sigma_{st}}
-\end{equation}
-onde $\sigma_{st}$ é o total de caminhos mínimos entre $s$ e $t$, e $\sigma_{st}(v)$ é o número desses caminhos que contêm $v$. O algoritmo de Brandes~\cite{brandes2001faster} otimiza esse cômputo para tempo $\mathcal{O}(|V| \cdot |E|)$, acumulando dependências em travessias de busca em largura, viabilizando a identificação de empresas intermediárias em redes com centenas de concorrentes.
-
-\subsubsection{Árvores Geradoras e Estrutura Disjoint-Set (Algoritmo de Kruskal)}
-Diante de redes orçamentárias volumosas com milhares de transações financeiras, a inspeção direta gera poluição visual (\textit{hairball}). Para isolar a espinha dorsal de drenagem de recursos, aplica-se o Algoritmo de Kruskal~\cite{kruskal1956shortest} adaptado para a extração da \textbf{Árvore Geradora de Peso Máximo (\textit{Max-ST})}. Operando sobre uma estrutura de conjuntos disjuntos (\textit{Disjoint-Set Union} - DSU) com união por posto e compressão de caminhos, o algoritmo ordena as transferências em tempo $\mathcal{O}(|E| \log |E|)$ e seleciona o subgrafo acíclico conexo que concentra os maiores fluxos financeiros, comprovando a rigidez estrutural da alocação de verbas.
-
-\subsubsection{Componentes Fortemente Conexas em Dígrafos (Algoritmo de Tarjan)}
-Uma distinção metodológica crucial em contratações públicas reside em separar a assimetria unilateral de vitórias do rodízio recíproco deliberado. Ao construir um dígrafo de torneio $G_{\text{torneio}} = (V_{\text{emp}}, E_{\text{dir}})$, onde uma aresta orientada $u \rightarrow v$ indica que $u$ venceu $v$ nos certames em que concorreram:
-\begin{itemize}
-  \item Em monopólios com empresas figurantes (``coelhos''), as arestas são estritamente unidirecionais, gerando um Grafo Acíclico Direcionado (DAG) cujas Componentes Fortemente Conexas (SCCs) possuem tamanho trivial ($|C| = 1$);
-  \item Em cartéis com rodízio de vencedores (\textit{bid rotation}), a alternância cíclica de vitórias ($A \rightarrow B \rightarrow C \rightarrow A$) fecha ciclos direcionados, caracterizados por SCCs não-triviais com $|C| \ge 2$~\cite{imhof2018bid}.
-\end{itemize}
-O Algoritmo de Tarjan~\cite{tarjan1972depth} extrai todas as SCCs em uma única passagem de busca em profundidade (DFS) com complexidade estrita $\mathcal{O}(|V| + |E|)$, discriminando de forma determinística esquemas de rodízio de meras vitórias isoladas.
-
-\subsubsection{Teoria da Informação e Viés Decisório (Entropia de Shannon)}
-Por fim, a avaliação de governança sobre a conduta dos agentes de contratação (pregoeiros) apoia-se na Teoria da Informação de Shannon~\cite{shannon1948mathematical}. Para cada pregoeiro $p \in V_{\text{preg}}$, define-se a variável aleatória discreta de suas homologações, calculando a Entropia de Shannon da carteira decisória:
-\begin{equation}
-  H(p) = - \sum_{i=1}^{k} P(e_i \mid p) \log_2 P(e_i \mid p)
-  \label{eq:shannon}
-\end{equation}
-onde $P(e_i \mid p) = \frac{W(p, e_i)}{\sum_j W(p, e_j)}$ reflete a fração orçamentária adjudicada à empresa $e_i$. Valores de $H(p)$ próximos de zero evidenciam o colapso da incerteza e a presença de viés sistemático, assinalando pregoeiros que concentram a quase totalidade das vitórias em fornecedores cativos.
+em que valores próximos de zero denotam extrema concentração na unidade $u$. Aplicando contração de vértices sobre credores ligados ao mesmo componente societário do Eixo 1, computa-se $\Delta\text{HHI}_u = \text{HHI}_{u,\text{grupo}} - \text{HHI}_u$. Por fim, o algoritmo \textit{PageRank} ponderado~\cite{brin1998anatomy} ($\mathcal{O}(|V|+|E|)$ por iteração) ranqueia a relevância sistêmica conjunta das secretarias concentradoras e dos credores que atuam como pontes entre múltiplas pastas municipais.

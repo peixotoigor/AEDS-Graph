@@ -1,20 +1,7 @@
-% =============================================================================
-% RESUMO / ABSTRACT
-% Diretrizes do Professor (Seção 3.2 do edital):
-% - Um parágrafo conciso (máximo de 250 palavras).
-% - Deve responder diretamente às 4 perguntas:
-%   1. Qual o problema?
-%   2. Há soluções, quais?
-%   3. Como foi modelado (qual estrutura de árvore/grafo)?
-%   4. Qual o principal resultado obtido?
-% =============================================================================
-
 \begin{abstract}
-% TODO: Escreva o resumo aqui (máximo de 250 palavras) respondendo diretamente
-% às quatro perguntas exigidas no edital.
+A fiscalização convencional de contratações públicas analisa certames e empenhos de forma tabular isolada, falhando em detectar vínculos societários ocultos, rodízio de vencedores e concentração orçamentária. Embora técnicas de mineração de dados e redes complexas auxiliem auditorias, bases municipais apresentam chaves estrangeiras ausentes e lances perdedores zerados, além de exigirem cautela jurídica e proteção de dados pessoais. Este trabalho propõe um \textit{pipeline} computacional em Python baseado em três estruturas de grafos integradas às 55 tabelas do SICOM/TCE-MG (Divinópolis/MG, 2025) e ao QSA da Receita Federal: (i) um grafo heterogêneo multicamada reduzido por filtragem $1$-core e Union-Find para detecção de triângulos $K_3$, ponderado pela materialidade empenhada; (ii) um dígrafo Perdedor $\to$ Vencedor analisado por pares recíprocos em datas distintas, ciclos curtos $C_3/C_4$, Tarjan, Louvain e razão de preço frente às cotações prévias; e (iii) um grafo bipartido Unidade--Credor avaliado por HHI, entropia de Shannon normalizada, \textit{PageRank} e contração societária ($\Delta\text{HHI}$), sob pseudonimização integral conforme a LGPD. Como principais resultados, o método reduziu 1.788 vértices societários a 3 núcleos críticos com evidência cadastral e empenhos ativos (incluindo 3 triângulos $K_3$), identificou 8 inversões temporais e 55 pares com razão de preço $\ge 0{,}95$ entre 7.280 ocorrências de disputa, e mapeou R\$\,677,14 milhões em 1.862 relações, separando dependência institucional (Saúde, $\text{HHI}=4.114{,}43$) de fornecedores privados em 17,95\,s de execução em memória.
 \end{abstract}
 
 \begin{IEEEkeywords}
-% TODO: Insira aqui as palavras-chave separadas por vírgula (3 a 6 termos).
-% Exemplo: Teoria dos Grafos, Algoritmos e Estruturas de Dados, Redes Complexas.
+Teoria dos Grafos, Contratações Públicas, Redes Complexas, Triagem Indiciária, SICOM, LGPD.
 \end{IEEEkeywords}

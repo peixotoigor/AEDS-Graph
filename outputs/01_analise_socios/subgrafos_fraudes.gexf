@@ -1,0 +1,635 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-11-16">
+    <creator>NetworkX 3.7</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="4" title="tipo_relacao" type="string" />
+      <attribute id="5" title="componente_id" type="long" />
+      <attribute id="6" title="em_triangulo_k3" type="boolean" />
+      <attribute id="7" title="nivel_risco" type="string" />
+      <attribute id="8" title="motivos_vinculo" type="string" />
+      <attribute id="9" title="qtd_certames_comuns" type="long" />
+      <attribute id="10" title="qtd_itens_comuns" type="long" />
+      <attribute id="11" title="segmento_objeto" type="string" />
+      <attribute id="12" title="descricao" type="string" />
+      <attribute id="13" title="networkx_key" type="string" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="classe" type="string" />
+      <attribute id="1" title="componente_id" type="long" />
+      <attribute id="2" title="em_triangulo_k3" type="boolean" />
+      <attribute id="3" title="descricao" type="string" />
+    </attributes>
+    <nodes>
+      <node id="03968926000163" label="MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="24.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Empresa | CNPJ: 03.968.926/0001-63 | Fantasia: MASIF ARTIGOS MEDICOS | Município: CURITIBA/PR | Porte: DEMAIS | Situação: ATIVA | Abertura: 2000-07-28 | CNAE: Comércio atacadista de instrumentos e materiais para uso médico, cirúrgico, hospitalar e de laboratórios | Componente: #1 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="04890798000145" label="ORTOM INDUSTRIA TEXTIL LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 04.890.798/0001-45 | Município: PORTO FELIZ/SP | Porte: DEMAIS | Situação: ATIVA | Abertura: 2001-06-28 | CNAE: Confecção de peças de vestuário, exceto roupas íntimas e as confeccionadas sob medida | Componente: #2 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="07734496000176" label="VILSON CORDEIRO MARRA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="3" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 07.734.496/0001-76 | Fantasia: VITUR TRANSPORTES | Município: DIVINOPOLIS/MG | Porte: MICRO EMPRESA | Situação: ATIVA | Abertura: 2005-11-29 | CNAE: Transporte rodoviário coletivo de passageiros, com itinerário fixo, municipal | Componente: #3 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="07897039000100" label="DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="24.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="4" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Empresa | CNPJ: 07.897.039/0001-00 | Fantasia: DENTEMED EQUIPAMENTOS ODONTOLOGICOS | Município: BELO HORIZONTE/MG | Porte: DEMAIS | Situação: ATIVA | Abertura: 2006-03-22 | CNAE: Fabricação de outras máquinas e equipamentos de uso geral não especificados anteriormente, peças e acessórios | Componente: #4 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="11359442000145" label="ALVIMAR CORDEIRO MARRA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="3" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 11.359.442/0001-45 | Município: DIVINOPOLIS/MG | Porte: MICRO EMPRESA | Situação: ATIVA | Abertura: 2009-11-30 | CNAE: Transporte rodoviário coletivo de passageiros, com itinerário fixo, municipal | Componente: #3 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="20035686000163" label="ORTOBENS DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 20.035.686/0001-63 | Município: PORTO FELIZ/SP | Porte: MICRO EMPRESA | Situação: ATIVA | Abertura: 2014-04-07 | CNAE: Comércio atacadista de produtos odontológicos | Componente: #2 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="31768037000198" label="EGC COMERCIO E ATACADISTA DE INFORMATICA E ELETROELETRONICOS LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="5" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 31.768.037/0001-98 | Fantasia: GRUPO MOOV | Município: BAYEUX/PB | Porte: EMPRESA DE PEQUENO PORTE | Situação: ATIVA | Abertura: 2018-10-15 | CNAE: Comércio atacadista de equipamentos de informática | Componente: #5 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="37885137000180" label="AMB DISTRIBUIDORA DE MEDICAMENTO E MATERIAIS HOSPITALARES LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="6" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 37.885.137/0001-80 | Fantasia: AMB DISTRIBUIDORA | Município: CAMBE/PR | Porte: EMPRESA DE PEQUENO PORTE | Situação: ATIVA | Abertura: 2020-07-28 | CNAE: Comércio atacadista de instrumentos e materiais para uso médico, cirúrgico, hospitalar e de laboratórios | Componente: #6 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="49329140000105" label="GWC INDUSTRIA, IMPORTACAO E DISTRIBUICAO DE ELETRONICOS LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="5" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 49.329.140/0001-05 | Fantasia: GWC INDUSTRIA | Município: BAYEUX/PB | Porte: EMPRESA DE PEQUENO PORTE | Situação: ATIVA | Abertura: 2023-01-25 | CNAE: Fabricação de componentes eletrônicos | Componente: #5 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="54860907000150" label="ODONTOMASTER EQUIPAMENTOS LTDA">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="24.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="4" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Empresa | CNPJ: 54.860.907/0001-50 | Fantasia: ODONTOMASTER | Município: BELO HORIZONTE/MG | Porte: DEMAIS | Situação: ATIVA | Abertura: 2024-04-24 | CNAE: Comércio atacadista de máquinas, aparelhos e equipamentos para uso odonto-médico-hospitalar; partes e peças | Componente: #4 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="78742491000133" label="JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <viz:size value="24.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Empresa | CNPJ: 78.742.491/0001-33 | Município: CURITIBA/PR | Porte: DEMAIS | Situação: ATIVA | Abertura: 1985-04-17 | CNAE: Comércio atacadista de instrumentos e materiais para uso médico, cirúrgico, hospitalar e de laboratórios | Componente: #1 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="97533241000138" label="M.H.M. DO COUTO - COMERCIAL LTDA">
+        <viz:color r="31" g="119" b="180" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Empresa" />
+          <attvalue for="1" value="6" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Empresa | CNPJ: 97.533.241/0001-38 | Fantasia: ROYAL SHOPPING DA SAUDE | Município: APUCARANA/PR | Porte: EMPRESA DE PEQUENO PORTE | Situação: ATIVA | Abertura: 2011-07-07 | CNAE: Comércio atacadista de instrumentos e materiais para uso médico, cirúrgico, hospitalar e de laboratórios | Componente: #6 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_ALESSANDRO_MORI_DO_COUTO_693279" label="ALESSANDRO MORI DO COUTO">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="6" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***693279** | Qualificação: Sócio-Administrador | Empresas (1): AMB DISTRIBUIDORA DE EQUIPAMENTOS E MATERIAIS HOSPITALARES LTDA | Componente: #6 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_ALVIMAR_CORDEIRO_MARRA" label="ALVIMAR CORDEIRO MARRA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="3" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Qualificação: Titular (Empresário Individual/MEI) | Empresas (1): ALVIMAR CORDEIRO MARRA | Componente: #3 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_ARMANDO_LOFFLER_PADILHA_769800" label="ARMANDO LOFFLER PADILHA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***769800** | Qualificação: Sócio-Administrador | Empresas (1): ORTOM INDUSTRIA TEXTIL LTDA | Componente: #2 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_EMMANUELA_CAMINHA_VELOSO_FREIRE_COSTA_613584" label="EMMANUELA CAMINHA VELOSO FREIRE COSTA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="5" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***613584** | Qualificação: Sócio-Administrador | Empresas (1): EGC COMERCIO E ATACADISTA DE INFORMATICA E ELETROELETRONICOS LTDA | Componente: #5 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_GUSTAVO_LUIZ_WANDERLEY_COSTA_619074" label="GUSTAVO LUIZ WANDERLEY COSTA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="5" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***619074** | Qualificação: Sócio-Administrador | Empresas (1): GWC INDUSTRIA, IMPORTACAO E DISTRIBUICAO DE ELETRONICOS LTDA | Componente: #5 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_JANAINA_GESSELE_035619" label="JANAINA GESSELE">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***035619** | Qualificação: Sócio | Empresas (1): MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA | Componente: #1 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_JARDEL_VIAPIANA_PADILHA_187878" label="JARDEL VIAPIANA PADILHA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***187878** | Qualificação: Sócio-Administrador | Empresas (1): ORTOBENS DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA | Componente: #2 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_KATTY_GESSELE_077199" label="KATTY GESSELE">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***077199** | Qualificação: Diretor / Sócio-Administrador | Empresas (2): MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA, JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A | Componente: #1 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_LARC_PARTICIPACOES_E_INVESTIMENTOS_LTDA_51381910" label="LARC PARTICIPACOES E INVESTIMENTOS LTDA">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="4" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Sócio Real (PJ) | Doc: 51381910 | Qualificação: Sócio | Empresas (2): DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA, ODONTOMASTER EQUIPAMENTOS LTDA | Componente: #4 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_LEONARDO_ANTONIO_RODRIGUES_CURY_729606" label="LEONARDO ANTONIO RODRIGUES CURY">
+        <viz:color r="255" g="127" b="14" a="1.0" />
+        <viz:size value="18.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="4" />
+          <attvalue for="2" value="true" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***729606** | Qualificação: Administrador | Empresas (2): DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA, ODONTOMASTER EQUIPAMENTOS LTDA | Componente: #4 | Triângulo K3: Sim" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_LUCIANE_VIAPIANA_PADILHA_209878" label="LUCIANE VIAPIANA PADILHA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***209878** | Qualificação: Sócio-Administrador | Empresas (1): ORTOM INDUSTRIA TEXTIL LTDA | Componente: #2 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_MARIA_HELENA_MORI_DO_COUTO_675229" label="MARIA HELENA MORI DO COUTO">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="6" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***675229** | Qualificação: Sócio-Administrador | Empresas (1): M.H.M. DO COUTO - COMERCIAL LTDA | Componente: #6 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_MARTA_IRENE_GESSELE_744339" label="MARTA IRENE GESSELE">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="1" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Doc: ***744339** | Qualificação: Diretor | Empresas (1): JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A | Componente: #1 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+      <node id="SOCIO_VILSON_CORDEIRO_MARRA" label="VILSON CORDEIRO MARRA">
+        <viz:color r="255" g="187" b="120" a="1.0" />
+        <viz:size value="13.0" />
+        <attvalues>
+          <attvalue for="0" value="Sócio Real" />
+          <attvalue for="1" value="3" />
+          <attvalue for="2" value="false" />
+          <attvalue for="3" value="Sócio Real (PF) | Qualificação: Titular (Empresário Individual/MEI) | Empresas (1): VILSON CORDEIRO MARRA | Componente: #3 | Triângulo K3: Não" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="03968926000163" target="SOCIO_JANAINA_GESSELE_035619" id="0" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="1" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="JANAINA GESSELE integra o QSA de MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA (Sócio) | Componente: #1 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="03968926000163" target="SOCIO_KATTY_GESSELE_077199" id="1" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="1" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="KATTY GESSELE integra o QSA de MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA (Sócio-Administrador) | Componente: #1 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="03968926000163" target="78742491000133" id="2" label="Vínculo ALTO (Score 29.00)" weight="29.0">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="1" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sócios comuns: KATTY GESSELE ; Sobrenomes comuns: GESSELE ; Mesmo endereço: WILSON LOIS KOEHLER JUNIOR, 406 - CURITIBA/PR ; Mesmo telefone: 4121084545" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="Materiais médico-cirúrgicos" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre MASIF ARTIGOS MEDICOS E HOSPITALARES LTDA e JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A | Score: 29.00 | Concorrências: 1 | Motivos: Sócios comuns: KATTY GESSELE ; Sobrenomes comuns: GESSELE ; Mesmo endereço: WILSON LOIS KOEHLER JUNIOR, 406 - CURITIBA/PR ; Mesmo telefone: 4121084545 | Componente: #1 | Triângulo K3: Sim" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="04890798000145" target="SOCIO_ARMANDO_LOFFLER_PADILHA_769800" id="3" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="2" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="ARMANDO LOFFLER PADILHA integra o QSA de ORTOM INDUSTRIA TEXTIL LTDA (Sócio-Administrador) | Componente: #2 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="04890798000145" target="SOCIO_LUCIANE_VIAPIANA_PADILHA_209878" id="4" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="2" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="LUCIANE VIAPIANA PADILHA integra o QSA de ORTOM INDUSTRIA TEXTIL LTDA (Sócio-Administrador) | Componente: #2 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="04890798000145" target="20035686000163" id="5" label="Vínculo ALTO (Score 10.00)" weight="10.0">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="2" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sobrenomes comuns: PADILHA VIAPIANA ; Mesmo telefone: 1532625549" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="Materiais médicos diversos" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre ORTOM INDUSTRIA TEXTIL LTDA e ORTOBENS DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA | Score: 10.00 | Concorrências: 1 | Motivos: Sobrenomes comuns: PADILHA VIAPIANA ; Mesmo telefone: 1532625549 | Componente: #2 | Triângulo K3: Não" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="07734496000176" target="SOCIO_VILSON_CORDEIRO_MARRA" id="6" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="3" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="VILSON CORDEIRO MARRA integra o QSA de VILSON CORDEIRO MARRA (Titular (Empresário Individual/MEI)) | Componente: #3 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="07734496000176" target="11359442000145" id="7" label="Vínculo ALTO (Score 2.00)" weight="2.0">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="3" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sobrenomes comuns: CORDEIRO MARRA" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="Transporte escolar" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre VILSON CORDEIRO MARRA e ALVIMAR CORDEIRO MARRA | Score: 2.00 | Concorrências: 1 | Motivos: Sobrenomes comuns: CORDEIRO MARRA | Componente: #3 | Triângulo K3: Não" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="07897039000100" target="SOCIO_LARC_PARTICIPACOES_E_INVESTIMENTOS_LTDA_51381910" id="8" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="4" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="LARC PARTICIPACOES E INVESTIMENTOS LTDA integra o QSA de DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA (Sócio) | Componente: #4 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="07897039000100" target="SOCIO_LEONARDO_ANTONIO_RODRIGUES_CURY_729606" id="9" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="4" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="LEONARDO ANTONIO RODRIGUES CURY integra o QSA de DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA (Administrador) | Componente: #4 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="07897039000100" target="54860907000150" id="10" label="Vínculo ALTO (Score 22.25)" weight="22.25">
+        <viz:color r="214" g="39" b="40" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="4" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sócios comuns: LARC PARTICIPACOES E INVESTIMENTOS LTDA | LEONARDO ANTONIO RODRIGUES CURY ; Sobrenomes comuns: ANTONIO CURY RODRIGUES" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="59" />
+          <attvalue for="11" value="Materiais odontológicos" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre DENTEMED EQUIPAMENTOS ODONTOLOGICOS LTDA e ODONTOMASTER EQUIPAMENTOS LTDA | Score: 22.25 | Concorrências: 60 | Motivos: Sócios comuns: LARC PARTICIPACOES E INVESTIMENTOS LTDA | LEONARDO ANTONIO RODRIGUES CURY ; Sobrenomes comuns: ANTONIO CURY RODRIGUES | Componente: #4 | Triângulo K3: Sim" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="11359442000145" target="SOCIO_ALVIMAR_CORDEIRO_MARRA" id="11" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="3" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="ALVIMAR CORDEIRO MARRA integra o QSA de ALVIMAR CORDEIRO MARRA (Titular (Empresário Individual/MEI)) | Componente: #3 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="20035686000163" target="SOCIO_JARDEL_VIAPIANA_PADILHA_187878" id="12" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="2" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="JARDEL VIAPIANA PADILHA integra o QSA de ORTOBENS DISTRIBUIDORA DE PRODUTOS HOSPITALARES LTDA (Sócio-Administrador) | Componente: #2 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="31768037000198" target="SOCIO_EMMANUELA_CAMINHA_VELOSO_FREIRE_COSTA_613584" id="13" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="5" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="EMMANUELA CAMINHA VELOSO FREIRE COSTA integra o QSA de EGC COMERCIO E ATACADISTA DE INFORMATICA E ELETROELETRONICOS LTDA (Sócio-Administrador) | Componente: #5 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="31768037000198" target="49329140000105" id="14" label="Vínculo ALTO (Score 10.25)" weight="10.25">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="5" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sobrenomes comuns: COSTA ; Mesmo endereço: LIBERDADE, 3230 - BAYEUX/PB" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="64" />
+          <attvalue for="11" value="Equipamentos e insumos (informática/eletrônicos)" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre EGC COMERCIO E ATACADISTA DE INFORMATICA E ELETROELETRONICOS LTDA e GWC INDUSTRIA, IMPORTACAO E DISTRIBUICAO DE ELETRONICOS LTDA | Score: 10.25 | Concorrências: 65 | Motivos: Sobrenomes comuns: COSTA ; Mesmo endereço: LIBERDADE, 3230 - BAYEUX/PB | Componente: #5 | Triângulo K3: Não" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="37885137000180" target="SOCIO_ALESSANDRO_MORI_DO_COUTO_693279" id="15" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="6" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="ALESSANDRO MORI DO COUTO integra o QSA de AMB DISTRIBUIDORA DE MEDICAMENTO E MATERIAIS HOSPITALARES LTDA (Sócio-Administrador) | Componente: #6 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="37885137000180" target="97533241000138" id="16" label="Vínculo ALTO (Score 2.00)" weight="2.0">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <attvalues>
+          <attvalue for="4" value="Vinculo_Suspeito" />
+          <attvalue for="5" value="6" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="ALTO" />
+          <attvalue for="8" value="Sobrenomes comuns: COUTO MORI" />
+          <attvalue for="9" value="1" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="Equipamentos hospitalares" />
+          <attvalue for="12" value="Vínculo suspeito [ALTO] entre AMB DISTRIBUIDORA DE MEDICAMENTO E MATERIAIS HOSPITALARES LTDA e M.H.M. DO COUTO - COMERCIAL LTDA | Score: 2.00 | Concorrências: 1 | Motivos: Sobrenomes comuns: COUTO MORI | Componente: #6 | Triângulo K3: Não" />
+          <attvalue for="13" value="Vinculo_Suspeito" />
+        </attvalues>
+      </edge>
+      <edge source="49329140000105" target="SOCIO_GUSTAVO_LUIZ_WANDERLEY_COSTA_619074" id="17" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="5" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="GUSTAVO LUIZ WANDERLEY COSTA integra o QSA de GWC INDUSTRIA, IMPORTACAO E DISTRIBUICAO DE ELETRONICOS LTDA (Sócio-Administrador) | Componente: #5 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="54860907000150" target="SOCIO_LARC_PARTICIPACOES_E_INVESTIMENTOS_LTDA_51381910" id="18" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="4" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="LARC PARTICIPACOES E INVESTIMENTOS LTDA integra o QSA de ODONTOMASTER EQUIPAMENTOS LTDA (Sócio) | Componente: #4 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="54860907000150" target="SOCIO_LEONARDO_ANTONIO_RODRIGUES_CURY_729606" id="19" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="4" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="LEONARDO ANTONIO RODRIGUES CURY integra o QSA de ODONTOMASTER EQUIPAMENTOS LTDA (Administrador) | Componente: #4 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="78742491000133" target="SOCIO_KATTY_GESSELE_077199" id="20" label="É Dono De" weight="1.0">
+        <viz:color r="255" g="127" b="14" a="0.95" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="1" />
+          <attvalue for="6" value="true" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="KATTY GESSELE integra o QSA de JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A (Diretor) | Componente: #1 | Triângulo K3: Sim" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="78742491000133" target="SOCIO_MARTA_IRENE_GESSELE_744339" id="21" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="1" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="MARTA IRENE GESSELE integra o QSA de JOAOMED COMERCIO DE MATERIAIS CIRURGICOS S/A (Diretor) | Componente: #1 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+      <edge source="97533241000138" target="SOCIO_MARIA_HELENA_MORI_DO_COUTO_675229" id="22" label="É Dono De" weight="1.0">
+        <viz:color r="127" g="127" b="127" a="0.85" />
+        <attvalues>
+          <attvalue for="4" value="É_Dono_De" />
+          <attvalue for="5" value="6" />
+          <attvalue for="6" value="false" />
+          <attvalue for="7" value="" />
+          <attvalue for="8" value="" />
+          <attvalue for="9" value="0" />
+          <attvalue for="10" value="0" />
+          <attvalue for="11" value="" />
+          <attvalue for="12" value="MARIA HELENA MORI DO COUTO integra o QSA de M.H.M. DO COUTO - COMERCIAL LTDA (Sócio-Administrador) | Componente: #6 | Triângulo K3: Não" />
+          <attvalue for="13" value="É_Dono_De" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

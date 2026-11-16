@@ -11,10 +11,16 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[brazilian]{babel}
+\renewcommand\IEEEkeywordsname{Palavras-chave}
 
-% --- Pacotes Matemáticos e Algoritmos ---
+% --- Tipografia e Quebra de URLs ---
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do_\do.\do=\do?\do&}
+
+% --- Pacotes Matemáticos ---
 \usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
 
 % --- Pacotes Gráficos e Tabelas ---
 \usepackage{graphicx}
@@ -22,29 +28,24 @@
 \usepackage{xcolor}
 \usepackage{textcomp}
 
-% --- Citações e Links ---
-\usepackage{cite}
-\usepackage{url}
-
 \begin{document}
 
 % =============================================================================
 % TÍTULO DO ARTIGO
 % =============================================================================
-\title{Análise de Contratações Públicas Através da Teoria dos Grafos: congluios, monopólios e oligopólios}
+\title{Análise de Contratações Públicas por Teoria dos Grafos: Risco Societário, Rodízio e Concentração Orçamentária}
 
 % =============================================================================
-% AUTORIA (Regras da Seção 3.1 do edital):
-% 1. Primeiros autores: Alunos da equipe (até 3 integrantes), ordenados por
-%    nível de contribuição (ou ordem alfabética se contribuição igualitária).
-% 2. Último autor: OBRIGATORIAMENTE o professor orientador (Michel Pires da Silva).
+% AUTORIA
+% 1. Primeiros autores: Alunos da equipe.
+% 2. Último autor: Professor orientador (Michel Pires da Silva).
 % =============================================================================
 \author{
     \IEEEauthorblockN{Igor Peixoto Rodrigues}
     \IEEEauthorblockA{\textit{Departamento de Computação} \\
     \textit{UFCI-MG} \\
     Divinópolis, Brasil \\
-    igorpeixoto@cefetmg.br.com}
+    igorpeixoto@cefetmg.br}
     \and
     \IEEEauthorblockN{Pedro Henrique de Araújo Carvalho}
     \IEEEauthorblockA{\textit{Departamento de Computação} \\
@@ -62,31 +63,17 @@
 \maketitle
 
 % =============================================================================
-% ESTRUTURA MODULAR DO ARTIGO (SEÇÕES INDIVIDUAIS EM report/sections/)
+% ESTRUTURA MODULAR DO ARTIGO
 % =============================================================================
-
-% Resumo e Palavras-chave
 \input{sections/00_abstract.tex}
-
-% 1. Introdução (Técnica do Funil, Relevância, Motivação, Objetivos e Roteiro)
 \input{sections/01_introducao.tex}
-
-% 2. Referencial Teórico (Fundamentos de Grafos/Árvores e Estado da Arte)
 \input{sections/02_referencial.tex}
-
-% 3. Metodologia (Dataset, Modelagem V e E, Algoritmos e Fluxograma Obrigatório)
 \input{sections/03_metodologia.tex}
-
-% 4. Resultados e Discussão (Tabelas, Gráficos, Gargalos e Análise Crítica)
 \input{sections/04_resultados.tex}
-
-% 5. Conclusão e Próximas Etapas (Contribuições, Limitações e Trabalhos Futuros)
 \input{sections/05_conclusao.tex}
 
 % =============================================================================
-% REFERÊNCIAS BIBLIOGRÁFICAS (Arquivo references.bib)
-% Regra do edital: Somente citações científicas reais (scholar.google.com).
-% Deve conter link do repositório (GitHub) e base de dados (Zenodo).
+% REFERÊNCIAS BIBLIOGRÁFICAS
 % =============================================================================
 \bibliographystyle{IEEEtran}
 \bibliography{references}

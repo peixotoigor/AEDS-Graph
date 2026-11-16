@@ -1,0 +1,82 @@
+% =============================================================================
+% ARTIGO MODULAR: EIXO 1 — ANÁLISE SOCIETÁRIA E MATERIALIDADE (01_analise_socios)
+% Disciplina: Algoritmos e Estruturas de Dados II (AEDS II)
+% Orientador: Prof. Michel Pires da Silva (CEFET-MG / UFCI-MG)
+% Modelo: IEEE Conference Template
+% =============================================================================
+
+\documentclass[conference]{IEEEtran}
+
+% --- Pacotes Básicos e Idioma ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\renewcommand\IEEEkeywordsname{Palavras-chave}
+
+% --- Tipografia e Quebra de URLs ---
+\usepackage{microtype}
+\usepackage{cite}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do_\do.\do=\do?\do&}
+
+% --- Pacotes Matemáticos ---
+\usepackage{amsmath,amssymb,amsfonts}
+
+% --- Pacotes Gráficos e Tabelas ---
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{textcomp}
+
+\begin{document}
+
+% =============================================================================
+% TÍTULO DO ARTIGO
+% =============================================================================
+\title{Detecção de Conluio e Concorrência Simulada em Contratações Públicas Municipais via Grafos Heterogêneos Multicamada: Um Estudo Empírico em Divinópolis/MG}
+%\title{Triagem de Vínculos Societários Ocultos e Materialidade em Licitações Municipais por Grafos Multicamada}
+
+% =============================================================================
+% AUTORIA
+% 1. Primeiros autores: Alunos da equipe.
+% 2. Último autor: Professor orientador (Michel Pires da Silva).
+% =============================================================================
+\author{
+    \IEEEauthorblockN{Igor Peixoto Rodrigues}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    igorpeixoto@cefetmg.br}
+    \and
+    \IEEEauthorblockN{Pedro Henrique de Araújo Carvalho}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    ypedroaraujo@gmail.com}
+    \and
+    \IEEEauthorblockN{Michel Pires da Silva}
+    \IEEEauthorblockA{\textit{Departamento de Computação} \\
+    \textit{UFCI-MG} \\
+    Divinópolis, Brasil \\
+    michel@cefetmg.br}
+}
+
+\maketitle
+
+% =============================================================================
+% ESTRUTURA MODULAR DO ARTIGO (SOMENTE 01_analise_socios)
+% =============================================================================
+\input{sections/00_abstract.tex}
+\input{sections/01_introducao.tex}
+\input{sections/02_referencial.tex}
+\input{sections/03_metodologia.tex}
+\input{sections/04_resultados.tex}
+\input{sections/05_conclusao.tex}
+
+% =============================================================================
+% REFERÊNCIAS BIBLIOGRÁFICAS
+% =============================================================================
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}

@@ -95,13 +95,49 @@ ENV/
 *~
 
 # ------------------------------------------------------------------------------
-# 6. EXEMPLOS PRÁTICOS PARA O SEU PROJETO (AEDS-Graph / database / scripts)
+# 6. LATEX / COMPILAÇÃO DO ARTIGO (report/)
 # ------------------------------------------------------------------------------
-# EXEMPLO A: Ignorar arquivos de dados de grafos muito pesados (ex: grafos gigantes de benchmark)
-# mas manter o diretório database versionado no git:
-# database/*.bin
-# database/grafos_pesados/
-# database/*.csv
+report/.texbuild/
+report/*.aux
+report/*.bbl
+report/*.blg
+report/*.fdb_latexmk
+report/*.fls
+report/*.out
+report/*.toc
+report/*.synctex.gz
 
-# EXEMPLO B: Não ignorar um arquivo específico dentro de uma pasta ignorada (exceção):
-# !database/grafo_exemplo.txt
+# ------------------------------------------------------------------------------
+# 7. PRIVACIDADE / LGPD (DADOS PESSOAIS QSA NÃO DEVEM IR PARA REPOSITÓRIOS PÚBLICOS)
+# ------------------------------------------------------------------------------
+outputs/01_analise_socios/socios_reais.csv
+outputs/01_analise_socios/alertas_vinculos_concorrentes.csv
+outputs/01_analise_socios/cache_qsa_brasilapi.json
+outputs/01_analise_socios/mapeamento_pseudonimos_restrito.csv
+database/2025/processed/socios_reais.csv
+database/2025/processed/alertas_vinculos_concorrentes.csv
+database/2025/processed/01_analise_socios/alertas_vinculos_concorrentes.csv
+
+# PASTAS IGNORADAS
+
+.__pycache__
+.pytest_cache
+docs/
+
+# Ignora todo o conteúdo dessas pastas...
+outputs/*
+scripts/*
+database/2025/processed/*
+
+# ... EXCETO a pasta 01_analise_socios:
+!outputs/01_analise_socios/
+!scripts/01_analise_socios/
+!report/01_analise_socios/
+!database/2025/processed/01_analise_socios/
+
+# Proteção LGPD (mantém os arquivos sensíveis bloqueados mesmo dentro de 01):
+outputs/01_analise_socios/*.csv
+outputs/01_analise_socios/*.json
+!outputs/01_analise_socios/*.md
+!outputs/01_analise_socios/*.txt
+

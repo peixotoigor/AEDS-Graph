@@ -1,15 +1,14 @@
-% =============================================================================
-% SEÇÃO 5: CONCLUSÃO E PRÓXIMAS ETAPAS
-% Diretrizes do Professor (Seção 3.2 do edital):
-% - Fechamento conciso das contribuições da equipe.
-% - Relato dos desafios e limitações práticas enfrentadas.
-% - Sugestões de melhorias e direções para pesquisas futuras.
-% =============================================================================
-
 \section{Conclusão e Próximas Etapas}
 \label{sec:conclusao}
 
-% TODO: Escreva a Conclusão aqui:
-% 1. Fechamento e principais contribuições alcançadas pelo projeto;
-% 2. Principais desafios técnicos e limitações dos dados/modelagem;
-% 3. Propostas de extensões e trabalhos futuros.
+Este trabalho demonstrou a viabilidade técnica e jurídica de modelar todo o ciclo de compras públicas municipais de Divinópolis/MG (exercício de 2025) por meio de três representações complementares em Teoria dos Grafos. O \textit{pipeline} desenvolvido integrou 55 tabelas brutas do SICOM/TCE-MG ao QSA da Receita Federal, exportando seis grafos auditáveis para o Gephi (\texttt{.gexf}) e reduzindo milhares de registros tabulares a subgrafos priorizados por expressão econômica: no Eixo~1, isolaram-se 3 componentes críticos com evidência cadastral ou societária dura e contratos ativos (incluindo 3 triângulos $K_3$); no Eixo~2, separaram-se 8 pares com alternância temporal real e 55 pares de baixo desconto frente a ciclos puramente competitivos no setor odontológico; e no Eixo~3, diferenciaram-se dois alertas de concentração institucional (Saúde e Desenvolvimento Econômico, liderados por entidade filantrópica, consórcio e empresa pública municipal) de fornecedores privados relevantes e da contração societária observada na Educação ($\Delta\text{HHI}=+1{,}83$). Toda a execução em memória completou-se em 17,954\,s, confirmando a eficiência prática das estruturas empregadas.
+
+Durante o desenvolvimento, quatro limitações empíricas da base pública condicionaram a modelagem e merecem registro transparente:
+\begin{enumerate}
+  \item \textbf{Mascaramento de CPFs:} o SICOM omite identificadores de sócios e a Receita Federal mascara os seis dígitos centrais do CPF (\texttt{***XXXXXX**}) e omite o CPF de titulares MEI, tornando o casamento de pessoas naturais dependente de normalização nominal e sujeito a homônimos;
+  \item \textbf{Sentinela \texttt{-1} intermódulo:} as chaves estrangeiras de licitação vêm preenchidas com \texttt{-1} em contratos e empenhos no SICOM 2025, exigindo integração por CNPJ/CPF higienizado e medindo a materialidade contratual global do fornecedor no exercício;
+  \item \textbf{Omissão de lances perdedores:} na tabela \texttt{julg\allowbreak Licitacao.csv}, os licitantes derrotados aparecem majoritariamente com valor unitário zerado, o que desloca a análise de \textit{cover bidding} para a razão entre o preço vencedor e a cotação prévia estimada;
+  \item \textbf{Sensibilidade onomástica, institucional e LGPD:} critérios puramente baseados em sobrenome geram falsos positivos (como o Componente~\#3), e métricas de HHI misturam entidades públicas e filantrópicas com empresas privadas, exigindo triagem manual, ressalvas indiciárias não acusatórias e pseudonimização rigorosa na publicação científica.
+\end{enumerate}
+
+Como trabalhos futuros, propõe-se: (i) incorporar séries históricas multianuais do SICOM (2020--2025) para acompanhar a evolução temporal de comunidades e ciclos; (ii) cruzar os vértices empresariais e societários com cadastros de inidoneidade e sanções (CEIS/CNEP) e bases de Pessoas Expostas Politicamente (PEPs); (iii) explorar modelos preditivos em redes heterogêneas sobre os subgrafos extraídos; e (iv) concluir o depósito público do conjunto de dados pseudonimizado com atribuição do DOI definitivo no Zenodo~\cite{projeto_dataset_zenodo}, assegurando reprodutibilidade integral em ambiente Linux~\cite{projeto_github}.

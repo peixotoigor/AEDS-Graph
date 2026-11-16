@@ -22,46 +22,177 @@
 \BIBdecl
 
 \bibitem{brasil2021licitacoes}
+\BIBentryALTinterwordspacing
 {Brasil}, ``Lei n{\textordmasculine} 14.133, de 1{\textordmasculine} de abril
   de 2021. lei de licita{\c{c}}{\~o}es e contratos administrativos,''
-  Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 2021.
+  Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 2021. [Online].
+  Available:
+  \url{https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{brasil2011concorrencia}
+\BIBentryALTinterwordspacing
+------, ``Lei n{\textordmasculine} 12.529, de 30 de novembro de 2011. estrutura
+  o sistema brasileiro de defesa da concorr{\^e}ncia,'' Di{\'a}rio Oficial da
+  Uni{\~a}o, Bras{\'\i}lia, DF, 2011. [Online]. Available:
+  \url{https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm}
+\BIBentrySTDinterwordspacing
 
 \bibitem{brasil2013anticorrupcao}
+\BIBentryALTinterwordspacing
 ------, ``Lei n{\textordmasculine} 12.846, de 1{\textordmasculine} de agosto de
-  2013. lei anticorrup{\c{c}}{\~a}o,'' Di{\'a}rio Oficial da Uni{\~a}o,
-  Bras{\'\i}lia, DF, 2013.
+  2013. disp{\~o}e sobre a responsabiliza{\c{c}}{\~a}o administrativa e civil
+  de pessoas jur{\'\i}dicas,'' Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia,
+  DF, 2013. [Online]. Available:
+  \url{https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm}
+\BIBentrySTDinterwordspacing
 
-\bibitem{fazekas2016corruption}
-M.~Fazekas, B.~T{\'o}th, and L.~P. King, ``Corruption risks in public
-  procurement: A objective approach,'' \emph{International Journal of Public
-  Administration}, vol.~39, no.~1, pp. 77--94, 2016.
+\bibitem{portal_transparencia_betha}
+\BIBentryALTinterwordspacing
+{Portal da Transpar{\^e}ncia de Divin{\'o}polis}. (2026) Dados abertos
+  municipais. Acesso em: 10 out. 2026. [Online]. Available:
+  \url{https://transparencia.betha.cloud/#/oU8BIS7tF8icFMLVMRCkJA==/dados-abertos}
+\BIBentrySTDinterwordspacing
 
-\bibitem{imhof2018bid}
-D.~Imhof, Y.~Karag{\"o}k, and S.~Rutz, ``Detecting bid-rigging coalitions in
-  different procurement mechanisms,'' \emph{Journal of Competition Law \&
-  Economics}, vol.~14, no.~3, pp. 401--443, 2018.
+\bibitem{tce_mg_dados_abertos}
+\BIBentryALTinterwordspacing
+{Tribunal de Contas do Estado de Minas Gerais}. (2026) Portal de dados abertos
+  ({SICOM} -- dados jurisdicionados). Acesso em: 11 nov. 2026. [Online].
+  Available: \url{https://dadosabertos.tce.mg.gov.br/#/public/inicio}
+\BIBentrySTDinterwordspacing
 
-\bibitem{oecd2016guidelines}
-{OECD - Organisation for Economic Co-operation and Development}, ``Guidelines
-  for fighting bid rigging in public procurement,'' Paris, 2016.
+\bibitem{tcemg2025in01}
+------, ``Instru{\c{c}}{\~a}o normativa n{\textordmasculine} 01/2025. altera a
+  {IN} n{\textordmasculine} 03/2015 sobre o sistema informatizado de contas dos
+  munic{\'\i}pios ({SICOM}),'' Di{\'a}rio Oficial de Contas do {TCE-MG}, Belo
+  Horizonte, MG, 2025.
 
-\bibitem{cade2022guia}
-{CADE - Conselho Administrativo de Defesa Econ{\^o}mica}, ``Guia de combate a
+\bibitem{tcu2011acordao2341}
+{Tribunal de Contas da Uni{\~a}o}, ``Ac{\'o}rd{\~a}o n{\textordmasculine}
+  2.341/2011 -- plen{\'a}rio. participa{\c{c}}{\~a}o de empresas com s{\'o}cios
+  comuns em licita{\c{c}}{\~o}es,'' Jurisprud{\^e}ncia Selecionada do {TCU},
+  Bras{\'\i}lia, DF, 2011.
+
+\bibitem{tcu2024acordao1798}
+------, ``Ac{\'o}rd{\~a}o n{\textordmasculine} 1.798/2024 -- plen{\'a}rio.
+  ind{\'\i}cios convergentes de conluio envolvendo empresas com v{\'\i}nculos
+  societ{\'a}rios ou familiares,'' Jurisprud{\^e}ncia Selecionada do {TCU},
+  Bras{\'\i}lia, DF, 2024.
+
+\bibitem{brasil2006lc123}
+\BIBentryALTinterwordspacing
+{Brasil}, ``Lei complementar n{\textordmasculine} 123, de 14 de dezembro de
+  2006. estatuto nacional da microempresa e da empresa de pequeno porte,''
+  Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 2006. [Online].
+  Available: \url{https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{brasil1992improbidade}
+\BIBentryALTinterwordspacing
+------, ``Lei n{\textordmasculine} 8.429, de 2 de junho de 1992. lei de
+  improbidade administrativa (reda{\c{c}}{\~a}o da lei n{\textordmasculine}
+  14.230/2021),'' Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 1992.
+  [Online]. Available:
+  \url{https://www.planalto.gov.br/ccivil_03/leis/l8429.htm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oecd2025guidelines}
+\BIBentryALTinterwordspacing
+{OECD -- Organisation for Economic Co-operation and Development}, ``Guidelines
+  for fighting bid rigging in public procurement,'' OECD Publishing, Paris
+  (original de 2009, revisado em 2025), 2025. [Online]. Available:
+  \url{https://www.oecd.org/en/topics/sub-issues/competition-enforcement/fighting-bid-rigging-in-public-procurement.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cade2019guia}
+\BIBentryALTinterwordspacing
+{CADE -- Conselho Administrativo de Defesa Econ{\^o}mica}, ``Guia de combate a
   cart{\'e}is em licita{\c{c}}{\~o}es,'' Minist{\'e}rio da Justi{\c{c}}a e
-  Seguran{\c{c}}a P{\'u}blica, Bras{\'\i}lia, DF, 2022.
+  Seguran{\c{c}}a P{\'u}blica, Bras{\'\i}lia, DF, 2019. [Online]. Available:
+  \url{https://www.gov.br/cade/pt-br/acesso-a-informacao/publicacoes-institucionais/guias_do_Cade}
+\BIBentrySTDinterwordspacing
 
-\bibitem{wachs2019network}
-J.~Wachs, M.~Fazekas, and J.~Kert{\'e}sz, ``A network approach to public
-  procurement,'' \emph{Royal Society Open Science}, vol.~6, no.~4, p. 181778,
-  2019.
+\bibitem{carbone2024bidrigging}
+C.~Carbone, F.~Calderoni, and M.~Jofre, ``Bid-rigging in public procurement:
+  cartel strategies and bidding patterns,'' \emph{Crime, Law and Social
+  Change}, vol.~82, no.~2, pp. 249--281, 2024.
+
+\bibitem{aaltio2025complementary}
+A.~Aaltio, R.~Buri, A.~Jokelainen, and J.~Lundberg, ``Complementary bidding and
+  cartel detection: Evidence from {Nordic} asphalt markets,''
+  \emph{International Journal of Industrial Organization}, vol.~98, p. 103129,
+  2025.
+
+\bibitem{imhof2018screening}
+D.~Imhof, Y.~Karag{\"o}k, and S.~Rutz, ``Screening for bid rigging---does it
+  work?'' \emph{Journal of Competition Law \& Economics}, vol.~14, no.~2, pp.
+  235--261, 2018.
+
+\bibitem{imhof2021detecting}
+D.~Imhof and H.~Wallimann, ``Detecting bid-rigging coalitions in different
+  countries and auction formats,'' \emph{International Review of Law and
+  Economics}, vol.~68, p. 106016, 2021.
+
+\bibitem{wachs2019cartel}
+J.~Wachs and J.~Kert{\'e}sz, ``A network approach to cartel detection in public
+  auction markets,'' \emph{Scientific Reports}, vol.~9, no.~1, p. 10818, 2019.
+
+\bibitem{wachs2020corruption}
+J.~Wachs, M.~Fazekas, and J.~Kert{\'e}sz, ``Corruption risk in contracting
+  markets: a network science perspective,'' \emph{International Journal of Data
+  Science and Analytics}, vol.~12, no.~1, pp. 45--60, 2021.
+
+\bibitem{fazekas2016objective}
+M.~Fazekas, I.~J. T{\'o}th, and L.~P. King, ``An objective corruption risk
+  index using public procurement data,'' \emph{European Journal on Criminal
+  Policy and Research}, vol.~22, no.~3, pp. 369--397, 2016.
 
 \bibitem{newman2018networks}
 M.~Newman, \emph{Networks}, 2nd~ed.\hskip 1em plus 0.5em minus 0.4em\relax
   Oxford University Press, 2018.
 
+\bibitem{lyra2021characterization}
+M.~S. Lyra, A.~Curado, B.~Dam{\'a}sio, F.~Ba{\c{c}}{\~a}o, and F.~L. Pinheiro,
+  ``Characterization of the firm--firm public procurement co-bidding network
+  from the {State} of {Cear{\'a}} ({Brazil}) municipalities,'' \emph{Applied
+  Network Science}, vol.~6, no.~1, p.~77, 2021.
+
+\bibitem{villamil2024collusion}
+I.~Villamil, J.~Kert{\'e}sz, and M.~Fazekas, ``Collusion risk in corporate
+  networks,'' \emph{Scientific Reports}, vol.~14, no.~1, p. 3161, 2024.
+
+\bibitem{pompeu2025collusion}
+M.~L.~F. Pompeu and R.~Holanda~Filho, ``Public procurement collusion
+  identification based on {GraphSAGE} algorithm,'' in \emph{Complex Networks \&
+  Their Applications XIII}, ser. Studies in Computational Intelligence.\hskip
+  1em plus 0.5em minus 0.4em\relax Springer Nature Switzerland, 2025, pp.
+  28--36.
+
 \bibitem{borgatti1997network}
 S.~P. Borgatti and M.~G. Everett, ``Network analysis of 2-mode data,''
   \emph{Social Networks}, vol.~19, no.~3, pp. 243--269, 1997.
+
+\bibitem{herrera2020characterization}
+F.~Herrera~Leiva, R.~Torres, O.~Nicolis, and R.~Salas~F., ``Characterization of
+  the {Chilean} public procurement ecosystem using social network analysis,''
+  \emph{IEEE Access}, vol.~8, pp. 138\,846--138\,858, 2020.
+
+\bibitem{alcazar2026supplier}
+J.~C. Alcazar-Gonzales, ``Supplier concentration in decentralized procurement:
+  Evidence from a low-institutional-capacity context,'' \emph{Journal of Public
+  Affairs}, vol.~26, no.~4, p. e70169, 2026.
+
+\bibitem{seidman1983network}
+S.~B. Seidman, ``Network structure and minimum degree,'' \emph{Social
+  Networks}, vol.~5, no.~3, pp. 269--287, 1983.
+
+\bibitem{tarjan1975efficiency}
+R.~E. Tarjan, ``Efficiency of a good but not linear set union algorithm,''
+  \emph{Journal of the ACM}, vol.~22, no.~2, pp. 215--225, 1975.
+
+\bibitem{tarjan1972depth}
+R.~Tarjan, ``Depth-first search and linear graph algorithms,'' \emph{SIAM
+  Journal on Computing}, vol.~1, no.~2, pp. 146--160, 1972.
 
 \bibitem{blondel2008fast}
 V.~D. Blondel, J.-L. Guillaume, R.~Lambiotte, and E.~Lefebvre, ``Fast unfolding
@@ -73,34 +204,47 @@ L.~C. Freeman, ``A set of measures of centrality based on betweenness,''
   \emph{Sociometry}, vol.~40, no.~1, pp. 35--41, 1977.
 
 \bibitem{brandes2001faster}
-U.~Brandes, ``A faster algorithm for betweenness centrality,'' \emph{Journal of
-  Mathematical Sociology}, vol.~25, no.~2, pp. 163--177, 2001.
+U.~Brandes, ``A faster algorithm for betweenness centrality,'' \emph{The
+  Journal of Mathematical Sociology}, vol.~25, no.~2, pp. 163--177, 2001.
 
-\bibitem{kruskal1956shortest}
-J.~B. Kruskal, ``On the shortest spanning subtree of a graph and the traveling
-  salesman problem,'' \emph{Proceedings of the American Mathematical Society},
-  vol.~7, no.~1, pp. 48--50, 1956.
+\bibitem{rhoades1993herfindahl}
+S.~A. Rhoades, ``The {Herfindahl-Hirschman} index,'' \emph{Federal Reserve
+  Bulletin}, vol.~79, no.~3, pp. 188--189, 1993.
 
-\bibitem{tarjan1972depth}
-R.~Tarjan, ``Depth-first search and linear graph algorithms,'' \emph{SIAM
-  Journal on Computing}, vol.~1, no.~2, pp. 146--160, 1972.
+\bibitem{doj2010horizontal}
+\BIBentryALTinterwordspacing
+{U.S. Department of Justice and Federal Trade Commission}, ``Horizontal merger
+  guidelines,'' Washington, DC, 2010. [Online]. Available:
+  \url{https://www.justice.gov/atr/horizontal-merger-guidelines-08192010}
+\BIBentrySTDinterwordspacing
 
 \bibitem{shannon1948mathematical}
 C.~E. Shannon, ``A mathematical theory of communication,'' \emph{The Bell
   System Technical Journal}, vol.~27, no.~3, pp. 379--423, 1948.
 
-\bibitem{portal_transparencia_betha}
-\BIBentryALTinterwordspacing
-{Portal da Transparência}. (2026) Dados abertos. Acesso em: 10 out. 2026.
-  [Online]. Available:
-  \url{https://transparencia.betha.cloud/#/oU8BIS7tF8icFMLVMRCkJA==/dados-abertos}
-\BIBentrySTDinterwordspacing
+\bibitem{brin1998anatomy}
+S.~Brin and L.~Page, ``The anatomy of a large-scale hypertextual {Web} search
+  engine,'' \emph{Computer Networks and ISDN Systems}, vol.~30, no. 1--7, pp.
+  107--117, 1998.
 
-\bibitem{tce_mg_dados_abertos}
+\bibitem{projeto_github}
+I.~P. Rodrigues, P.~H. d.~A. Carvalho, and M.~P. da~Silva, ``Reposit{\'o}rio de
+  c{\'o}digo: An{\'a}lise de contrata{\c{c}}{\~o}es p{\'u}blicas via teoria dos
+  grafos ({AEDS-Graph}),'' \url{https://github.com/peixotoigor/AEDS-Graph},
+  2026, pipeline em Python, scripts anal{\'\i}ticos e visualiza{\c{c}}{\~o}es.
+
+\bibitem{projeto_dataset_zenodo}
+------, ``Base de dados tratada de contrata{\c{c}}{\~o}es p{\'u}blicas
+  municipais ({SICOM}/{Divin{\'o}polis} 2025),'' Zenodo (em processo de
+  dep{\'o}sito/publica{\c{c}}{\~a}o), 2026, dataset tratado e pseudonimizado;
+  DOI definitivo a ser disponibilizado no reposit{\'o}rio do projeto.
+
+\bibitem{brasil2018lgpd}
 \BIBentryALTinterwordspacing
-{Tribunal de Contas do Estado de Minas Gerais}. (2026) Dados abertos. Acesso
-  em: 11 nov. 2026. [Online]. Available:
-  \url{https://dadosabertos.tce.mg.gov.br/#/public/inicio}
+{Brasil}, ``Lei n{\textordmasculine} 13.709, de 14 de agosto de 2018. lei geral
+  de prote{\c{c}}{\~a}o de dados pessoais ({LGPD}),'' Di{\'a}rio Oficial da
+  Uni{\~a}o, Bras{\'\i}lia, DF, 2018. [Online]. Available:
+  \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -1,0 +1,192 @@
+{
+  "project": "AEDS-Graph",
+  "security_policy": "NVIDIA SkillSpector pre-use gate (Score 0-39 approved, 40-69 manual review, >=70 blocked)",
+  "skills_used": [
+    {
+      "name": "swarm",
+      "internal_id": "native_swarm",
+      "category": "orchestration",
+      "source_type": "antigravity-builtin",
+      "skillspector_score": 0,
+      "agents": ["coordinator", "redator_tex"],
+      "purpose": "Coordenação multiagente paralela via mural compartilhado."
+    },
+    {
+      "name": "swarm_monitor",
+      "internal_id": "swarm_monitor",
+      "category": "orchestration",
+      "source_type": "antigravity-builtin",
+      "skillspector_score": 0,
+      "agents": ["monitor"],
+      "purpose": "Detecção periódica de estagnação (stall) nos workers do swarm."
+    },
+    {
+      "name": "doc-coauthoring",
+      "category": "writing",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["redator_tex", "tex_argumentacao"],
+      "purpose": "Fluxo estruturado de coautoria, refinamento e revisão de texto científico."
+    },
+    {
+      "name": "scientific-writing",
+      "category": "writing",
+      "source_type": "community",
+      "author": "K-Dense Inc.",
+      "skillspector_score": 8,
+      "agents": ["redator_tex", "tex_argumentacao"],
+      "purpose": "Redação acadêmica rigorosa baseada em evidências empíricas e citações verificadas."
+    },
+    {
+      "name": "citation-management",
+      "category": "literature",
+      "source_type": "community",
+      "author": "K-Dense Inc.",
+      "skillspector_score": 7,
+      "agents": ["tex_literatura"],
+      "purpose": "Validação CrossRef/arXiv, remoção de metadados inconsistentes e formatação BibTeX IEEEtran."
+    },
+    {
+      "name": "papers-skill",
+      "category": "literature",
+      "source_type": "community",
+      "source_repo": "https://github.com/xwmxcz/papers-skill",
+      "skillspector_score": 35,
+      "agents": ["tex_literatura"],
+      "purpose": "Busca acadêmica no Semantic Scholar e inspeção de referências científicas reais."
+    },
+    {
+      "name": "literature-search-arxiv",
+      "category": "literature",
+      "source_type": "antigravity-plugin-science",
+      "author": "google",
+      "skillspector_score": 14,
+      "agents": ["tex_literatura"],
+      "purpose": "Busca e verificação de preprints e artigos técnicos no arXiv."
+    },
+    {
+      "name": "professional-proofreader",
+      "category": "language-quality",
+      "source_type": "community",
+      "skillspector_score": 21,
+      "agents": ["tex_fluidez"],
+      "purpose": "Revisão ortográfica, gramatical, de paralelismo e rigor linguístico."
+    },
+    {
+      "name": "avoid-ai-writing",
+      "category": "language-quality",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_fluidez"],
+      "purpose": "Remoção de clichês, gerundismo conclusivo e marcadores artificiais de texto gerado por IA."
+    },
+    {
+      "name": "copy-editing",
+      "category": "language-quality",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_fluidez"],
+      "purpose": "Passagens focadas de edição para clareza, concisão e fluxo argumentativo."
+    },
+    {
+      "name": "latex-paper-conversion",
+      "category": "layout-latex",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_layout"],
+      "purpose": "Boas práticas de template IEEEtran, floats, tabelas booktabs e compilação limpa."
+    },
+    {
+      "name": "pdf-official",
+      "category": "layout-latex",
+      "source_type": "community",
+      "skillspector_score": 7,
+      "agents": ["tex_layout"],
+      "purpose": "Inspeção estrutural e visual do PDF compilado (report/main.pdf)."
+    },
+    {
+      "name": "ui-visual-validator",
+      "category": "visualization",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_layout", "tex_imagens"],
+      "purpose": "Validação visual de alinhamento, quebras, colisões de rótulos e contraste."
+    },
+    {
+      "name": "matplotlib",
+      "category": "visualization",
+      "source_type": "community",
+      "author": "K-Dense Inc.",
+      "skillspector_score": 0,
+      "agents": ["tex_imagens"],
+      "purpose": "Qualidade editorial de gráficos 300 DPI em Matplotlib orientado a objetos (ForceAtlas2)."
+    },
+    {
+      "name": "high-end-visual-design",
+      "category": "visualization",
+      "source_type": "community",
+      "source_repo": "https://github.com/Leonxlnx/taste-skill",
+      "skillspector_score": 0,
+      "agents": ["tex_imagens"],
+      "purpose": "Hierarquia tipográfica, ritmo espacial e clareza em infográficos e painéis."
+    },
+    {
+      "name": "data-storytelling",
+      "category": "argumentation",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_argumentacao"],
+      "purpose": "Encadeamento narrativo de métricas empíricas entre tabelas, gráficos e conclusões."
+    },
+    {
+      "name": "ejentum-reasoning-harness",
+      "category": "argumentation",
+      "source_type": "community",
+      "source_repo": "https://github.com/ejentum/ejentum-mcp",
+      "skillspector_score": 10,
+      "agents": ["tex_argumentacao"],
+      "purpose": "Verificação lógica anti-viés e teste de falseabilidade sobre afirmações quantitativas."
+    },
+    {
+      "name": "advogado-especialista",
+      "category": "legal-compliance",
+      "source_type": "community",
+      "author": "renat",
+      "skillspector_score": 0,
+      "agents": ["tex_juridico_lgpd"],
+      "purpose": "Enquadramento no Direito brasileiro (Lei 14.133/2021, 12.846/2013, 12.529/2011, 8.429/1992, TCU)."
+    },
+    {
+      "name": "privacy-by-design",
+      "category": "privacy-lgpd",
+      "source_type": "community",
+      "skillspector_score": 11,
+      "agents": ["tex_juridico_lgpd"],
+      "purpose": "Minimização de dados e pseudonimização integral desde a modelagem das saídas."
+    },
+    {
+      "name": "gdpr-data-handling",
+      "category": "privacy-lgpd",
+      "source_type": "community",
+      "skillspector_score": 27,
+      "agents": ["tex_juridico_lgpd"],
+      "purpose": "Controles técnicos de anonimização e tratamento de dados pessoais em pesquisa."
+    },
+    {
+      "name": "legal-advisor",
+      "category": "legal-compliance",
+      "source_type": "community",
+      "skillspector_score": 0,
+      "agents": ["tex_juridico_lgpd"],
+      "purpose": "Redação de cláusulas éticas, ressalvas probatórias e avisos de proteção de dados."
+    }
+  ],
+  "skills_blocked_and_excluded": [
+    {
+      "name": "literature-search-openalex",
+      "source_type": "antigravity-plugin-science",
+      "skillspector_score": 53,
+      "status": "BLOCKED (DO NOT INSTALL - Score >= 40 policy)"
+    }
+  ]
+}

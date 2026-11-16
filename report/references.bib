@@ -1,202 +1,405 @@
 % =============================================================================
-% REFERÊNCIAS BIBLIOGRÁFICAS (BibTeX)
-% Diretrizes do Professor (Seção 4 do edital):
-% 1. Citações rigorosas: Somente referências com base científica comprovada
-%    (Artigos, Anais de Congressos, Livros, Teses).
-%    - Citar sites genéricos, Wikipedia ou blogs: -20% na nota.
-%    - Citações "alucinadas" por IA sem respaldo físico real: -50% na nota.
-%    - Use o Google Scholar (scholar.google.com) para obter os BibTeXs oficiais.
-% 2. OBRIGATÓRIO: O link do repositório de código (ex: GitHub) e da base de dados
-%    (ex: Zenodo) DEVEM constar nas referências e ser citados no texto.
+% REFERÊNCIAS BIBLIOGRÁFICAS VERIFICADAS (IEEEtran)
 % =============================================================================
 
+% --- Repositório de Código e Base de Dados (Obrigatórios no Edital) ---
+
 @misc{projeto_github,
-  title        = {Reposit{\'o}rio de C{\'o}digo: An{\'a}lise de Grafos em Compras P{\'u}blicas (AEDS II)},
-  author       = {{Equipe do Projeto}},
+  author       = {Rodrigues, Igor Peixoto and Carvalho, Pedro Henrique de Ara{\'u}jo and da Silva, Michel Pires},
+  title        = {Reposit{\'o}rio de C{\'o}digo: An{\'a}lise de Contrata{\c{c}}{\~o}es P{\'u}blicas via Teoria dos Grafos ({AEDS-Graph})},
   year         = {2026},
-  howpublished = {\url{https://github.com/usuario/repositorio}},
-  note         = {C{\'o}digo-fonte aberto, scripts e pipeline de dados}
+  howpublished = {\url{https://github.com/peixotoigor/AEDS-Graph}},
+  note         = {Pipeline em Python, scripts anal{\'\i}ticos e visualiza{\c{c}}{\~o}es}
 }
 
 @misc{projeto_dataset_zenodo,
-  title        = {Base de Dados de Contrata{\c{c}}{\~o}es P{\'u}blicas ({SICOM} 2025)},
-  author       = {{Equipe do Projeto}},
+  author       = {Rodrigues, Igor Peixoto and Carvalho, Pedro Henrique de Ara{\'u}jo and da Silva, Michel Pires},
+  title        = {Base de Dados Tratada de Contrata{\c{c}}{\~o}es P{\'u}blicas Municipais ({SICOM}/{Divin{\'o}polis} 2025)},
   year         = {2026},
-  howpublished = {Zenodo, \url{https://doi.org/10.5281/zenodo.xxxxxxx}},
-  note         = {Dataset tratado e pronto para execu{\c{c}}{\~a}o}
+  howpublished = {Zenodo (em processo de dep{\'o}sito/publica{\c{c}}{\~a}o)},
+  note         = {Dataset tratado e pseudonimizado; DOI definitivo a ser disponibilizado no reposit{\'o}rio do projeto}
 }
 
-@misc{brasil2021licitacoes,
-  title        = {Lei n{\textordmasculine} 14.133, de 1{\textordmasculine} de abril de 2021. Lei de Licita{\c{c}}{\~o}es e Contratos Administrativos},
-  author       = {{Brasil}},
-  year         = {2021},
-  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o},
-  address      = {Bras{\'\i}lia, DF}
-}
-
-@misc{brasil2013anticorrupcao,
-  title        = {Lei n{\textordmasculine} 12.846, de 1{\textordmasculine} de agosto de 2013. Lei Anticorrup{\c{c}}{\~a}o},
-  author       = {{Brasil}},
-  year         = {2013},
-  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o},
-  address      = {Bras{\'\i}lia, DF}
-}
-
-@misc{sicom2025tcemg,
-  title        = {{SICOM}: Sistema Informatizado de Contas dos Munic{\'\i}pios},
-  author       = {{Tribunal de Contas do Estado de Minas Gerais - TCE-MG}},
-  year         = {2025},
-  howpublished = {\url{https://www.tce.mg.gov.br}},
-  note         = {Dados abertos de presta{\c{c}}{\~a}o de contas municipais}
-}
-
-@misc{cade2022guia,
-  title        = {Guia de Combate a Cart{\'e}is em Licita{\c{c}}{\~o}es},
-  author       = {{CADE - Conselho Administrativo de Defesa Econ{\^o}mica}},
-  year         = {2022},
-  howpublished = {Minist{\'e}rio da Justi{\c{c}}a e Seguran{\c{c}}a P{\'u}blica},
-  address      = {Bras{\'\i}lia, DF}
-}
-
-@misc{oecd2016guidelines,
-  title        = {Guidelines for Fighting Bid Rigging in Public Procurement},
-  author       = {{OECD - Organisation for Economic Co-operation and Development}},
-  year         = {2016},
-  publisher    = {OECD Publishing},
-  address      = {Paris}
-}
-
-@article{fazekas2016corruption,
-  title     = {Corruption risks in public procurement: A objective approach},
-  author    = {Fazekas, Mih{\'a}ly and T{\'o}th, Bence and King, Lawrence Peter},
-  journal   = {International Journal of Public Administration},
-  volume    = {39},
-  number    = {1},
-  pages     = {77--94},
-  year      = {2016},
-  publisher = {Taylor \& Francis}
-}
-
-@article{wachs2019network,
-  title     = {A network approach to public procurement},
-  author    = {Wachs, Johannes and Fazekas, Mih{\'a}ly and Kert{\'e}sz, J{\'a}nos},
-  journal   = {Royal Society Open Science},
-  volume    = {6},
-  number    = {4},
-  pages     = {181778},
-  year      = {2019},
-  publisher = {The Royal Society}
-}
-
-@article{imhof2018bid,
-  title     = {Detecting bid-rigging coalitions in different procurement mechanisms},
-  author    = {Imhof, David and Karag{\"o}k, Yavuz and Rutz, Samuel},
-  journal   = {Journal of Competition Law \& Economics},
-  volume    = {14},
-  number    = {3},
-  pages     = {401--443},
-  year      = {2018},
-  publisher = {Oxford University Press}
-}
-
-@book{newman2018networks,
-  title     = {Networks},
-  author    = {Newman, Mark},
-  year      = {2018},
-  publisher = {Oxford University Press},
-  edition   = {2nd}
-}
-
-@article{borgatti1997network,
-  title     = {Network analysis of 2-mode data},
-  author    = {Borgatti, Stephen P and Everett, Martin G},
-  journal   = {Social Networks},
-  volume    = {19},
-  number    = {3},
-  pages     = {243--269},
-  year      = {1997},
-  publisher = {Elsevier}
-}
-
-@article{freeman1977set,
-  title     = {A set of measures of centrality based on betweenness},
-  author    = {Freeman, Linton C},
-  journal   = {Sociometry},
-  volume    = {40},
-  number    = {1},
-  pages     = {35--41},
-  year      = {1977},
-  publisher = {JSTOR}
-}
-
-@article{brandes2001faster,
-  title     = {A faster algorithm for betweenness centrality},
-  author    = {Brandes, Ulrik},
-  journal   = {Journal of Mathematical Sociology},
-  volume    = {25},
-  number    = {2},
-  pages     = {163--177},
-  year      = {2001},
-  publisher = {Taylor \& Francis}
-}
-
-@article{blondel2008fast,
-  title     = {Fast unfolding of communities in large networks},
-  author    = {Blondel, Vincent D and Guillaume, Jean-Loup and Lambiotte, Renaud and Lefebvre, Etienne},
-  journal   = {Journal of Statistical Mechanics: Theory and Experiment},
-  volume    = {2008},
-  number    = {10},
-  pages     = {P10008},
-  year      = {2008},
-  publisher = {IOP Publishing}
-}
-
-@article{kruskal1956shortest,
-  title     = {On the shortest spanning subtree of a graph and the traveling salesman problem},
-  author    = {Kruskal, Joseph B},
-  journal   = {Proceedings of the American Mathematical Society},
-  volume    = {7},
-  number    = {1},
-  pages     = {48--50},
-  year      = {1956}
-}
-
-@article{tarjan1972depth,
-  title     = {Depth-first search and linear graph algorithms},
-  author    = {Tarjan, Robert},
-  journal   = {SIAM Journal on Computing},
-  volume    = {1},
-  number    = {2},
-  pages     = {146--160},
-  year      = {1972},
-  publisher = {SIAM}
-}
-
-@article{shannon1948mathematical,
-  title     = {A mathematical theory of communication},
-  author    = {Shannon, Claude E},
-  journal   = {The Bell System Technical Journal},
-  volume    = {27},
-  number    = {3},
-  pages     = {379--423},
-  year      = {1948},
-  publisher = {Nokia Bell Labs}
-}
+% --- Portais de Dados Oficiais ---
 
 @online{portal_transparencia_betha,
-  author       = {{Portal da Transparência}},
-  title        = {Dados Abertos},
+  author       = {{Portal da Transpar{\^e}ncia de Divin{\'o}polis}},
+  title        = {Dados Abertos Municipais},
   year         = {2026},
   url          = {https://transparencia.betha.cloud/#/oU8BIS7tF8icFMLVMRCkJA==/dados-abertos},
-  urldate      = {2026-10-10},
   note         = {Acesso em: 10 out. 2026}
 }
 
 @online{tce_mg_dados_abertos,
   author       = {{Tribunal de Contas do Estado de Minas Gerais}},
-  title        = {Dados Abertos},
+  title        = {Portal de Dados Abertos ({SICOM} -- Dados Jurisdicionados)},
   year         = {2026},
   url          = {https://dadosabertos.tce.mg.gov.br/#/public/inicio},
-  urldate      = {2026-11-11},
   note         = {Acesso em: 11 nov. 2026}
+}
+
+% --- Referencial Científico: Compras Públicas, Conluio e Redes Complexas ---
+
+@article{fazekas2016objective,
+  author    = {Fazekas, Mih{\'a}ly and T{\'o}th, Istv{\'a}n J{\'a}nos and King, Lawrence Peter},
+  title     = {An Objective Corruption Risk Index Using Public Procurement Data},
+  journal   = {European Journal on Criminal Policy and Research},
+  volume    = {22},
+  number    = {3},
+  pages     = {369--397},
+  year      = {2016},
+  publisher = {Springer},
+  doi       = {10.1007/s10610-016-9308-z}
+}
+
+@article{imhof2018screening,
+  author    = {Imhof, David and Karag{\"o}k, Yavuz and Rutz, Samuel},
+  title     = {Screening for Bid Rigging---Does It Work?},
+  journal   = {Journal of Competition Law \& Economics},
+  volume    = {14},
+  number    = {2},
+  pages     = {235--261},
+  year      = {2018},
+  publisher = {Oxford University Press},
+  doi       = {10.1093/joclec/nhy006}
+}
+
+@article{wachs2019cartel,
+  author    = {Wachs, Johannes and Kert{\'e}sz, J{\'a}nos},
+  title     = {A network approach to cartel detection in public auction markets},
+  journal   = {Scientific Reports},
+  volume    = {9},
+  number    = {1},
+  pages     = {10818},
+  year      = {2019},
+  publisher = {Springer Nature},
+  doi       = {10.1038/s41598-019-47198-1}
+}
+
+@article{wachs2020corruption,
+  author    = {Wachs, Johannes and Fazekas, Mih{\'a}ly and Kert{\'e}sz, J{\'a}nos},
+  title     = {Corruption risk in contracting markets: a network science perspective},
+  journal   = {International Journal of Data Science and Analytics},
+  volume    = {12},
+  number    = {1},
+  pages     = {45--60},
+  year      = {2021},
+  publisher = {Springer},
+  doi       = {10.1007/s41060-019-00204-1}
+}
+
+@article{imhof2021detecting,
+  author    = {Imhof, David and Wallimann, Hannes},
+  title     = {Detecting bid-rigging coalitions in different countries and auction formats},
+  journal   = {International Review of Law and Economics},
+  volume    = {68},
+  pages     = {106016},
+  year      = {2021},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.irle.2021.106016}
+}
+
+@article{lyra2021characterization,
+  author    = {Lyra, Marcos S. and Curado, Ant{\'o}nio and Dam{\'a}sio, Bruno and Ba{\c{c}}{\~a}o, Fernando and Pinheiro, Fl{\'a}vio L.},
+  title     = {Characterization of the firm--firm public procurement co-bidding network from the {State} of {Cear{\'a}} ({Brazil}) municipalities},
+  journal   = {Applied Network Science},
+  volume    = {6},
+  number    = {1},
+  pages     = {77},
+  year      = {2021},
+  publisher = {SpringerOpen},
+  doi       = {10.1007/s41109-021-00418-y}
+}
+
+@article{villamil2024collusion,
+  author    = {Villamil, Isabela and Kert{\'e}sz, J{\'a}nos and Fazekas, Mih{\'a}ly},
+  title     = {Collusion risk in corporate networks},
+  journal   = {Scientific Reports},
+  volume    = {14},
+  number    = {1},
+  pages     = {3161},
+  year      = {2024},
+  publisher = {Springer Nature},
+  doi       = {10.1038/s41598-024-53625-9}
+}
+
+@incollection{pompeu2025collusion,
+  author    = {Pompeu, Marcos Leno Ferreira and Holanda Filho, Raimir},
+  title     = {Public Procurement Collusion Identification Based on {GraphSAGE} Algorithm},
+  booktitle = {Complex Networks \& Their Applications XIII},
+  series    = {Studies in Computational Intelligence},
+  pages     = {28--36},
+  year      = {2025},
+  publisher = {Springer Nature Switzerland},
+  doi       = {10.1007/978-3-031-82427-2_3}
+}
+
+@article{carbone2024bidrigging,
+  author    = {Carbone, Carlotta and Calderoni, Francesco and Jofre, Maria},
+  title     = {Bid-rigging in public procurement: cartel strategies and bidding patterns},
+  journal   = {Crime, Law and Social Change},
+  volume    = {82},
+  number    = {2},
+  pages     = {249--281},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/s10611-024-10142-0}
+}
+
+@article{aaltio2025complementary,
+  author    = {Aaltio, Aapo and Buri, Riku and Jokelainen, Antto and Lundberg, Johan},
+  title     = {Complementary bidding and cartel detection: Evidence from {Nordic} asphalt markets},
+  journal   = {International Journal of Industrial Organization},
+  volume    = {98},
+  pages     = {103129},
+  year      = {2025},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.ijindorg.2024.103129}
+}
+
+@article{herrera2020characterization,
+  author    = {Herrera Leiva, Fabiola and Torres, Romina and Nicolis, Orietta and Salas F., Rodrigo},
+  title     = {Characterization of the {Chilean} Public Procurement Ecosystem Using Social Network Analysis},
+  journal   = {IEEE Access},
+  volume    = {8},
+  pages     = {138846--138858},
+  year      = {2020},
+  publisher = {IEEE},
+  doi       = {10.1109/access.2020.3011947}
+}
+
+@article{alcazar2026supplier,
+  author    = {Alcazar-Gonzales, Juan Carlos},
+  title     = {Supplier Concentration in Decentralized Procurement: Evidence From a Low-Institutional-Capacity Context},
+  journal   = {Journal of Public Affairs},
+  volume    = {26},
+  number    = {4},
+  pages     = {e70169},
+  year      = {2026},
+  publisher = {Wiley},
+  doi       = {10.1002/pa.70169}
+}
+
+% --- Fundamentos Matemáticos, Algoritmos de Grafos e Métricas ---
+
+@book{newman2018networks,
+  author    = {Newman, Mark},
+  title     = {Networks},
+  edition   = {2nd},
+  year      = {2018},
+  publisher = {Oxford University Press},
+  doi       = {10.1093/oso/9780198805090.001.0001}
+}
+
+@article{borgatti1997network,
+  author    = {Borgatti, Stephen P. and Everett, Martin G.},
+  title     = {Network analysis of 2-mode data},
+  journal   = {Social Networks},
+  volume    = {19},
+  number    = {3},
+  pages     = {243--269},
+  year      = {1997},
+  publisher = {Elsevier},
+  doi       = {10.1016/S0378-8733(96)00301-2}
+}
+
+@article{seidman1983network,
+  author    = {Seidman, Stephen B.},
+  title     = {Network structure and minimum degree},
+  journal   = {Social Networks},
+  volume    = {5},
+  number    = {3},
+  pages     = {269--287},
+  year      = {1983},
+  publisher = {Elsevier},
+  doi       = {10.1016/0378-8733(83)90028-X}
+}
+
+@article{tarjan1975efficiency,
+  author    = {Tarjan, Robert Endre},
+  title     = {Efficiency of a Good But Not Linear Set Union Algorithm},
+  journal   = {Journal of the ACM},
+  volume    = {22},
+  number    = {2},
+  pages     = {215--225},
+  year      = {1975},
+  publisher = {ACM},
+  doi       = {10.1145/321879.321884}
+}
+
+@article{tarjan1972depth,
+  author    = {Tarjan, Robert},
+  title     = {Depth-First Search and Linear Graph Algorithms},
+  journal   = {SIAM Journal on Computing},
+  volume    = {1},
+  number    = {2},
+  pages     = {146--160},
+  year      = {1972},
+  publisher = {SIAM},
+  doi       = {10.1137/0201010}
+}
+
+@article{blondel2008fast,
+  author    = {Blondel, Vincent D. and Guillaume, Jean-Loup and Lambiotte, Renaud and Lefebvre, Etienne},
+  title     = {Fast unfolding of communities in large networks},
+  journal   = {Journal of Statistical Mechanics: Theory and Experiment},
+  volume    = {2008},
+  number    = {10},
+  pages     = {P10008},
+  year      = {2008},
+  publisher = {IOP Publishing},
+  doi       = {10.1088/1742-5468/2008/10/P10008}
+}
+
+@article{brin1998anatomy,
+  author    = {Brin, Sergey and Page, Lawrence},
+  title     = {The anatomy of a large-scale hypertextual {Web} search engine},
+  journal   = {Computer Networks and ISDN Systems},
+  volume    = {30},
+  number    = {1--7},
+  pages     = {107--117},
+  year      = {1998},
+  publisher = {Elsevier},
+  doi       = {10.1016/S0169-7552(98)00110-X}
+}
+
+@article{shannon1948mathematical,
+  author    = {Shannon, Claude E.},
+  title     = {A Mathematical Theory of Communication},
+  journal   = {The Bell System Technical Journal},
+  volume    = {27},
+  number    = {3},
+  pages     = {379--423},
+  year      = {1948},
+  publisher = {IEEE},
+  doi       = {10.1002/j.1538-7305.1948.tb01338.x}
+}
+
+@article{rhoades1993herfindahl,
+  author    = {Rhoades, Stephen A.},
+  title     = {The {Herfindahl-Hirschman} Index},
+  journal   = {Federal Reserve Bulletin},
+  volume    = {79},
+  number    = {3},
+  pages     = {188--189},
+  year      = {1993}
+}
+
+@article{freeman1977set,
+  author    = {Freeman, Linton C.},
+  title     = {A Set of Measures of Centrality Based on Betweenness},
+  journal   = {Sociometry},
+  volume    = {40},
+  number    = {1},
+  pages     = {35--41},
+  year      = {1977},
+  publisher = {JSTOR},
+  doi       = {10.2307/3033543}
+}
+
+@article{brandes2001faster,
+  author    = {Brandes, Ulrik},
+  title     = {A faster algorithm for betweenness centrality},
+  journal   = {The Journal of Mathematical Sociology},
+  volume    = {25},
+  number    = {2},
+  pages     = {163--177},
+  year      = {2001},
+  publisher = {Taylor \& Francis},
+  doi       = {10.1080/0022250X.2001.9990249}
+}
+
+% --- Diretrizes Institucionais, Legislação e Controle Externo ---
+
+@misc{oecd2025guidelines,
+  author       = {{OECD -- Organisation for Economic Co-operation and Development}},
+  title        = {Guidelines for Fighting Bid Rigging in Public Procurement},
+  year         = {2025},
+  howpublished = {OECD Publishing, Paris (original de 2009, revisado em 2025)},
+  url          = {https://www.oecd.org/en/topics/sub-issues/competition-enforcement/fighting-bid-rigging-in-public-procurement.html}
+}
+
+@misc{cade2019guia,
+  author       = {{CADE -- Conselho Administrativo de Defesa Econ{\^o}mica}},
+  title        = {Guia de Combate a Cart{\'e}is em Licita{\c{c}}{\~o}es},
+  year         = {2019},
+  howpublished = {Minist{\'e}rio da Justi{\c{c}}a e Seguran{\c{c}}a P{\'u}blica, Bras{\'\i}lia, DF},
+  url          = {https://www.gov.br/cade/pt-br/acesso-a-informacao/publicacoes-institucionais/guias_do_Cade}
+}
+
+@misc{doj2010horizontal,
+  author       = {{U.S. Department of Justice and Federal Trade Commission}},
+  title        = {Horizontal Merger Guidelines},
+  year         = {2010},
+  howpublished = {Washington, DC},
+  url          = {https://www.justice.gov/atr/horizontal-merger-guidelines-08192010}
+}
+
+@misc{brasil2021licitacoes,
+  author       = {{Brasil}},
+  title        = {Lei n{\textordmasculine} 14.133, de 1{\textordmasculine} de abril de 2021. Lei de Licita{\c{c}}{\~o}es e Contratos Administrativos},
+  year         = {2021},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm}
+}
+
+@misc{brasil2013anticorrupcao,
+  author       = {{Brasil}},
+  title        = {Lei n{\textordmasculine} 12.846, de 1{\textordmasculine} de agosto de 2013. Disp{\~o}e sobre a responsabiliza{\c{c}}{\~a}o administrativa e civil de pessoas jur{\'\i}dicas},
+  year         = {2013},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm}
+}
+
+@misc{brasil2011concorrencia,
+  author       = {{Brasil}},
+  title        = {Lei n{\textordmasculine} 12.529, de 30 de novembro de 2011. Estrutura o Sistema Brasileiro de Defesa da Concorr{\^e}ncia},
+  year         = {2011},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm}
+}
+
+@misc{brasil1992improbidade,
+  author       = {{Brasil}},
+  title        = {Lei n{\textordmasculine} 8.429, de 2 de junho de 1992. Lei de Improbidade Administrativa (reda{\c{c}}{\~a}o da Lei n{\textordmasculine} 14.230/2021)},
+  year         = {1992},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/leis/l8429.htm}
+}
+
+@misc{brasil2006lc123,
+  author       = {{Brasil}},
+  title        = {Lei Complementar n{\textordmasculine} 123, de 14 de dezembro de 2006. Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte},
+  year         = {2006},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm}
+}
+
+@misc{brasil2018lgpd,
+  author       = {{Brasil}},
+  title        = {Lei n{\textordmasculine} 13.709, de 14 de agosto de 2018. Lei Geral de Prote{\c{c}}{\~a}o de Dados Pessoais ({LGPD})},
+  year         = {2018},
+  howpublished = {Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF},
+  url          = {https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}
+}
+
+@misc{tcemg2025in01,
+  author       = {{Tribunal de Contas do Estado de Minas Gerais}},
+  title        = {Instru{\c{c}}{\~a}o Normativa n{\textordmasculine} 01/2025. Altera a {IN} n{\textordmasculine} 03/2015 sobre o Sistema Informatizado de Contas dos Munic{\'\i}pios ({SICOM})},
+  year         = {2025},
+  howpublished = {Di{\'a}rio Oficial de Contas do {TCE-MG}, Belo Horizonte, MG}
+}
+
+@misc{tcu2011acordao2341,
+  author       = {{Tribunal de Contas da Uni{\~a}o}},
+  title        = {Ac{\'o}rd{\~a}o n{\textordmasculine} 2.341/2011 -- Plen{\'a}rio. Participa{\c{c}}{\~a}o de empresas com s{\'o}cios comuns em licita{\c{c}}{\~o}es},
+  year         = {2011},
+  howpublished = {Jurisprud{\^e}ncia Selecionada do {TCU}, Bras{\'\i}lia, DF}
+}
+
+@misc{tcu2024acordao1798,
+  author       = {{Tribunal de Contas da Uni{\~a}o}},
+  title        = {Ac{\'o}rd{\~a}o n{\textordmasculine} 1.798/2024 -- Plen{\'a}rio. Ind{\'\i}cios convergentes de conluio envolvendo empresas com v{\'\i}nculos societ{\'a}rios ou familiares},
+  year         = {2024},
+  howpublished = {Jurisprud{\^e}ncia Selecionada do {TCU}, Bras{\'\i}lia, DF}
 }
