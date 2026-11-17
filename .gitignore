@@ -10,6 +10,7 @@ arquivos modificados/
 backup/
 
 *.md
+!README.md
 documentacao/
 
 .DS_Store
