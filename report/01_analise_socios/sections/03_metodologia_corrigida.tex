@@ -1,0 +1,123 @@
+\section{Metodologia}
+\label{sec:metodologia}
+
+O estudo implementa um \textit{pipeline} determinístico em Python para reconstruir a rede licitatória e societária do município de Divinópolis/MG no exercício de 2025. O fluxo compreende a higienização dos registros, a construção do grafo multicamada, o enriquecimento dos dados societários via QSA, o cálculo de escores para pares co-disputantes e a redução topológica. A Figura~\ref{fig:fluxograma_eixo1} apresenta a organização geral das etapas do módulo analisado.
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.93\textwidth, trim =0 1.1cm 0 0, clip]{figures/fluxograma_eixo1.pdf}
+\caption{Fluxograma do módulo de análise de relações societárias e licitatórias. O fluxo contempla as fontes SICOM/TCE-MG e BrasilAPI, a higienização, a construção do grafo, o enriquecimento QSA, a pontuação e a redução topológica.}
+\label{fig:fluxograma_eixo1}
+\end{figure*}
+
+\subsection{Obtenção e Tratamento de Dados}
+
+Os registros licitatórios provêm das remessas consolidadas de 2025 do município de Divinópolis/MG, identificado pelo código \texttt{3122306}, no Portal de Dados Abertos do TCE-MG~\cite{tce_mg_dados_abertos,tcemg2025in01}. Foram processadas quatro tabelas CSV do módulo \texttt{licitacao}: \texttt{licitacao.csv}, \texttt{habLicitacao.csv}, \texttt{julgLicitacao.csv} e \texttt{quadroSocLicitacao.csv}. Os dados societários foram complementados por consultas ao QSA da Receita Federal via BrasilAPI~\cite{brasilapi2026cnpj}.
+
+A análise exploratória identificou problemas de formatação em documentos fiscais, incluindo perda de zeros à esquerda e conversão indevida para notação científica (por exemplo, \texttt{2.71E+13}). Para evitar alterações decorrentes da interpretação numérica dos identificadores, os arquivos foram carregados como texto e submetidos a uma rotina de saneamento. A rotina remove caracteres de formatação e restaura o comprimento esperado dos documentos: 14 dígitos para CNPJ e 11 dígitos para CPF. Em seguida, foram consolidados os participantes únicos registrados nas fases de habilitação e julgamento.
+
+O cruzamento financeiro entre licitações, contratos, empenhos e pagamentos não é utilizado para produzir os resultados quantitativos apresentados. A inspeção das tabelas indicou preenchimento de chaves estrangeiras intermódulo com o valor sentinela \texttt{-1}, o que impede a associação direta e unívoca entre determinados certames e seus registros de execução orçamentária. Embora existam chaves intramódulo válidas, a reconstrução de uma ligação confiável entre o certame e a despesa executada exige procedimento adicional de integração e validação. Por essa razão, a materialidade financeira não é apresentada como achado deste estudo.
+
+\subsection{Modelagem do Grafo Multicamada}
+
+Após a consolidação dos participantes, a rede é modelada como um grafo heterogêneo multicamada ponderado:
+\begin{equation}
+  G=(V,E,\tau,\phi,w),
+  \label{eq:grafo_metodologia}
+\end{equation}
+em que $V$ representa o conjunto de vértices, $E$ o conjunto de arestas, $\tau:V\rightarrow\mathcal{T}_V$ identifica o tipo de entidade, $\phi:E\rightarrow\mathcal{T}_E$ identifica a camada relacional e $w:E\rightarrow\mathbb{R}_{>0}$ atribui o peso da relação.
+
+\subsubsection{Partições de Vértices}
+
+\begin{itemize}
+  \item \textbf{Órgãos públicos:} entidades municipais responsáveis pelos certames;
+  \item \textbf{Empresas licitantes:} pessoas jurídicas e pessoas físicas registradas como participantes nas fases de habilitação ou julgamento;
+  \item \textbf{Sócios e controladores:} pessoas físicas e pessoas jurídicas identificadas no QSA, incluindo \textit{holdings}, além de titulares de MEI tratados conforme a regra de extração descrita adiante.
+\end{itemize}
+
+\subsubsection{Camadas de Arestas}
+
+\begin{itemize}
+  \item \texttt{Participou\_Licitacao}: conecta uma empresa ao órgão responsável pelo certame em que participou;
+  \item \texttt{Concorreu\_Contra}: conecta pares de empresas que disputaram certames ou itens em comum. O peso registra a recorrência de co-disputa;
+  \item \texttt{É\_Dono\_De}: conecta sócios ou controladores às empresas às quais estão vinculados;
+  \item \texttt{Vinculo\_Suspeito}: conecta pares co-disputantes com sobreposição cadastral, societária ou onomástica acima do limite mínimo de retenção.
+\end{itemize}
+
+As relações são armazenadas simetricamente na estrutura computacional de listas de adjacência, embora algumas possuam direção semântica natural. A camada de co-disputa é uma projeção entre empresas: cada par de empresas que compartilha participação em certames ou itens é representado por uma aresta, cujo peso registra a recorrência definida na implementação.
+
+\subsection{Enriquecimento Societário e Escore Multidimensional}
+
+Como os registros do SICOM não disponibilizam todos os identificadores dos sócios necessários à análise, realizou-se enriquecimento cadastral mediante consultas ao QSA da Receita Federal via BrasilAPI, com persistência em \textit{cache} local. Para MEIs e empresários individuais sem QSA formal, o titular foi extraído da razão social segundo a regra de processamento adotada no código.
+
+Antes da comparação entre empresas, os atributos cadastrais passaram por filtros de normalização:
+\begin{itemize}
+  \item \textbf{Endereços e telefones:} normalização de logradouro, número, município e unidade federativa; descarte de endereços genéricos ou sem número e de telefones que não atendem ao comprimento mínimo definido;
+  \item \textbf{Correio eletrônico:} descarte de endereços associados a termos de serviços contábeis ou administrativos terceirizados, conforme lista de termos implementada;
+  \item \textbf{Onomástica:} consideração dos sobrenomes de sócios pessoas físicas e titulares de MEI, com remoção do primeiro prenome, de preposições e de sufixos definidos na rotina de normalização.
+\end{itemize}
+
+Para reduzir falsos positivos associados a sobrenomes frequentes, foi adotada uma ponderação discreta inspirada no princípio de frequência inversa. Cada sobrenome compartilhado $n$ recebe peso
+\begin{equation}
+w(n)=
+\begin{cases}
+0{,}25, & \text{se classificado como trivial};\\
+1{,}00, & \text{caso contrário}.
+\end{cases}
+\end{equation}
+
+Para cada par de empresas co-disputantes $(a,b)$, o escore de vínculo é definido por
+\begin{equation}
+\begin{aligned}
+s(a,b)=\;&10|S(a)\cap S(b)|\\
+&+10[\mathrm{raiz}(a)=\mathrm{raiz}(b)]\\
+&+10[\mathrm{end}(a)=\mathrm{end}(b)]\\
+&+8[\mathrm{tel}(a)=\mathrm{tel}(b)]\\
+&+5[\mathrm{email}(a)=\mathrm{email}(b)]\\
+&+\sum_{n\in N(a)\cap N(b)}w(n),
+\end{aligned}
+\label{eq:escore_vinculo}
+\end{equation}
+em que $S(x)$ representa o conjunto de sócios da empresa $x$; $\mathrm{raiz}(x)$ representa a raiz do CNPJ; $\mathrm{end}(x)$, $\mathrm{tel}(x)$ e $\mathrm{email}(x)$ representam os atributos cadastrais normalizados; e $N(x)$ representa o conjunto de sobrenomes extraídos.
+
+A recorrência de co-disputa, armazenada em \texttt{Peso\_Concorrencia}, não integra a soma de $s(a,b)$; ela é mantida como atributo relacional e utilizada como critério auxiliar de ordenação dos alertas. Os pares com escore positivo são classificados em três faixas: \texttt{BAIXO}, para $0<s(a,b)<1{,}00$; \texttt{MEDIO}, para $1{,}00\leq s(a,b)<2{,}00$; e \texttt{ALTO}, para $s(a,b)\geq2{,}00$ ou identidade cadastral/societária direta. Na base analisada, os pares de baixo risco são excluídos da camada \texttt{Vinculo\_Suspeito}; os pares médios e altos são mantidos, totalizando 43 arestas. A redução topológica posterior utiliza o limiar numérico $\theta=2{,}00$.
+
+\subsection{Redução Topológica e Identificação de Motivos $K_3$}
+
+A redução tem por objetivo remover as relações de participação institucional e de concorrência ordinária que não integram o domínio prioritário da análise, preservando as arestas suspeitas de maior escore e as relações societárias incidentes às empresas envolvidas. O procedimento é composto pelas etapas seguintes.
+
+\begin{enumerate}
+  \item \textbf{Filtragem por predicado de arestas:} define-se $V_{\mathrm{suspeito}}$ como o conjunto das empresas incidentes em arestas \texttt{Vinculo\_Suspeito} com peso $s(a,b)\geq\theta$, em que $\theta=2{,}00$. Retêm-se as arestas que satisfazem
+  \begin{equation}
+  \begin{aligned}
+  \mathcal{P}(u,v,t,w)\iff&
+  \big(t=\mathrm{sus}\land w\geq\theta\big)\\
+  &\lor\big(t=\mathrm{prop}\land
+  (u\in V_{\mathrm{suspeito}}\\
+  &\hspace{3.7em}\lor v\in V_{\mathrm{suspeito}})\big),
+  \end{aligned}
+  \label{eq:predicado_reducao}
+  \end{equation}
+  em que $\mathrm{sus}$ identifica a camada \texttt{Vinculo\_Suspeito} e $\mathrm{prop}$ identifica a camada \texttt{É\_Dono\_De}.
+  A varredura das listas de adjacência possui custo $O(|V|+|E|)$. Como a seleção é feita por predicado de arestas, denomina-se esta etapa \textit{subgrafo filtrado por arestas}, e não subgrafo induzido por vértices.
+
+  \item \textbf{Remoção de vértices isolados:} após a filtragem, removem-se os vértices cujo grau é zero. O resultado corresponde ao $1$-core do grafo filtrado. Essa operação pode ser executada por uma varredura de vértices em $O(|V|+|E|)$; a menção a uma fila ou BFS deve ser entendida apenas como detalhe de implementação, não como requisito matemático do $1$-core.
+
+  \item \textbf{Componentes conexas por Union-Find:} aplica-se a estrutura de conjuntos disjuntos com compressão de caminho e união por posto. Para a inicialização dos vértices e a sequência de operações sobre as arestas, o custo amortizado é
+  \begin{equation}
+    O\big((|V|+|E|)\alpha(|V|)\big),
+  \end{equation}
+  em que $\alpha$ representa a função inversa de Ackermann. São mantidas as componentes não triviais, com $|C_i|\geq2$.
+
+  \item \textbf{Enumeração dos motivos triangulares:} para cada aresta suspeita $(a,b)$ entre empresas, calcula-se a interseção
+  \begin{equation}
+    \mathrm{Donos}(a)\cap\mathrm{Donos}(b),
+  \end{equation}
+  em que $\mathrm{Donos}(x)$ é o conjunto de sócios ou controladores associados à empresa $x$. Cada elemento $s$ dessa interseção forma o motivo tipado $\{(s,a),(s,b),(a,b)\}$: duas arestas \texttt{É\_Dono\_De} e uma aresta \texttt{Vinculo\_Suspeito}. A enumeração ocorre na representação agregada multicamada; a camada bipartida de propriedade, isoladamente, não contém triângulos.
+\end{enumerate}
+
+\subsection{Proteção de Dados e Limites Éticos}
+
+Os resultados são apresentados com identificadores pseudonimizados. Os vértices de empresas, empresários individuais e sócios recebem rótulos artificiais; nomes civis, CPFs e CNPJs não são reproduzidos nas tabelas e figuras. Endereços e telefones coincidentes são descritos por rótulos genéricos, sem exposição dos valores completos. A chave de correspondência, quando necessária à auditoria autorizada, deve permanecer separada do material público e sob controle de acesso.
+
+A pseudonimização é uma medida de redução de exposição, mas não deve ser descrita como anonimização integral. A divulgação deve observar os princípios de finalidade, adequação e necessidade da LGPD~\cite{brasil2018lgpd}. Por fim, nenhum escore ou motivo topológico deve ser interpretado isoladamente como comprovação de ilícito; os achados demandam validação documental e contextual.

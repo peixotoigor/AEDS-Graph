@@ -178,19 +178,47 @@ INPUT C:\Program Files\MiKTeX\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Program Files\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\sections\00_abstract.tex
-INPUT .\sections\00_abstract.tex
-INPUT sections\00_abstract.tex
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
+INPUT .\sections\00_abstract_corrigido.tex
+INPUT .\sections\00_abstract_corrigido.tex
+INPUT sections\00_abstract_corrigido.tex
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8t.tfm
+INPUT .\sections\01_introducao_corrigida.tex
+INPUT .\sections\01_introducao_corrigida.tex
+INPUT sections\01_introducao_corrigida.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+OUTPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\igorp\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\base\8r.enc
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmbi8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmrc8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT .\sections\02_referencial_corrigido.tex
+INPUT .\sections\02_referencial_corrigido.tex
+INPUT sections\02_referencial_corrigido.tex
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy9.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex9.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
@@ -211,136 +239,76 @@ INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msb.cf
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msb.cfg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
-INPUT .\sections\01_introducao.tex
-INPUT .\sections\01_introducao.tex
-INPUT sections\01_introducao.tex
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
+INPUT .\sections\03_metodologia_corrigida.tex
+INPUT .\sections\03_metodologia_corrigida.tex
+INPUT sections\03_metodologia_corrigida.tex
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT .\figures\fluxograma_eixo1.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT .\sections\04_resultados_corrigidos.tex
+INPUT .\sections\04_resultados_corrigidos.tex
+INPUT sections\04_resultados_corrigidos.tex
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\ts1ptm.fd
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-OUTPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.pdf
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\igorp\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Program Files\MiKTeX\fonts\enc\dvips\base\8r.enc
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmbi8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmrc8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
-INPUT .\sections\02_referencial.tex
-INPUT .\sections\02_referencial.tex
-INPUT sections\02_referencial.tex
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\psnfss\t1pcr.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
-INPUT .\sections\03_metodologia.tex
-INPUT .\sections\03_metodologia.tex
-INPUT sections\03_metodologia.tex
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT .\figures\fluxograma_eixo1.pdf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
-INPUT .\sections\04_resultados.tex
-INPUT .\sections\04_resultados.tex
-INPUT sections\04_resultados.tex
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_rede_societaria_k3.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT .\figures\eixo1_componentes_detalhados.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmbi8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmbi8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo.png
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmrc8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8t.tfm
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT .\figures\eixo1_metricas_topologicas.png
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8t.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
-INPUT .\sections\05_conclusao.tex
-INPUT .\sections\05_conclusao.tex
-INPUT sections\05_conclusao.tex
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo.png
+INPUT .\sections\05_conclusao_corrigida.tex
+INPUT .\sections\05_conclusao_corrigida.tex
+INPUT sections\05_conclusao_corrigida.tex
 INPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.bbl
 INPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.bbl
 INPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.bbl
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT c:\Users\igorp\OneDrive\Arquivos Antigos\Área de Trabalho\Projetos_26_2\AEDS-Graph\report\01_analise_socios\.texbuild\main.aux
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
@@ -349,8 +317,6 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb

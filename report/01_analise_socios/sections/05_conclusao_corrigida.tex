@@ -1,0 +1,34 @@
+\section{Conclusão e Trabalhos Futuros}
+\label{sec:conclusao}
+
+Este trabalho apresentou uma abordagem algorítmica e topológica baseada em grafos heterogêneos multicamada para a identificação de indícios de sobreposição societária, cadastral e onomástica entre empresas que disputaram contratações públicas municipais. Aplicada aos dados do SICOM/TCE-MG referentes ao exercício de 2025 de Divinópolis/MG e complementada por informações do QSA obtidas via BrasilAPI, a metodologia demonstrou como relações licitatórias e societárias podem ser integradas em uma estrutura única e submetidas a critérios determinísticos de seleção.
+
+\subsection{Eficiência da Redução Topológica}
+
+A filtragem por escore multidimensional, com limiar $\theta\geq2{,}00$, seguida da remoção de vértices isolados e da identificação de componentes conexas, reduziu a rede original de 1.788 vértices e 5.914 arestas para um subgrafo com 26 vértices e 23 arestas. A redução corresponde a 98,55\% dos vértices e 99,61\% das arestas. O subgrafo resultante contém seis componentes conexas, formadas por 12 empresas e 14 sócios ou controladores.
+
+Esse resultado demonstra a capacidade da filtragem determinística de concentrar a inspeção em relações selecionadas pelo escore e em seus vínculos societários incidentes. A redução, entretanto, deve ser entendida como um mecanismo de priorização: ela preserva as relações que satisfazem os critérios definidos, mas não garante que todos os possíveis padrões de risco estejam contidos no subgrafo.
+
+\subsection{Identificação de Sobreposições Societárias e Cadastrais}
+
+A avaliação de 4.059 pares de empresas co-disputantes identificou 202 pares com escore positivo. Desses, 159 foram classificados na faixa baixa, 37 na faixa média e seis na faixa alta. A camada \texttt{Vinculo\_Suspeito} reteve os 43 pares das duas últimas faixas, enquanto a redução topológica selecionou os seis pares com escore igual ou superior a 2,00.
+
+A enumeração dos motivos triangulares identificou três ocorrências de $K_3$ em dois componentes. Esses motivos representam pares de empresas concorrentes que compartilham um ou mais sócios ou controladores na representação agregada multicamada. Os quatro componentes restantes não apresentaram sócios formalmente compartilhados no QSA e foram selecionados principalmente por coincidências de endereço, telefone ou sobrenomes. Tais relações são sinais complementares de triagem e exigem validação independente.
+
+No Caso 2, os dados descrevem disputa em 59 itens e registram \texttt{Peso\_Concorrencia = 60}. Como a documentação analisada não esclarece a diferença entre essas quantidades, a divergência deve ser verificada na fonte de dados ou na regra de agregação do atributo antes de uma interpretação quantitativa definitiva.
+
+\subsection{Contribuição ao Controle Externo e Limitações}
+
+O pipeline oferece um procedimento rastreável para organizar relações entre órgãos, fornecedores e sócios, calcular escores explícitos e reduzir a rede a componentes que podem ser examinadas individualmente. Sua contribuição está na integração de camadas relacionais e na explicabilidade dos critérios de seleção, não na classificação automática de empresas como fraudulentas.
+
+Os resultados possuem caráter indiciário. A presença de relações societárias, cadastrais ou onomásticas não comprova, isoladamente, conluio ou irregularidade. A confirmação de qualquer hipótese exige diligências adicionais, incluindo análise das propostas, dos lances, das atas de julgamento, da execução contratual e de outros elementos documentais pertinentes.
+
+Uma limitação importante desta versão é a ausência de resultados financeiros associados individualmente aos pares analisados. Embora a arquitetura contemple uma etapa de materialidade, as limitações de vinculação entre tabelas de diferentes módulos do SICOM impediram apresentar, neste artigo, uma associação validada entre certames e valores empenhados, liquidados ou pagos. Outra limitação decorre da dependência da completude e da atualidade dos dados cadastrais do QSA e da possibilidade de coincidências legítimas em atributos como endereço, telefone e sobrenome.
+
+\subsection{Trabalhos Futuros}
+
+Como continuidade, pretende-se desenvolver uma integração validada entre os registros licitatórios e a execução financeira, reconstruindo as relações entre homologações, contratos, empenhos, liquidações e pagamentos. Essa etapa permitirá incorporar a materialidade econômica aos núcleos identificados, desde que as associações entre certames e despesas possam ser sustentadas por chaves ou evidências documentais consistentes.
+
+Uma segunda direção consiste em incorporar atributos temporais e financeiros das propostas e dos lances registrados nas atas de julgamento, de modo a investigar padrões de alternância de vencedores (\textit{bid rotation}), propostas de cobertura (\textit{cover bidding}) e supressão de propostas. A terceira direção envolve a análise de bases plurianuais do SICOM, com métricas de centralidade e detecção de comunidades para acompanhar a evolução das relações entre fornecedores.
+
+Por fim, pretende-se investigar modelos de aprendizado de representação em grafos heterogêneos (\textit{Heterogeneous Graph Neural Networks}) para avaliar a calibração dos pesos do escore multidimensional a partir de casos históricos analisados ou julgados pelos órgãos de controle. Essa investigação deverá considerar a disponibilidade de dados rotulados, a interpretabilidade dos modelos e a rastreabilidade dos critérios utilizados.

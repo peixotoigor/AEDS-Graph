@@ -46,14 +46,6 @@
   \url{https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12846.htm}
 \BIBentrySTDinterwordspacing
 
-\bibitem{portal_transparencia_betha}
-\BIBentryALTinterwordspacing
-{Portal da Transpar{\^e}ncia de Divin{\'o}polis}. (2026) Dados abertos
-  municipais de {Divin{\'o}polis}. Acesso em: 10 out. 2026. [Online].
-  Available:
-  \url{https://transparencia.betha.cloud/#/oU8BIS7tF8icFMLVMRCkJA==/dados-abertos}
-\BIBentrySTDinterwordspacing
-
 \bibitem{tce_mg_dados_abertos}
 \BIBentryALTinterwordspacing
 {Tribunal de Contas do Estado de Minas Gerais}. (2026) Portal de dados abertos
@@ -68,18 +60,6 @@
   munic{\'\i}pios ({SICOM}),'' Di{\'a}rio Oficial de Contas do {TCE-MG}, Belo
   Horizonte, MG, 2025.
 
-\bibitem{tcu2011acordao2341}
-{Tribunal de Contas da Uni{\~a}o}, ``Ac{\'o}rd{\~a}o n{\textordmasculine}
-  2.341/2011 -- {Plen{\'a}rio}. participa{\c{c}}{\~a}o de empresas com
-  s{\'o}cios comuns em licita{\c{c}}{\~o}es,'' Jurisprud{\^e}ncia Selecionada
-  do {TCU}, Bras{\'\i}lia, DF, 2011.
-
-\bibitem{tcu2024acordao1798}
-------, ``Ac{\'o}rd{\~a}o n{\textordmasculine} 1.798/2024 -- {Plen{\'a}rio}.
-  ind{\'\i}cios convergentes de conluio envolvendo empresas com v{\'\i}nculos
-  societ{\'a}rios ou familiares,'' Jurisprud{\^e}ncia Selecionada do {TCU},
-  Bras{\'\i}lia, DF, 2024.
-
 \bibitem{brasilapi2026cnpj}
 \BIBentryALTinterwordspacing
 {BrasilAPI}. (2026) {BrasilAPI}: Interface p{\'u}blica de consulta cadastral
@@ -93,23 +73,6 @@
   Geral de Prote{\c{c}}{\~a}o de Dados Pessoais} ({LGPD}),'' Di{\'a}rio Oficial
   da Uni{\~a}o, Bras{\'\i}lia, DF, 2018. [Online]. Available:
   \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}
-\BIBentrySTDinterwordspacing
-
-\bibitem{brasil2006lc123}
-\BIBentryALTinterwordspacing
-------, ``Lei complementar n{\textordmasculine} 123, de 14 de dezembro de 2006.
-  {Estatuto Nacional da Microempresa e da Empresa de Pequeno Porte},''
-  Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 2006. [Online].
-  Available: \url{https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm}
-\BIBentrySTDinterwordspacing
-
-\bibitem{brasil1992improbidade}
-\BIBentryALTinterwordspacing
-------, ``Lei n{\textordmasculine} 8.429, de 2 de junho de 1992. {Lei de
-  Improbidade Administrativa} (reda{\c{c}}{\~a}o da {Lei} n{\textordmasculine}
-  14.230/2021),'' Di{\'a}rio Oficial da Uni{\~a}o, Bras{\'\i}lia, DF, 1992.
-  [Online]. Available:
-  \url{https://www.planalto.gov.br/ccivil_03/leis/l8429.htm}
 \BIBentrySTDinterwordspacing
 
 \bibitem{oecd2025guidelines}
@@ -185,40 +148,5 @@ S.~B. Seidman, ``Network structure and minimum degree,'' \emph{Social
 \bibitem{tarjan1975efficiency}
 R.~E. Tarjan, ``Efficiency of a good but not linear set union algorithm,''
   \emph{Journal of the ACM}, vol.~22, no.~2, pp. 215--225, 1975.
-
-\bibitem{blondel2008fast}
-V.~D. Blondel, J.-L. Guillaume, R.~Lambiotte, and E.~Lefebvre, ``Fast unfolding
-  of communities in large networks,'' \emph{Journal of Statistical Mechanics:
-  Theory and Experiment}, vol. 2008, no.~10, p. P10008, 2008.
-
-\bibitem{bastian2009gephi}
-M.~Bastian, S.~Heymann, and M.~Jacomy, ``{Gephi}: An open source software for
-  exploring and manipulating networks,'' in \emph{Proceedings of the
-  International {AAAI} Conference on Web and Social Media ({ICWSM})}, vol.~3,
-  no.~1, 2009, pp. 361--362.
-
-\bibitem{jacomy2014forceatlas2}
-M.~Jacomy, T.~Venturini, S.~Heymann, and M.~Bastian, ``{ForceAtlas2}, a
-  continuous graph layout algorithm for handy network visualization designed
-  for the {Gephi} software,'' \emph{{PLoS ONE}}, vol.~9, no.~6, p. e98679,
-  2014.
-
-\bibitem{projeto_dataset_zenodo}
-I.~P. Rodrigues, P.~H. d.~A. Carvalho, and M.~P. da~Silva, ``Base de dados
-  tratada de contrata{\c{c}}{\~o}es p{\'u}blicas municipais
-  ({SICOM}/{Divin{\'o}polis} 2025),'' Zenodo (em processo de
-  dep{\'o}sito/publica{\c{c}}{\~a}o), 2026, dataset tratado e pseudonimizado;
-  DOI definitivo a ser disponibilizado no reposit{\'o}rio do projeto.
-
-\bibitem{hunter2007matplotlib}
-J.~D. Hunter, ``{Matplotlib}: A {2D} graphics environment,'' \emph{Computing in
-  Science \& Engineering}, vol.~9, no.~3, pp. 90--95, 2007.
-
-\bibitem{projeto_github}
-I.~P. Rodrigues, P.~H. d.~A. Carvalho, and M.~P. da~Silva, ``Reposit{\'o}rio de
-  c{\'o}digo: An{\'a}lise de contrata{\c{c}}{\~o}es p{\'u}blicas via teoria dos
-  grafos ({AEDS-Graph}),'' \url{https://github.com/peixotoigor/AEDS-Graph},
-  2026, pipeline em Python, m{\'o}dulo 01\_analise\_socios e
-  visualiza{\c{c}}{\~o}es.
 
 \end{thebibliography}
