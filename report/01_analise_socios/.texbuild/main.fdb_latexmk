@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex .texbuild/main"] 1794943388.10383 ".texbuild/main.aux" ".texbuild/main.bbl" ".texbuild/main" 1794943391.85069 0
+["bibtex .texbuild/main"] 1795095478.8255 ".texbuild/main.aux" ".texbuild/main.bbl" ".texbuild/main" 1795095548.02702 0
   "./references.bib" 1794771917 13744 a59b43095c0e2313565c72273ca1413a ""
-  ".texbuild/main.aux" 1794943390 9569 442a6e15d344f933af9840d8e19620e5 "pdflatex"
+  ".texbuild/main.aux" 1795095547 10473 978c45bf17a13c7b1767838db6ed3557 "pdflatex"
   "C:/Program Files/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
   (generated)
   ".texbuild/main.bbl"
   ".texbuild/main.blg"
   (rewritten before read)
-["pdflatex"] 1794943388.47345 "main.tex" ".texbuild/main.pdf" "main" 1794943391.85437 0
-  ".texbuild/main.aux" 1794943390 9569 442a6e15d344f933af9840d8e19620e5 "pdflatex"
-  ".texbuild/main.bbl" 1794943388 6924 32d9225e2a1919d1ab69e46f7926c3dc "bibtex .texbuild/main"
+["pdflatex"] 1795095544.71381 "main.tex" ".texbuild/main.pdf" "main" 1795095548.02804 0
+  ".texbuild/main.aux" 1795095547 10473 978c45bf17a13c7b1767838db6ed3557 "pdflatex"
+  ".texbuild/main.bbl" 1795095479 7281 bd19362a45f2e239b5d1c64cf1d81dab "bibtex .texbuild/main"
   "C:/Program Files/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/courier/pcrb8r.tfm" 1136765053 1292 3059476c50a24578715759f22652f3d0 ""
   "C:/Program Files/MiKTeX/fonts/tfm/adobe/courier/pcrb8t.tfm" 1136765053 1384 87406e4336af44af883a035f17f319d9 ""
@@ -118,16 +118,17 @@
   "C:/Users/igorp/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-msb.cfg" 1772370317 5594 992ef5c3f8fd1168bb7101a957333065 ""
   "C:/Users/igorp/AppData/Local/Programs/MiKTeX/tex/latex/microtype/mt-ptm.cfg" 1772370317 12427 a6802929d6bd2a4ba6d4f5db602da2b4 ""
   "IEEEtran.cls" 1794679426 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "figures/Sub_grafo.png" 1794933815 78691 4305848b57aeee86b08d0cac14533530 ""
+  "figures/Sub_grafo_2.png" 1795089569 69935 09745c15d8a69621fa72b2ab0995c0c0 ""
   "figures/fluxograma_eixo1.pdf" 1794943106 41845 122b2df89186e39a3a4887ec458abc51 ""
-  "figures/grafo_completo.png" 1794933827 836593 02d69f0c32f4c3d264bfc1673a8d4628 ""
-  "main.tex" 1794941325 3079 9ddfb7c6cfe7b04f3d0f0d1f36595198 ""
-  "sections/00_abstract_corrigido.tex" 1794941314 2224 9cf5e2ba404d3fd1870bc056dbbbb3c6 ""
-  "sections/01_introducao_corrigida.tex" 1794940899 5454 6b77d1223772919576adb18f168fbb21 ""
-  "sections/02_referencial_corrigido.tex" 1794940903 12695 bafd600f65f6e2fcdb4043038df8ab8f ""
-  "sections/03_metodologia_corrigida.tex" 1794943379 11499 abee436ef0612fb589c398ad89be85d4 ""
-  "sections/04_resultados_corrigidos.tex" 1794940907 17449 ef239c87efd35b257ba5aafcd6b129ff ""
-  "sections/05_conclusao_corrigida.tex" 1794940918 5717 b7474770842fce4f503cb31ad40d752b ""
+  "figures/fluxograma_licitacao_horizontal.pdf" 1795092091 23585 f76dd8df78c5f53ac8591dadcdb83391 ""
+  "figures/grafo_completo_2.png" 1795089676 911826 08140c63e545fcb3768684bf20eef5d2 ""
+  "main.tex" 1795094859 3079 deba6d3e9ebc178af479fec193b55b14 ""
+  "sections/00_abstract_corrigido.tex" 1795094875 2272 595b0e5546c49ffdbf606a2b8bc9c73a ""
+  "sections/01_introducao_corrigida.tex" 1795094876 5630 6bcde4d6828c9181108b654278803adb ""
+  "sections/02_referencial_corrigido.tex" 1795094893 16135 ad81361dc71383df61dfdfad6f40d226 ""
+  "sections/03_metodologia_corrigida.tex" 1795095543 15219 231f7c326a70c6f2ebbf6948026289aa ""
+  "sections/04_resultados_corrigidos.tex" 1795094993 18753 63ee24bf801e1eab76a1b47f1b762d50 ""
+  "sections/05_conclusao_corrigida.tex" 1795095011 5841 791985f25094eebd1b0575f3dfeba121 ""
   (generated)
   ".texbuild/main.aux"
   ".texbuild/main.log"

@@ -10,76 +10,84 @@
 \babel@aux{brazilian}{}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introdução}{1}{}\protected@file@percent }
 \newlabel{sec:introducao}{{I}{1}{}{section.1}{}}
+\citation{projeto_github}
+\citation{brasil2021licitacoes}
 \citation{brasil2021licitacoes}
 \citation{brasil2011concorrencia}
 \citation{brasil2013anticorrupcao}
+\@writefile{toc}{\contentsline {section}{\numberline {II}Referencial Teórico e Estado da Arte}{2}{}\protected@file@percent }
+\newlabel{sec:referencial}{{II}{2}{}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Licitações Públicas}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Fundamentos Jurídico-Regulatórios e Triagem Indiciária}{2}{}\protected@file@percent }
 \citation{brasil2018lgpd}
 \citation{oecd2025guidelines,cade2019guia}
 \citation{carbone2024bidrigging,fazekas2016objective,wachs2020corruption}
 \citation{wachs2019cartel,lyra2021characterization}
 \citation{villamil2024collusion,pompeu2025collusion}
 \citation{mcpherson2001homophily}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Referencial Teórico e Estado da Arte}{2}{}\protected@file@percent }
-\newlabel{sec:referencial}{{II}{2}{}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Fundamentos Jurídico-Regulatórios e Triagem Indiciária}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Redes de Co-disputa, Relações Societárias e Homofilia}{2}{}\protected@file@percent }
 \citation{kivela2014multilayer,newman2018networks}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Fluxo sequencial das etapas do procedimento licitatório, desde a identificação da necessidade da Administração Pública até a efetivação da contratação, passando pelas fases de abertura e edital, especificação de itens e cotação, habilitação, disputa e julgamento, e homologação.}}{3}{}\protected@file@percent }
+\newlabel{fig:fluxograma_licitacao}{{1}{3}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Redes de Co-disputa, Relações Societárias e Homofilia}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Grafos Heterogêneos e Multicamadas}{3}{}\protected@file@percent }
+\newlabel{eq:grafo_multicamada}{{1}{3}{}{equation.1}{}}
 \citation{seidman1983network}
 \citation{tarjan1975efficiency}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Grafos Heterogêneos e Multicamadas}{3}{}\protected@file@percent }
-\newlabel{eq:grafo_multicamada}{{1}{3}{}{equation.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Motivos Triangulares e Compartilhamento Societário}{3}{}\protected@file@percent }
-\newlabel{eq:motivo_triangular}{{2}{3}{}{equation.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Fundamentos dos Algoritmos de Redução Topológica}{3}{}\protected@file@percent }
-\newlabel{eq:complexidade_union_find}{{3}{3}{}{equation.3}{}}
-\newlabel{eq:intersecao_donos}{{4}{3}{}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-E}}Motivos Triangulares e Vínculos Societários Compartilhados}{4}{}\protected@file@percent }
+\newlabel{eq:motivo_triangular}{{2}{4}{}{equation.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-F}}Fundamentos dos Algoritmos de Redução Topológica}{4}{}\protected@file@percent }
+\newlabel{eq:complexidade_union_find}{{3}{4}{}{equation.3}{}}
+\newlabel{eq:intersecao_donos}{{4}{4}{}{equation.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-G}}Ponderação de Similaridade e Controle de Falsos Positivos}{4}{}\protected@file@percent }
+\citation{projeto_github}
 \citation{tce_mg_dados_abertos,tcemg2025in01}
 \citation{brasilapi2026cnpj}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-F}}Ponderação de Similaridade e Controle de Falsos Positivos}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-G}}Síntese do Enquadramento e Limites Interpretativos}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {III}Metodologia}{4}{}\protected@file@percent }
-\newlabel{sec:metodologia}{{III}{4}{}{section.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Obtenção e Tratamento de Dados}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Modelagem do Grafo Multicamada}{4}{}\protected@file@percent }
-\newlabel{eq:grafo_metodologia}{{7}{4}{}{equation.7}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}1}Partições de Vértices}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}2}Camadas de Arestas}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Fluxograma do módulo de análise de relações societárias e licitatórias. O fluxo contempla as fontes SICOM/TCE-MG e BrasilAPI, a higienização, a construção do grafo, o enriquecimento QSA, a pontuação e a redução topológica.}}{5}{}\protected@file@percent }
-\newlabel{fig:fluxograma_eixo1}{{1}{5}{}{figure.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Enriquecimento Societário e Escore Multidimensional}{5}{}\protected@file@percent }
-\newlabel{eq:escore_vinculo}{{9}{5}{}{equation.9}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Redução Topológica e Identificação de Motivos $K_3$}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-H}}Síntese do Enquadramento e Limites Interpretativos}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}Metodologia}{5}{}\protected@file@percent }
+\newlabel{sec:metodologia}{{III}{5}{}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-A}}Obtenção e Tratamento de Dados}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-B}}Modelagem do Grafo Multicamada}{5}{}\protected@file@percent }
+\newlabel{eq:grafo_metodologia}{{7}{5}{}{equation.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}1}Partições de Vértices}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {III-B}2}Camadas de Arestas}{5}{}\protected@file@percent }
+\citation{brasilapi2026cnpj}
+\citation{projeto_github}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Fluxograma do módulo de análise de relações societárias e licitatórias. O fluxo contempla as fontes SICOM/TCE-MG e BrasilAPI, a higienização, a construção do grafo, o enriquecimento QSA, a pontuação e a redução topológica.}}{6}{}\protected@file@percent }
+\newlabel{fig:fluxograma_eixo1}{{2}{6}{}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-C}}Enriquecimento Societário e Escore Multidimensional}{6}{}\protected@file@percent }
+\newlabel{eq:escore_vinculo}{{9}{6}{}{equation.9}{}}
 \citation{brasil2018lgpd}
-\newlabel{eq:predicado_reducao}{{10}{6}{}{equation.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Proteção de Dados e Limites Éticos}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Resultados e Discussão}{6}{}\protected@file@percent }
-\newlabel{sec:resultados}{{IV}{6}{}{section.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Caracterização Topológica da Rede Completa}{6}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Distribuição dos Vértices por Categoria}}{6}{}\protected@file@percent }
-\newlabel{tab:vertices}{{I}{6}{}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Distribuição das Arestas por Camada Relacional}}{6}{}\protected@file@percent }
-\newlabel{tab:arestas}{{II}{6}{}{table.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Topologia completa da rede heterogênea multicamada de contratações públicas de Divinópolis/MG em 2025 ($|V| = 1.788$, $|E| = 5.914$). O vértice central em laranja (\texttt  {Orgao\_02} — Prefeitura Municipal) exerce forte atração gravitacional sobre as empresas licitantes (vértices verdes) por meio das arestas azuis claras (\texttt  {Participou\_Licitacao}), enquanto o agrupamento isolado no quadrante inferior direito representa o polo periférico do Legislativo (\texttt  {Orgao\_01} — Câmara Municipal). As nuvens densas em rosa claro (\texttt  {Concorreu\_Contra}) e o halo externo de sócios em azul (\textit  {Sócio Real}, ligados por arestas verdes \texttt  {É\_Dono\_De}) obscurecem as 43 arestas vermelhas (\texttt  {Vinculo\_Suspeito}).}}{7}{}\protected@file@percent }
-\newlabel{fig:grafo-completo}{{2}{7}{}{figure.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Estratificação do Escore Multidimensional e Eficiência da Redução Algorítmica}{7}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Estratificação dos Pares Concorrentes por Faixa de Risco}}{7}{}\protected@file@percent }
-\newlabel{tab:estratificacao}{{III}{7}{}{table.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Evolução Métrica do Pipeline de Redução Topológica}}{7}{}\protected@file@percent }
-\newlabel{tab:reducao_topologica}{{IV}{7}{}{table.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Subgrafo de alto risco composto por seis componentes conexas independentes ($|V|=26$ e $|E|=23$). Os vértices representam empresas licitantes (verde) e sócios ou controladores (azul). As arestas verdes representam relações societárias, enquanto as vermelhas representam vínculos suspeitos, com espessura proporcional ao escore $s(a,b)$. Destacam-se os motivos triangulares $K_3$ nos Casos 1 e 2, associados ao compartilhamento de controladores entre empresas concorrentes.}}{8}{}\protected@file@percent }
-\newlabel{fig:subgrafo-alto-risco}{{3}{8}{}{figure.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Análise dos Núcleos de Alto Risco Identificados}{8}{}\protected@file@percent }
-\newlabel{subsec:nucleos_alto_risco}{{\mbox  {IV-C}}{8}{}{subsection.4.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}1}Motivos Topológicos de Controle Societário Compartilhado}{8}{}\protected@file@percent }
-\newlabel{eq:motivo_k3}{{13}{8}{}{equation.13}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}2}Indícios de Vínculos Operacionais e Onomásticos sem Compartilhamento Societário Direto}{8}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Caracterização dos Núcleos de Alto Risco Identificados}}{9}{}\protected@file@percent }
-\newlabel{tab:analise_nucleos}{{V}{9}{}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusão e Trabalhos Futuros}{9}{}\protected@file@percent }
-\newlabel{sec:conclusao}{{V}{9}{}{section.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Eficiência da Redução Topológica}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Identificação de Sobreposições Societárias e Cadastrais}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Contribuição ao Controle Externo e Limitações}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-D}}Redução Topológica e Identificação de Motivos $K_3$}{7}{}\protected@file@percent }
+\newlabel{eq:predicado_reducao}{{10}{7}{}{equation.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {III-E}}Proteção de Dados e Limites Éticos}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Resultados e Discussão}{7}{}\protected@file@percent }
+\newlabel{sec:resultados}{{IV}{7}{}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Caracterização Topológica da Rede Completa}{7}{}\protected@file@percent }
+\citation{projeto_github}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces Distribuição dos Vértices por Categoria}}{8}{}\protected@file@percent }
+\newlabel{tab:vertices}{{I}{8}{}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Distribuição das Arestas por Camada Relacional}}{8}{}\protected@file@percent }
+\newlabel{tab:arestas}{{II}{8}{}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Estratificação do Escore de Triagem e Eficiência da Redução Algorítmica}{8}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Estratificação dos Pares Concorrentes por Faixa do Escore de Triagem}}{8}{}\protected@file@percent }
+\newlabel{tab:estratificacao}{{III}{8}{}{table.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Topologia completa da rede heterogênea multicamada de contratações públicas de Divinópolis/MG em 2025 ($|V| = 1.788$, $|E| = 5.914$). Conforme a legenda, os vértices laranja representam órgãos públicos (com o nó central de maior grau correspondendo ao Executivo municipal, 628 ligações), os verdes representam empresas licitantes e o halo externo azul representa integrantes do QSA (\textit  {Sócio Real}, ligados pelas arestas verdes \texttt  {É\_Dono\_De}). As nuvens densas em rosa (\texttt  {Concorreu\_Contra}) e a sobreposição de ligações (\emph  {hairball effect}) absorvem o segundo órgão de menor grau (52 ligações) e obscurecem a leitura individual das 43 arestas vermelhas (\texttt  {Vinculo\_Suspeito}), justificando a etapa posterior de redução topológica.}}{8}{}\protected@file@percent }
+\newlabel{fig:grafo-completo}{{3}{8}{}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {IV}{\ignorespaces Evolução Métrica do Pipeline de Redução Topológica}}{9}{}\protected@file@percent }
+\newlabel{tab:reducao_topologica}{{IV}{9}{}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Análise dos Núcleos Prioritários Identificados}{9}{}\protected@file@percent }
+\newlabel{subsec:nucleos_alto_risco}{{\mbox  {IV-C}}{9}{}{subsection.4.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}1}Motivos Topológicos de Controle e Gestão Compartilhados}{9}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Subgrafo reduzido ($|V|=26$ e $|E|=23$) composto por seis componentes conexas independentes. Os vértices verdes representam empresas licitantes e os azuis representam integrantes do QSA (\textit  {Sócio Real}). As arestas verdes correspondem à camada \texttt  {É\_Dono\_De}, enquanto as vermelhas representam \texttt  {Vinculo\_Suspeito} com espessura proporcional ao escore $s(a,b)$. Destacam-se os motivos triangulares $K_3$ nos Casos 1 e 2, associados ao compartilhamento de integrantes do QSA entre empresas co-disputantes.}}{9}{}\protected@file@percent }
+\newlabel{fig:subgrafo-alto-risco}{{4}{9}{}{figure.4}{}}
+\newlabel{eq:motivo_k3}{{13}{9}{}{equation.13}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {V}{\ignorespaces Caracterização dos Núcleos Selecionados na Faixa Superior do Escore de Triagem}}{10}{}\protected@file@percent }
+\newlabel{tab:analise_nucleos}{{V}{10}{}{table.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {IV-C}2}Indícios Cadastrais e Onomásticos sem Vínculo Compartilhado no QSA}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {V}Conclusão e Trabalhos Futuros}{10}{}\protected@file@percent }
+\newlabel{sec:conclusao}{{V}{10}{}{section.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Eficiência da Redução Topológica}{10}{}\protected@file@percent }
+\citation{projeto_github}
 \bibstyle{IEEEtran}
 \bibdata{references}
 \bibcite{brasil2021licitacoes}{1}
@@ -88,21 +96,24 @@
 \bibcite{tce_mg_dados_abertos}{4}
 \bibcite{tcemg2025in01}{5}
 \bibcite{brasilapi2026cnpj}{6}
-\bibcite{brasil2018lgpd}{7}
-\bibcite{oecd2025guidelines}{8}
-\bibcite{cade2019guia}{9}
-\bibcite{carbone2024bidrigging}{10}
-\bibcite{fazekas2016objective}{11}
-\bibcite{wachs2020corruption}{12}
-\bibcite{wachs2019cartel}{13}
-\bibcite{lyra2021characterization}{14}
-\bibcite{villamil2024collusion}{15}
-\bibcite{pompeu2025collusion}{16}
-\bibcite{mcpherson2001homophily}{17}
-\bibcite{kivela2014multilayer}{18}
-\bibcite{newman2018networks}{19}
-\bibcite{seidman1983network}{20}
-\bibcite{tarjan1975efficiency}{21}
-\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Trabalhos Futuros}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{Refer\^encias}{10}{}\protected@file@percent }
-\gdef \@abspage@last{10}
+\bibcite{projeto_github}{7}
+\bibcite{brasil2018lgpd}{8}
+\bibcite{oecd2025guidelines}{9}
+\bibcite{cade2019guia}{10}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}Identificação de Sobreposições no QSA e Cadastrais}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Contribuição ao Controle Externo e Limitações}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-D}}Trabalhos Futuros}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{Refer\^encias}{11}{}\protected@file@percent }
+\bibcite{carbone2024bidrigging}{11}
+\bibcite{fazekas2016objective}{12}
+\bibcite{wachs2020corruption}{13}
+\bibcite{wachs2019cartel}{14}
+\bibcite{lyra2021characterization}{15}
+\bibcite{villamil2024collusion}{16}
+\bibcite{pompeu2025collusion}{17}
+\bibcite{mcpherson2001homophily}{18}
+\bibcite{kivela2014multilayer}{19}
+\bibcite{newman2018networks}{20}
+\bibcite{seidman1983network}{21}
+\bibcite{tarjan1975efficiency}{22}
+\gdef \@abspage@last{12}

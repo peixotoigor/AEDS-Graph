@@ -1,6 +1,29 @@
 \section{Referencial Teórico e Estado da Arte}
 \label{sec:referencial}
 
+\subsection{Licitações Públicas}
+
+A licitação pública constitui o procedimento administrativo formal por meio do qual a Administração Pública seleciona fornecedores para a aquisição de bens, prestação de serviços ou execução de obras, em atendimento ao disposto no art.~37, inciso XXI, da Constituição Federal e na Lei nº 14.133/2021~\cite{brasil2021licitacoes}. Seu objetivo central é assegurar a seleção da proposta apta a gerar o resultado mais vantajoso para o interesse público, garantindo igualdade de condições entre os concorrentes e publicidade dos atos praticados ao longo do certame.
+
+Conforme ilustrado na Figura~\ref{fig:fluxograma_licitacao}, o rito licitatório origina-se a partir de uma necessidade identificada pela Administração Pública e desenvolve-se de forma sequencial em cinco etapas principais até a celebração da contratação:
+
+\begin{enumerate}
+  \item \textbf{Abertura e Edital:} compreende a definição do órgão demandante, do objeto a ser contratado e da modalidade licitatória aplicável, formalizada com a publicação do instrumento convocatório;
+  \item \textbf{Itens e Cotação:} envolve o detalhamento e a especificação de lotes ou itens individuais, com suas respectivas quantidades, bem como a realização de pesquisa prévia para estabelecer os preços de referência;
+  \item \textbf{Habilitação:} consiste na conferência documental da qualificação jurídica, regularidade fiscal, capacidade técnica e idoneidade econômica das empresas interessadas em disputar o certame;
+  \item \textbf{Disputa e Julgamento:} corresponde à fase competitiva propriamente dita, marcada pelo envio de propostas e lances por item e pela subsequente classificação da melhor oferta segundo os critérios definidos no edital;
+  \item \textbf{Homologação:} encerra formalmente o procedimento administrativo mediante a adjudicação do objeto ao proponente vencedor e a validação da regularidade do processo, viabilizando a etapa final de contratação.
+\end{enumerate}
+
+\begin{figure*}[!h]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/fluxograma_licitacao_horizontal.pdf}
+  \caption{Fluxo sequencial das etapas do procedimento licitatório, desde a identificação da necessidade da Administração Pública até a efetivação da contratação, passando pelas fases de abertura e edital, especificação de itens e cotação, habilitação, disputa e julgamento, e homologação.}
+  \label{fig:fluxograma_licitacao}
+\end{figure*}
+
+Sob a perspectiva da análise de dados e de redes, as fases de habilitação e de disputa e julgamento assumem papel central, pois registram formalmente quais empresas atuaram como competidoras simultâneas em um mesmo certame ou item. Quando examinadas de forma isolada por procedimento, as propostas podem aparentar competitividade regular; entretanto, a agregação desses registros ao longo de múltiplos certames permite observar padrões recorrentes de co-participação e investigar se agentes formalmente distintos compartilham vínculos societários ou cadastrais capazes de comprometer a independência efetiva da disputa.
+
 \subsection{Fundamentos Jurídico-Regulatórios e Triagem Indiciária}
 
 As contratações públicas devem assegurar tratamento isonômico entre os participantes e selecionar a proposta apta a produzir o resultado mais vantajoso para a Administração, conforme os princípios e objetivos estabelecidos pela Lei nº 14.133/2021~\cite{brasil2021licitacoes}. O diploma também prevê infrações administrativas relacionadas à fraude e à frustração do caráter competitivo dos procedimentos licitatórios. No plano concorrencial, a Lei nº 12.529/2011 considera infrações à ordem econômica condutas concertadas entre concorrentes que tenham por objeto ou possam produzir efeitos anticoncorrenciais~\cite{brasil2011concorrencia}. A Lei nº 12.846/2013, por sua vez, estabelece a responsabilização administrativa e civil de pessoas jurídicas pela prática de atos lesivos contra a Administração Pública, incluindo condutas relacionadas a procedimentos licitatórios~\cite{brasil2013anticorrupcao}.
@@ -19,7 +42,7 @@ A interpretação de coincidências nominais exige cautela. O conceito de homofi
 
 \subsection{Grafos Heterogêneos e Multicamadas}
 
-Redes heterogêneas permitem representar entidades de diferentes tipos em uma mesma estrutura, enquanto modelos multicamada distinguem categorias de relações que coexistem entre essas entidades~\cite{kivela2014multilayer,newman2018networks}. Essa distinção é relevante para o problema estudado: órgãos públicos, empresas licitantes e sócios ou controladores constituem tipos distintos de vértices; participação em licitação, co-disputa, propriedade societária e vínculo suspeito constituem camadas relacionais distintas.
+Redes heterogêneas permitem representar entidades de diferentes tipos em uma mesma estrutura, enquanto modelos multicamada distinguem categorias de relações que coexistem entre essas entidades~\cite{kivela2014multilayer,newman2018networks}. Essa distinção é relevante para o problema estudado: órgãos públicos, empresas licitantes e integrantes do QSA (sócios, controladores e administradores) constituem tipos distintos de vértices; participação em licitação, co-disputa, vínculos societários/administrativos e vínculo suspeito constituem camadas relacionais distintas.
 
 O grafo utilizado pode ser formalizado por
 \begin{equation}
@@ -28,26 +51,26 @@ O grafo utilizado pode ser formalizado por
 \end{equation}
 em que $V$ é o conjunto de vértices, $E$ é o conjunto de arestas, $\tau_V:V\rightarrow\mathcal{T}_V$ associa cada vértice a um tipo, $\tau_E:E\rightarrow\mathcal{T}_E$ identifica a camada de cada aresta e $w:E\rightarrow\mathbb{R}_{>0}$ atribui pesos às relações.
 
-Neste estudo, os tipos de vértices são órgãos públicos, empresas licitantes e sócios ou controladores. As quatro camadas de arestas são:
+Neste estudo, os tipos de vértices são órgãos públicos, empresas licitantes e integrantes do QSA (sócios, controladores e administradores). As quatro camadas de arestas são:
 \begin{itemize}
   \item \texttt{Participou\_Licitacao}: conecta empresas aos órgãos responsáveis pelos certames dos quais participaram;
-  \item \texttt{Concorreu\_Contra}: conecta pares de empresas que disputaram os mesmos certames ou itens, com peso associado à recorrência de co-disputa;
-  \item \texttt{É\_Dono\_De}: conecta sócios ou controladores às empresas às quais estão vinculados;
+  \item \texttt{Concorreu\_Contra}: conecta pares de empresas que compartilharam participação no mesmo certame ou disputaram os mesmos itens, com peso associado à soma de certames e itens em comum;
+  \item \texttt{É\_Dono\_De}: conecta integrantes do QSA (sócios, controladores ou administradores) e titulares de MEI às empresas às quais estão vinculados;
   \item \texttt{Vinculo\_Suspeito}: conecta empresas co-disputantes para as quais foi identificado escore positivo acima do limite mínimo de retenção.
 \end{itemize}
 
 As camadas \texttt{Participou\_Licitacao} e \texttt{É\_Dono\_De} são bipartidas entre tipos distintos de vértices. Já \texttt{Concorreu\_Contra} e \texttt{Vinculo\_Suspeito} conectam empresas entre si. Consequentemente, o grafo agregado não é, em geral, bipartido, ainda que algumas de suas camadas o sejam. Essa distinção é necessária para interpretar corretamente os motivos triangulares examinados neste trabalho.
 
-\subsection{Motivos Triangulares e Compartilhamento Societário}
+\subsection{Motivos Triangulares e Vínculos Societários Compartilhados}
 
-Um triângulo $K_3$ é um subgrafo com três vértices distintos e uma aresta entre cada par de vértices. No problema estudado, considera-se um motivo triangular tipado formado por duas relações societárias e uma relação entre empresas concorrentes. Para um sócio $s$ compartilhado pelas empresas $a$ e $b$, o motivo é
+Um triângulo $K_3$ é um subgrafo com três vértices distintos e uma aresta entre cada par de vértices. No problema estudado, considera-se um motivo triangular tipado formado por duas relações da camada \texttt{É\_Dono\_De} e uma relação entre empresas concorrentes. Para um membro do QSA $s$ (sócio, controlador ou administrador) compartilhado pelas empresas $a$ e $b$, o motivo é
 \begin{equation}
   \{(s,a),(s,b),(a,b)\},
   \label{eq:motivo_triangular}
 \end{equation}
 em que $(s,a)$ e $(s,b)$ pertencem à camada \texttt{É\_Dono\_De}, enquanto $(a,b)$ pertence à camada \texttt{Vinculo\_Suspeito}.
 
-O triângulo, portanto, não está presente na camada bipartida de propriedade considerada isoladamente. Ele aparece na representação agregada que combina as duas relações de propriedade com a aresta entre as empresas. Se duas empresas concorrentes compartilham dois sócios ou controladores distintos, cada elemento da interseção dos conjuntos de sócios forma um motivo triangular. A existência desses motivos caracteriza uma sobreposição societária observável, mas não comprova, por si só, coordenação ilícita ou ausência efetiva de independência decisória.
+O triângulo, portanto, não está presente na camada bipartida do QSA considerada isoladamente. Ele aparece na representação agregada que combina as duas relações societárias ou administrativas com a aresta entre as empresas. Se duas empresas concorrentes compartilham dois integrantes distintos no QSA, cada elemento da interseção desses conjuntos forma um motivo triangular. A existência desses motivos caracteriza uma sobreposição de propriedade ou de administração observável, mas não comprova, por si só, coordenação ilícita ou ausência efetiva de independência decisória.
 
 \subsection{Fundamentos dos Algoritmos de Redução Topológica}
 

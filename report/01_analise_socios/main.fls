@@ -216,6 +216,14 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
 INPUT .\sections\02_referencial_corrigido.tex
 INPUT .\sections\02_referencial_corrigido.tex
 INPUT sections\02_referencial_corrigido.tex
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT .\figures\fluxograma_licitacao_horizontal.pdf
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
 INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-cmr.cfg
@@ -240,6 +248,7 @@ INPUT C:\Users\igorp\AppData\Local\Programs\MiKTeX\tex\latex\microtype\mt-msb.cf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT .\sections\03_metodologia_corrigida.tex
@@ -251,9 +260,8 @@ INPUT .\figures\fluxograma_eixo1.pdf
 INPUT .\figures\fluxograma_eixo1.pdf
 INPUT .\figures\fluxograma_eixo1.pdf
 INPUT .\figures\fluxograma_eixo1.pdf
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
-INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
-INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
 INPUT .\sections\04_resultados_corrigidos.tex
 INPUT .\sections\04_resultados_corrigidos.tex
 INPUT sections\04_resultados_corrigidos.tex
@@ -271,12 +279,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8t.tfm
-INPUT .\figures\grafo_completo.png
-INPUT .\figures\grafo_completo.png
-INPUT .\figures\grafo_completo.png
-INPUT .\figures\grafo_completo.png
-INPUT .\figures\grafo_completo.png
-INPUT .\figures\grafo_completo.png
+INPUT .\figures\grafo_completo_2.png
+INPUT .\figures\grafo_completo_2.png
+INPUT .\figures\grafo_completo_2.png
+INPUT .\figures\grafo_completo_2.png
+INPUT .\figures\grafo_completo_2.png
+INPUT .\figures\grafo_completo_2.png
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmrc8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
@@ -285,13 +293,13 @@ INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\courier\pcrr8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\courier\pcrr8r.tfm
 INPUT C:\Program Files\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
 INPUT C:\Program Files\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
-INPUT .\figures\Sub_grafo.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
+INPUT .\figures\Sub_grafo_2.png
 INPUT .\sections\05_conclusao_corrigida.tex
 INPUT .\sections\05_conclusao_corrigida.tex
 INPUT sections\05_conclusao_corrigida.tex

@@ -5,8 +5,7 @@ A aplicação do pipeline computacional aos registros licitatórios do exercíci
 
 \subsection{Caracterização Topológica da Rede Completa}
 
-Após a consolidação das tabelas do SICOM/TCE-MG e o enriquecimento societário junto à base da Receita Federal (BrasilAPI), construiu-se o grafo heterogêneo multicamada composto por três partições de vértices: órgãos públicos, empresas licitantes e respectivos sócios ou controladores, como mostrado na Fig.~\ref{fig:grafo-completo}.  A projeção visual da rede completa evidencia o fenômeno de ofuscamento estrutural (\emph{hairball effect}) inerente a grandes redes de compras públicas. A
-distribuição dessas entidades é apresentada na Tabela~\ref{tab:vertices}.
+Após a consolidação das tabelas do SICOM/TCE-MG e o enriquecimento cadastral junto à base da Receita Federal (BrasilAPI, consultada em 14 de novembro de 2026), construiu-se o grafo heterogêneo multicamada composto por três partições de vértices: órgãos públicos, empresas licitantes e integrantes do QSA (sócios, controladores e administradores), como mostrado na Fig.~\ref{fig:grafo-completo}. A projeção visual da rede completa evidencia o fenômeno de ofuscamento estrutural (\emph{hairball effect}) inerente a grandes redes de compras públicas. A distribuição dessas entidades é apresentada na Tabela~\ref{tab:vertices}.
 \begin{table}[!h]
   \centering
   \caption{Distribuição dos Vértices por Categoria}
@@ -18,19 +17,14 @@ distribuição dessas entidades é apresentada na Tabela~\ref{tab:vertices}.
     \hline
     Órgãos públicos & 2 & 2 órgãos municipais \\
     Empresas licitantes & 674 & 673 PJ e 1 PF \\
-    Sócios e controladores & 1.112 & 1.044 PF e 68 PJ \\
+    Integrantes do QSA & 1.112 & 1.044 PF e 68 PJ \\
     \hline
     \textbf{Total} & \textbf{1.788} & \\
     \hline
   \end{tabular}
 \end{table}
 
-Na partição dos órgãos públicos, a Prefeitura Municipal (\texttt{Orgao\_02}) concentra 245 licitações, enquanto a
-Câmara Municipal (\texttt{Orgao\_01}) participa de 19
-licitações. Essa distribuição evidencia a predominância
-da atividade contratante do Poder Executivo na rede analisada. 
-As relações entre os vértices são representadas por quatro
-camadas de arestas, cujas respectivas quantidades e características são apresentadas na Tabela~\ref{tab:arestas}.
+Na partição dos órgãos públicos, a Prefeitura Municipal (\texttt{Orgao\_02}) concentra 245 licitações (628 arestas de participação), enquanto a Câmara Municipal (\texttt{Orgao\_01}) participa de 19 licitações (52 arestas). Essa distribuição evidencia a predominância da atividade contratante do Poder Executivo na rede analisada. As relações entre os vértices são representadas por quatro camadas de arestas, cujas respectivas quantidades e características são apresentadas na Tabela~\ref{tab:arestas}.
 
 \begin{table}[!h]
   \centering
@@ -42,9 +36,9 @@ camadas de arestas, cujas respectivas quantidades e características são aprese
       \textbf{Camada} & \textbf{Quantidade} & \textbf{Relação Representada} \\
       \midrule
       \texttt{Participou\_Licitacao} & 680   & Participação em licitações \\
-      \texttt{Concorreu\_Contra}     & 4.059 & Concorrência entre empresas \\
-      \texttt{É\_Dono\_De}           & 1.132 & Propriedade societária \\
-      \texttt{Vinculo\_Suspeito}     & 43    & Vínculos acima do limiar de risco \\
+      \texttt{Concorreu\_Contra}     & 4.059 & Co-disputa (certames e itens) \\
+      \texttt{É\_Dono\_De}           & 1.132 & Vínculos societários e de gestão (QSA) \\
+      \texttt{Vinculo\_Suspeito}     & 43    & Pares acima do limiar mínimo de triagem \\
       \midrule
       \textbf{Total}                 & \textbf{5.914} & \\
       \bottomrule
@@ -52,30 +46,21 @@ camadas de arestas, cujas respectivas quantidades e características são aprese
   }
 \end{table}
 
-A camada \texttt{Participou\_Licitacao} estabelece as
-relações entre fornecedores e órgãos contratantes,
-enquanto \texttt{Concorreu\_Contra} representa as disputas comerciais entre pares de empresas. A camada
-\texttt{É\_Dono\_De} modela os vínculos de propriedade
-entre sócios e empresas. Por fim, a camada
-\texttt{Vinculo\_Suspeito} reúne as relações identificadas
-pelo modelo de pontuação multidimensional, retidas
-a partir do limiar mínimo $s(a,b) \geq 1{,}00$. Assim, as 43 arestas dessa camada correspondem aos 37 pares de risco médio e aos seis pares de risco alto.
+A camada \texttt{Participou\_Licitacao} estabelece as relações entre fornecedores e órgãos contratantes, enquanto \texttt{Concorreu\_Contra} representa as co-disputas comerciais entre pares de empresas em nível de certame e de item. A camada \texttt{É\_Dono\_De} modela os vínculos de propriedade societária e de administração extraídos do QSA e dos registros de MEI. Por fim, a camada \texttt{Vinculo\_Suspeito} reúne as relações selecionadas pelo escore multidimensional de triagem a partir do limiar mínimo $s(a,b) \geq 1{,}00$. Assim, as 43 arestas dessa camada correspondem aos 37 pares da faixa média e aos seis pares da faixa alta.
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{figures/grafo_completo}
-  \caption{Topologia completa da rede heterogênea multicamada de contratações públicas de Divinópolis/MG em 2025 ($|V| = 1.788$, $|E| = 5.914$). O vértice central em laranja (\texttt{Orgao\_02} — Prefeitura Municipal) exerce forte atração gravitacional sobre as empresas licitantes (vértices verdes) por meio das arestas azuis claras (\texttt{Participou\_Licitacao}), enquanto o agrupamento isolado no quadrante inferior direito representa o polo periférico do Legislativo (\texttt{Orgao\_01} — Câmara Municipal). As nuvens densas em rosa claro (\texttt{Concorreu\_Contra}) e o halo externo de sócios em azul (\textit{Sócio Real}, ligados por arestas verdes \texttt{É\_Dono\_De}) obscurecem as 43 arestas vermelhas (\texttt{Vinculo\_Suspeito}).}
+  \includegraphics[width=\linewidth]{figures/grafo_completo_2}
+  \caption{Topologia completa da rede heterogênea multicamada de contratações públicas de Divinópolis/MG em 2025 ($|V| = 1.788$, $|E| = 5.914$). Conforme a legenda, os vértices laranja representam órgãos públicos (com o nó central de maior grau correspondendo ao Executivo municipal, 628 ligações), os verdes representam empresas licitantes e o halo externo azul representa integrantes do QSA (\textit{Sócio Real}, ligados pelas arestas verdes \texttt{É\_Dono\_De}). As nuvens densas em rosa (\texttt{Concorreu\_Contra}) e a sobreposição de ligações (\emph{hairball effect}) absorvem o segundo órgão de menor grau (52 ligações) e obscurecem a leitura individual das 43 arestas vermelhas (\texttt{Vinculo\_Suspeito}), justificando a etapa posterior de redução topológica.}
   \label{fig:grafo-completo}
 \end{figure}
 
-\subsection{Estratificação do Escore Multidimensional e Eficiência da Redução Algorítmica}
+\subsection{Estratificação do Escore de Triagem e Eficiência da Redução Algorítmica}
 
-A avaliação cadastral, societária e onomástica dos 4.059 pares de empresas concorrentes identificou 202 pares com sobreposição
-positiva, caracterizada por $s(a,b)>0$. A estratificação desses pares em faixas de criticidade permitiu distinguir coincidências
-onomásticas de baixa relevância de relações com maior potencial indiciário, conforme apresentado na Tabela~\ref{tab:estratificacao}.
+A avaliação cadastral, onomástica e de vínculos do QSA sobre os 4.059 pares de empresas concorrentes identificou 202 pares com sobreposição positiva ($s(a,b)>0$). A estratificação desses pares em faixas heurísticas do escore de triagem permitiu separar coincidências onomásticas isoladas de relações com sinais cadastrais ou de controle mais fortes, conforme apresentado na Tabela~\ref{tab:estratificacao}.
 \begin{table}[!h]
   \centering
-  \caption{Estratificação dos Pares Concorrentes por Faixa de Risco}
+  \caption{Estratificação dos Pares Concorrentes por Faixa do Escore de Triagem}
   \label{tab:estratificacao}
   \footnotesize
   \begin{tabular}{lrrp{3.2cm}}
@@ -84,24 +69,16 @@ onomásticas de baixa relevância de relações com maior potencial indiciário,
     \hline
     Baixo & 159 & $0 < s < 1{,}00$ & Coincidências isoladas de sobrenomes triviais \\
     Médio & 37  & $1{,}00 \leq s < 2{,}00$ & Sobreposições onomásticas sem identidade cadastral direta \\
-    Alto  & 6   & $s \geq 2{,}00$ & Identidade cadastral ou societária direta e/ou escore elevado \\
+    Alto  & 6   & $s \geq 2{,}00$ & Vínculo direto no QSA/cadastral ou dois sobrenomes raros \\
     \hline
     \textbf{Total} & \textbf{202} & & \\
     \hline
   \end{tabular}
 \end{table}
 
-Os 159 pares classificados como de baixo risco correspondem predominantemente a coincidências isoladas de sobrenomes
-triviais, às quais foi atribuído peso de 0{,}25. Por esse motivo, esses pares foram excluídos da camada indiciária. Os 37 pares
-de risco médio, associados a sobreposições onomásticas de menor frequência ou segundos prenomes, sem correspondência direta de
-sócios, endereços ou telefones, foram mantidos no grafo completo como relações de monitoramento. Por sua vez, os seis pares de
-alto risco foram selecionados como alvos prioritários para investigação, em razão dos escores elevados ou da presença de
-identidades cadastrais e societárias diretas.
+Os 159 pares da faixa baixa correspondem predominantemente a coincidências isoladas de sobrenomes incluídos na lista $\mathcal{T}_{\mathrm{comum}}$ (peso $0{,}25$), sendo excluídos da camada indiciária. Os 37 pares da faixa média, associados a sobreposições onomásticas sem correspondência direta de integrantes do QSA, endereço ou telefone, foram mantidos no grafo completo apenas como camada de monitoramento. Por sua vez, os seis pares da faixa alta ($s(a,b)\geq 2{,}00$) foram retidos pela redução topológica para inspeção prioritária, ressalvando-se que dois deles atingiram o limiar exclusivamente por coincidência de sobrenomes não triviais.
 
-Após a estratificação, a cadeia de redução topológica, implementada no módulo \texttt{reduzir\_grafo.py}, foi aplicada
-sequencialmente ao grafo completo. O procedimento reduziu a estrutura de 1.788 para 26 vértices e de 5.914 para 23 arestas,
-correspondendo a uma redução de 98{,}55\% e 99{,}61\%, respectivamente. A evolução das métricas estruturais em cada
-etapa do processamento é apresentada na Tabela~\ref{tab:reducao_topologica}.
+Após a estratificação, a cadeia de redução topológica, implementada no módulo \texttt{03\_reduzir\_grafo.py}~\cite{projeto_github}, foi aplicada sequencialmente ao grafo completo. O procedimento reduziu a estrutura de 1.788 para 26 vértices e de 5.914 para 23 arestas, correspondendo a uma redução de 98{,}55\% e 99{,}61\%, respectivamente. A evolução das métricas estruturais em cada etapa do processamento é apresentada na Tabela~\ref{tab:reducao_topologica}.
 
 \begin{table}[!h]
   \centering
@@ -131,67 +108,64 @@ Na etapa seguinte, a aplicação do algoritmo \textit{Union-Find} permitiu ident
 
 A análise quantitativa apresentada nesta seção concentra-se nas relações licitatórias, societárias e cadastrais. Embora o fluxo metodológico contemple uma etapa complementar de materialidade financeira, não são apresentados valores de homologação, empenho, liquidação ou pagamento associados individualmente aos seis pares. A vinculação entre módulos do SICOM exige tratamento adicional das chaves intermódulo, de modo que não seria adequado atribuir materialidade financeira aos casos sem uma associação documental validada.
 
-\subsection{Análise dos Núcleos de Alto Risco Identificados}
+\subsection{Análise dos Núcleos Prioritários Identificados}
 \label{subsec:nucleos_alto_risco}
 
-O subgrafo resultante do processo de redução topológica, apresentado na Fig.~\ref{fig:subgrafo-alto-risco}, contém seis componentes conexas independentes, totalizando 26 vértices e 23 arestas. Essa estrutura reúne 12 empresas licitantes e 14 sócios ou controladores, conectados por 17 relações de propriedade societária (\texttt{É\_Dono\_De}) e seis vínculos classificados como suspeitos (\texttt{Vinculo\_Suspeito}).
+O subgrafo resultante do processo de redução topológica, apresentado na Fig.~\ref{fig:subgrafo-alto-risco}, contém seis componentes conexas independentes, totalizando 26 vértices e 23 arestas. Essa estrutura reúne 12 empresas licitantes e 14 integrantes do QSA ou titulares de MEI, conectados por 17 relações da camada \texttt{É\_Dono\_De} e seis vínculos selecionados na camada \texttt{Vinculo\_Suspeito}.
 
 \begin{figure}[!t]
   \centering
-  \includegraphics[width=\linewidth]{figures/Sub_grafo.png}
-  \caption{Subgrafo de alto risco composto por seis componentes conexas independentes ($|V|=26$ e $|E|=23$). Os vértices representam empresas licitantes (verde) e sócios ou controladores (azul). As arestas verdes representam relações societárias, enquanto as vermelhas representam vínculos suspeitos, com espessura proporcional ao escore $s(a,b)$. Destacam-se os motivos triangulares $K_3$ nos Casos 1 e 2, associados ao compartilhamento de controladores entre empresas concorrentes.}
+  \includegraphics[width=\linewidth, trim = 0 5cm 0 0, clip]{figures/Sub_grafo_2.png}
+  \caption{Subgrafo reduzido ($|V|=26$ e $|E|=23$) composto por seis componentes conexas independentes. Os vértices verdes representam empresas licitantes e os azuis representam integrantes do QSA (\textit{Sócio Real}). As arestas verdes correspondem à camada \texttt{É\_Dono\_De}, enquanto as vermelhas representam \texttt{Vinculo\_Suspeito} com espessura proporcional ao escore $s(a,b)$. Destacam-se os motivos triangulares $K_3$ nos Casos 1 e 2, associados ao compartilhamento de integrantes do QSA entre empresas co-disputantes.}
   \label{fig:subgrafo-alto-risco}
 \end{figure}
 
-A análise individualizada dos componentes permitiu identificar diferentes combinações de evidências cadastrais, societárias e onomásticas. A Tabela~\ref{tab:analise_nucleos} apresenta a decomposição dos escores atribuídos aos seis pares concorrentes, bem como os respectivos padrões topológicos e contextos licitatórios.
+A análise individualizada dos componentes permitiu identificar diferentes combinações de evidências cadastrais, onomásticas e de vínculos no QSA. A Tabela~\ref{tab:analise_nucleos} apresenta a decomposição dos escores atribuídos aos seis pares selecionados, bem como os respectivos padrões topológicos e contextos licitatórios.
 
 \begin{table*}[!t]
   \centering
-  \caption{Caracterização dos Núcleos de Alto Risco Identificados}
+  \caption{Caracterização dos Núcleos Selecionados na Faixa Superior do Escore de Triagem}
   \label{tab:analise_nucleos}
   \footnotesize
   \begin{tabular}{clccp{8.0cm}}
     \hline
     \textbf{Caso} & \textbf{Par Concorrente} & \textbf{Escore} & \textbf{Motivo} & \textbf{Evidências Identificadas} \\
     \hline
-    1 & \texttt{E1-A} $\times$ \texttt{E1-B} & 29,00 & $K_3$ & Uma sócia em comum ($+10{,}00$), endereço compartilhado em Curitiba/PR ($+10{,}00$), mesmo telefone com DDD 41 ($+8{,}00$) e um sobrenome raro ($+1{,}00$). Processo 36/2025, referente a materiais médico-cirúrgicos. \\
-    2 & \texttt{E2-A} $\times$ \texttt{E2-B} & 22,25 & $2 \times K_3$ & Dois sócios em comum, sendo uma pessoa física e uma holding ($+20{,}00$), dois tokens raros ($+2{,}00$) e um sobrenome comum ($+0{,}25$). Concorrência em 59 itens do Processo 208/2025, referente a materiais odontológicos. \\
-    3 & \texttt{E3-A} $\times$ \texttt{E3-B} & 10,25 & Árvore & Endereço normalizado compartilhado em Bayeux/PB ($+10{,}00$) e um sobrenome comum entre os sócios ($+0{,}25$). Recorrência de concorrência em certames de informática e eletrônicos. \\
-    4 & \texttt{E4-A} $\times$ \texttt{E4-B} & 10,00 & Árvore & Telefone fixo compartilhado com DDD 15 ($+8{,}00$) e dois sobrenomes raros compartilhados entre os sócios ($+2{,}00$). Processo 48/2025, referente a materiais médicos descartáveis. \\
-    5 & \texttt{E5-A} $\times$ \texttt{E5-B} & 2,00 & Árvore & Dois sobrenomes raros compartilhados entre titulares de MEI ($+2{,}00$). Processo 61/2025, referente a transporte escolar. \\
-    6 & \texttt{E6-A} $\times$ \texttt{E6-B} & 2,00 & Árvore & Dois sobrenomes raros compartilhados entre sócios ($+2{,}00$). Processo 111/2025, referente a equipamentos hospitalares. \\
+    1 & \texttt{E1-A} $\times$ \texttt{E1-B} & 29,00 & $K_3$ & Pessoa em comum no QSA (\textit{Sócio-Administrador} em uma e \textit{Diretor} na outra, $+10{,}00$), endereço compartilhado em Curitiba/PR ($+10{,}00$), mesmo telefone com DDD 41 ($+8{,}00$) e um sobrenome raro ($+1{,}00$). Processo 36/2025, materiais médico-cirúrgicos (1 certame; 0 itens comuns no julgamento; \texttt{Peso\_Concorrencia} $=1$). \\
+    2 & \texttt{E2-A} $\times$ \texttt{E2-B} & 22,25 & $2 \times K_3$ & Dois vínculos comuns no QSA: uma \textit{holding} (\textit{Sócio} em ambas) e uma pessoa física (\textit{Administrador} em ambas, $+20{,}00$), dois tokens raros ($+2{,}00$) e um sobrenome comum ($+0{,}25$). Processo 208/2025, materiais odontológicos (1 certame + 59 itens; \texttt{Peso\_Concorrencia} $=60$). \\
+    3 & \texttt{E3-A} $\times$ \texttt{E3-B} & 10,25 & Árvore & Endereço normalizado compartilhado em Bayeux/PB ($+10{,}00$) e um sobrenome comum ($+0{,}25$). Certames de informática e eletrônicos (1 certame + 64 itens; \texttt{Peso\_Concorrencia} $=65$). \\
+    4 & \texttt{E4-A} $\times$ \texttt{E4-B} & 10,00 & Árvore & Telefone fixo compartilhado com DDD 15 ($+8{,}00$) e dois sobrenomes raros compartilhados ($+2{,}00$). Processo 48/2025, materiais médicos descartáveis (1 certame; 0 itens comuns no julgamento; \texttt{Peso\_Concorrencia} $=1$). \\
+    5 & \texttt{E5-A} $\times$ \texttt{E5-B} & 2,00 & Árvore & Apenas dois sobrenomes raros compartilhados entre titulares de MEI ($+2{,}00$), sem vínculo direto de QSA, endereço ou telefone. Processo 61/2025, transporte escolar (\texttt{Peso\_Concorrencia} $=1$). \\
+    6 & \texttt{E6-A} $\times$ \texttt{E6-B} & 2,00 & Árvore & Apenas dois sobrenomes raros compartilhados entre integrantes do QSA ($+2{,}00$), sem vínculo direto de QSA, endereço ou telefone. Processo 111/2025, equipamentos hospitalares (\texttt{Peso\_Concorrencia} $=1$). \\
     \hline
   \end{tabular}
 \end{table*}
 
-A distribuição dos escores evidencia diferentes níveis de sobreposição entre os pares analisados. Os Casos 1 e 2 apresentam as maiores pontuações, associadas à existência de sócios compartilhados e, consequentemente, à formação de motivos triangulares na rede. Nos demais casos, os vínculos identificados decorrem principalmente de coincidências domiciliares, telefônicas ou onomásticas, sem compartilhamento
-formal de sócios identificado no QSA.
+A distribuição dos escores evidencia diferentes níveis de sobreposição entre os pares analisados. Os Casos 1 e 2 apresentam as maiores pontuações, associadas à existência de integrantes comuns no QSA e, consequentemente, à formação de motivos triangulares na rede. Nos demais casos, não há vínculo comum no QSA: os Casos 3 e 4 decorrem de coincidências de endereço ou telefone, enquanto os Casos 5 e 6 resultam exclusivamente de coincidências onomásticas.
 
-\subsubsection{Motivos Topológicos de Controle Societário Compartilhado}
+\subsubsection{Motivos Topológicos de Controle e Gestão Compartilhados}
 
-A enumeração identificou três motivos estruturais $K_3$, concentrados nos Casos 1 e 2, conforme ilustrado na Fig.~\ref{fig:subgrafo-alto-risco}. Cada motivo é formado por um sócio compartilhado, duas empresas e três arestas: duas relações de propriedade entre o sócio e as empresas e uma relação \texttt{Vinculo\_Suspeito} entre as empresas. Formalmente, para um sócio $S_i$ compartilhado pelas empresas $E_a$ e $E_b$, o triângulo é dado por:
+A enumeração identificou três motivos estruturais $K_3$, concentrados nos Casos 1 e 2, conforme ilustrado na Fig.~\ref{fig:subgrafo-alto-risco}. Cada motivo é formado por um integrante do QSA compartilhado, duas empresas e três arestas: duas relações \texttt{É\_Dono\_De} entre a pessoa física ou jurídica e as empresas, e uma relação \texttt{Vinculo\_Suspeito} entre as empresas. Formalmente, para um integrante $S_i$ compartilhado pelas empresas $E_a$ e $E_b$, o triângulo é dado por:
 
 \begin{equation}
   \{(S_i,E_a),(S_i,E_b),(E_a,E_b)\},
   \label{eq:motivo_k3}
 \end{equation}
 
-em que as duas primeiras arestas pertencem à camada \texttt{É\_Dono\_De} e a terceira à camada \texttt{Vinculo\_Suspeito}. Portanto, o motivo triangular ocorre na representação agregada multicamada, e não na camada bipartida de propriedade considerada isoladamente.
+em que as duas primeiras arestas pertencem à camada \texttt{É\_Dono\_De} e a terceira à camada \texttt{Vinculo\_Suspeito}. Portanto, o motivo triangular ocorre na representação agregada multicamada, e não na camada bipartida do QSA considerada isoladamente.
 
-O Caso 2 apresenta uma configuração de maior complexidade: as empresas \texttt{E2-A} e \texttt{E2-B} compartilham simultaneamente um sócio pessoa física (\texttt{S2-PF}) e uma holding controladora (\texttt{S2-Holding}), resultando em dois motivos triangulares ($2 \times K_3$). O registro descritivo informa disputa em 59 itens do Processo Licitatório nº 208/2025, enquanto o atributo \texttt{Peso\_Concorrencia} apresenta valor 60. Como a documentação disponível não esclarece a diferença entre a contagem de itens e o peso armazenado, os dois valores são mantidos como registrados, sem presumir que representem a mesma unidade de contagem.
+O Caso 2 apresenta uma configuração que combina sobreposição societária e administrativa: as empresas \texttt{E2-A} e \texttt{E2-B} compartilham uma \textit{holding} qualificada como \textit{Sócio} (\texttt{S2-Holding}) e uma pessoa física qualificada como \textit{Administrador} em ambas as empresas (\texttt{S2-PF}), resultando em dois motivos triangulares ($2 \times K_3$). No plano licitatório, as empresas participaram do Processo nº 208/2025 e disputaram 59 itens individuais no julgamento, o que, segundo a regra aditiva da implementação (\texttt{Qtd\_Certames\_Comuns} $+$ \texttt{Qtd\_Itens\_Comuns}), produz exatamente \texttt{Peso\_Concorrencia} $= 1 + 59 = 60$.
 
-Essa configuração constitui um dos principais alertas identificados pelo modelo, uma vez que empresas formalmente distintas apresentam convergência em dois níveis de controle societário e participação simultânea em múltiplos itens do mesmo certame. Esse padrão justifica investigação complementar sobre a independência das propostas e a autonomia decisória dos concorrentes.
+Essa configuração constitui um dos principais sinais de alerta identificados na triagem, uma vez que empresas formalmente distintas apresentam convergência simultânea de participação societária indireta e de administração comum, associada à atuação conjunta em múltiplos itens do mesmo certame. Esse padrão justifica investigação complementar sobre a independência das propostas e a autonomia decisória dos concorrentes.
 
-No Caso 1, o escore de 29{,}00 resulta da combinação de uma sócia compartilhada ($+10{,}00$), endereço coincidente em Curitiba/PR ($+10{,}00$), telefone compartilhado com DDD 41 ($+8{,}00$) e sobrenome raro em comum ($+1{,}00$). A convergência simultânea desses atributos indica forte sobreposição cadastral e societária entre as empresas concorrentes, constituindo outro núcleo prioritário para análise pericial.
+No Caso 1, o escore de 29{,}00 resulta da combinação de uma pessoa física presente no QSA de ambas as empresas (\textit{Sócio-Administrador} em uma e \textit{Diretor} na outra, $+10{,}00$), endereço coincidente em Curitiba/PR ($+10{,}00$), telefone compartilhado com DDD 41 ($+8{,}00$) e sobrenome raro em comum ($+1{,}00$). A convergência simultânea desses atributos indica forte sobreposição cadastral, societária e diretiva entre as participantes do certame, embora o registro de 0 itens comuns no julgamento indique que a co-ocorrência verificada se deu no nível do processo licitatório, demandando conferência dos lotes efetivamente disputados.
 
-\subsubsection{Indícios de Vínculos Operacionais e Onomásticos
-sem Compartilhamento Societário Direto}
+\subsubsection{Indícios Cadastrais e Onomásticos sem Vínculo Compartilhado no QSA}
 
-Os Casos 3 a 6 apresentam componentes conexas com estrutura em árvore, sem a formação de motivos triangulares $K_3$. Nesses casos, não foi identificado compartilhamento formal de sócios no QSA. Entretanto, a avaliação multidimensional permitiu detectar outras formas de
-sobreposição entre os participantes, que seriam menos evidentes em análises restritas à interseção de CPF ou CNPJ dos quadros societários.
+Os Casos 3 a 6 apresentam componentes conexas com estrutura em árvore, sem a formação de motivos triangulares $K_3$, pois não possuem integrantes comuns no QSA. Entretanto, a avaliação multidimensional permitiu detectar outras formas de sobreposição entre as empresas pareadas que seriam menos evidentes em análises restritas à interseção de CPF ou CNPJ dos quadros societários.
 
-Nos Casos 3 e 4, predominam evidências relacionadas ao compartilhamento de infraestrutura cadastral e de contato. No Caso 3, as empresas \texttt{E3-A} e \texttt{E3-B} apresentam o mesmo endereço normalizado em Bayeux/PB, além de recorrência de concorrência em certames de informática e eletrônicos. Essa recorrência é registrada em \texttt{Peso\_Concorrencia} e não integra o escore $s(a,b)$. No Caso 4, as empresas \texttt{E4-A} e \texttt{E4-B} compartilham um terminal telefônico fixo com DDD 15 e apresentam dois sobrenomes raros em comum entre seus respectivos sócios. 
+Nos Casos 3 e 4, predominam evidências relacionadas ao compartilhamento de infraestrutura cadastral e de contato. No Caso 3, as empresas \texttt{E3-A} e \texttt{E3-B} apresentam o mesmo endereço normalizado em Bayeux/PB e intensa disputa conjunta no julgamento (1 certame e 64 itens em comum, resultando em \texttt{Peso\_Concorrencia} $= 65$ em informática e eletrônicos). No Caso 4, as empresas \texttt{E4-A} e \texttt{E4-B} compartilham um terminal telefônico fixo com DDD 15 e apresentam dois sobrenomes raros em comum, tendo sido pareadas no nível do certame (\texttt{Qtd\_Itens\_Comuns} $= 0$).
 
-Nos Casos 5 e 6, os principais elementos de sobreposição são de natureza onomástica. A ponderação diferencial dos sobrenomes, com atribuição de peso 1{,}00 para sobrenomes classificados como raros, permitiu identificar dois sobrenomes compartilhados entre titulares de MEI no setor de transporte escolar (Caso 5) e entre sócios de empresas fornecedoras de equipamentos hospitalares (Caso 6).
+Nos Casos 5 e 6, os únicos elementos de sobreposição são de natureza onomástica. A ponderação diferencial dos sobrenomes, com atribuição de peso $1{,}00$ para sobrenomes ausentes de $\mathcal{T}_{\mathrm{comum}}$, fez com que o compartilhamento de dois sobrenomes atingisse o corte $s(a,b) = 2{,}00$ entre titulares de MEI no setor de transporte escolar (Caso 5) e entre integrantes do QSA de empresas de equipamentos hospitalares (Caso 6), ambos pareados no nível do certame.
 
-Embora esses quatro componentes não apresentem compartilhamento societário formal identificado, as coincidências observadas constituem indicadores complementares para a análise das relações entre concorrentes. Sua interpretação, contudo, deve considerar a possibilidade de coincidências cadastrais, vínculos familiares ou outros fatores que não caracterizam, isoladamente, coordenação ilícita entre empresas.
+Embora esses quatro componentes não apresentem vínculo direto no QSA, os casos com infraestrutura compartilhada (Casos 3 e 4) constituem sinais complementares relevantes para verificação documental. Já nos Casos 5 e 6, a ausência de vínculo cadastral ou societário direto reforça que o corte de triagem baseado exclusivamente em sobrenomes possui menor especificidade e deve considerar a possibilidade de homonímia, parentesco sem coordenação ilícita ou participação em itens distintos do mesmo edital.

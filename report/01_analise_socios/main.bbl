@@ -67,6 +67,13 @@
   \url{https://brasilapi.com.br/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{projeto_github}
+I.~P. Rodrigues, P.~H. d.~A. Carvalho, and M.~P. da~Silva, ``Reposit{\'o}rio de
+  c{\'o}digo: An{\'a}lise de contrata{\c{c}}{\~o}es p{\'u}blicas via teoria dos
+  grafos ({AEDS-Graph}),'' \url{https://github.com/peixotoigor/AEDS-Graph},
+  2026, pipeline em Python, m{\'o}dulo 01\_analise\_socios e
+  visualiza{\c{c}}{\~o}es.
+
 \bibitem{brasil2018lgpd}
 \BIBentryALTinterwordspacing
 {Brasil}, ``Lei n{\textordmasculine} 13.709, de 14 de agosto de 2018. {Lei
