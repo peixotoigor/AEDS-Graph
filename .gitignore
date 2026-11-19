@@ -125,7 +125,6 @@ database/2025/processed/01_analise_socios/alertas_vinculos_concorrentes.csv
 docs/
 
 # Ignora todo o conteúdo dessas pastas...
-report/*
 outputs/*
 scripts/*
 database/2025/processed/*
@@ -133,7 +132,6 @@ database/2025/processed/*
 # ... EXCETO a pasta 01_analise_socios:
 !outputs/01_analise_socios/
 !scripts/01_analise_socios/
-!report/01_analise_socios/
 !database/2025/processed/01_analise_socios/
 
 # Proteção LGPD (mantém os arquivos sensíveis bloqueados mesmo dentro de 01):
@@ -154,3 +152,9 @@ skills/
 *.toc
 *.synctex.gz
 .texbuild/
+
+# Em report/, ignora tudo EXCETO report/01_analise_socios/ e todos os arquivos dentro dela
+report/*
+!report/01_analise_socios/
+!report/01_analise_socios/.texbuild/
+!report/01_analise_socios/**
