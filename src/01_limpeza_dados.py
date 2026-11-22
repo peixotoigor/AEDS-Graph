@@ -38,10 +38,10 @@ def limpar_documento(doc):
 # 2. CARREGAMENTO DAS BASES DE DADOS
 # ==========================================
 # Forçamos a leitura como string (dtype=str) para proteger IDs numéricos e CNPJs
-df_licitacao = pd.read_csv('arquivos_originais/2025.3122306.licitacao.licitacao.csv', sep=';', dtype=str)
-df_hab = pd.read_csv('arquivos_originais/2025.3122306.licitacao.habLicitacao.csv', sep=';', dtype=str)
-df_socios = pd.read_csv('arquivos_originais/2025.3122306.licitacao.quadroSocLicitacao.csv', sep=';', dtype=str)
-df_julgamento = pd.read_csv('arquivos_originais/2025.3122306.licitacao.julgLicitacao.csv', sep=';', dtype=str)
+df_licitacao = pd.read_csv('data/raw/2025.3122306.licitacao.licitacao.csv', sep=';', dtype=str)
+df_hab = pd.read_csv('data/raw/2025.3122306.licitacao.habLicitacao.csv', sep=';', dtype=str)
+df_socios = pd.read_csv('data/raw/2025.3122306.licitacao.quadroSocLicitacao.csv', sep=';', dtype=str)
+df_julgamento = pd.read_csv('data/raw/2025.3122306.licitacao.julgLicitacao.csv', sep=';', dtype=str)
 
 # Aplicando a higienização nos documentos (agora usando os nomes REAIS das colunas)
 df_hab['num_documento'] = df_hab['num_documento'].apply(limpar_documento)
@@ -147,7 +147,7 @@ tabela_arestas = tabela_arestas_bruta.groupby(['Source', 'Target', 'Tipo_Relacao
 tabela_nos = tabela_nos.rename(columns={'ID': 'Id'})
 
 # Define pasta de destino e garante que ela exista
-pasta_destino = 'resultados'
+pasta_destino = 'results'
 os.makedirs(pasta_destino, exist_ok=True)
 
 caminho_nos = os.path.join(pasta_destino, 'tabela_nos_gephi.csv')

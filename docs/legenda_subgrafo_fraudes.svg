@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1960" height="460" viewBox="0 0 1960 460">
+  <rect width="1960" height="460" fill="#FFFFFF"/>
+  <rect x="16" y="16" width="1928" height="428" rx="18" ry="18" fill="#FAFBFD" stroke="#CBD5E1" stroke-width="2.5"/>
+
+  <text x="46" y="60" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#0F172A">LEGENDA — SUBGRAFO REDUZIDO DE ALTO RISCO (26 Vértices  |  23 Arestas  |  6 Núcleos)</text>
+  <line x1="44" y1="82" x2="1916" y2="82" stroke="#E2E8F0" stroke-width="2"/>
+
+  <text x="46" y="122" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#475569">VÉRTICES (PSEUDONIMIZADOS)</text>
+  <text x="990" y="122" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#475569">ARESTAS E ESCALA DE RISCO</text>
+  <line x1="940" y1="102" x2="940" y2="376" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Nós -->
+  <circle cx="84" cy="195" r="25" fill="#40FF10" stroke="#1F9E00" stroke-width="2.5"/>
+  <text x="84" y="201" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0F172A">Ei</text>
+  <text x="131" y="190" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#0F172A">Empresa Licitante (E1–E6, n = 12)</text>
+  <text x="131" y="217" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Concorrentes presentes nos 6 casos de nível ALTO</text>
+
+  <circle cx="84" cy="312" r="25" fill="#8682FF" stroke="#4A46B8" stroke-width="2.5"/>
+  <text x="84" y="318" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0F172A">Si</text>
+  <text x="131" y="307" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#0F172A">Sócio / Controlador (S1–S6, n = 14)</text>
+  <text x="131" y="334" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Sócios PF, titulares MEI ou holding (S2-Holding)</text>
+
+  <!-- Arestas -->
+  <path d="M 992 194 C 1018 178, 1052 178, 1078 194" fill="none" stroke="#34BF19" stroke-width="5.2" stroke-linecap="round"/>
+  <path d="M 992 194 C 1018 178, 1052 178, 1078 194" fill="none" stroke="#6EFF50" stroke-width="3.8" stroke-linecap="round"/>
+  <text x="1100" y="185" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#0F172A">É_Dono_De (n = 17)</text>
+  <text x="1100" y="212" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Relação societária ou titularidade empresarial</text>
+
+  <path d="M 992 295 C 1018 287, 1052 287, 1078 295" fill="none" stroke="#FF0519" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 992 309 C 1018 301, 1052 301, 1078 309" fill="none" stroke="#FF0519" stroke-width="5.5" stroke-linecap="round"/>
+  <path d="M 992 324 C 1018 317, 1052 317, 1078 324" fill="none" stroke="#FF0519" stroke-width="9.0" stroke-linecap="round"/>
+  <text x="1100" y="303" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" fill="#0F172A">Vinculo_Suspeito (n = 6)</text>
+  <text x="1100" y="330" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#475569">Espessura proporcional ao Score (2,00 a 29,00)</text>
+
+  <line x1="44" y1="388" x2="1916" y2="388" stroke="#E2E8F0" stroke-width="2"/>
+  <text x="46" y="421" font-family="Arial, Helvetica, sans-serif" font-size="17" font-style="italic" fill="#475569">Nota: Casos 1 (Score 29,00) e 2 (Score 22,25) formam triângulos societários fechados (K₃); Casos 3–6 conectam-se por endereço, telefone ou parentesco.</text>
+</svg>
+

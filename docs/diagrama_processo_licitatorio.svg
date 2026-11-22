@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="740" viewBox="0 0 2100 740">
+  <defs>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#475569"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1E40AF"/>
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B45309"/>
+    </marker>
+    <marker id="arrow-red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#B91C1C"/>
+    </marker>
+  </defs>
+
+  <rect width="2100" height="740" fill="#FFFFFF"/>
+  <rect x="14" y="14" width="2072" height="712" rx="16" ry="16" fill="#FAFBFD" stroke="#CBD5E1" stroke-width="2.2"/>
+
+  <text x="42" y="56" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="bold" fill="#0F172A">ETAPAS DO PROCESSO LICITATÓRIO (LEI Nº 14.133/2021) E INTEGRAÇÃO COM A AUDITORIA EM GRAFOS</text>
+  <text x="42" y="84" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#475569">Mapeamento das fases administrativas nas tabelas abertas do SICOM/TCE-MG e pontos de atuação do pipeline multicamada</text>
+  <line x1="40" y1="102" x2="2060" y2="102" stroke="#E2E8F0" stroke-width="2"/>
+
+  <!-- Etapa 1 -->
+  <rect x="42" y="128" width="360" height="278" rx="14" ry="14" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <rect x="56" y="142" width="332" height="46" rx="8" ry="8" fill="#1E40AF"/>
+  <text x="222" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">1. Abertura e Edital</text>
+  <text x="222" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Definição do órgão público</text>
+  <text x="222" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">(Prefeitura / Câmara), objeto,</text>
+  <text x="222" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">modalidade e abertura do</text>
+  <text x="222" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">processo licitatório.</text>
+  <rect x="56" y="344" width="332" height="46" rx="8" ry="8" fill="#DBEAFE"/>
+  <text x="222" y="364" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#1E3A8A">SICOM: licitacao.csv</text>
+  <text x="222" y="381" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#1E3A8A">(Grafo: Vértices Órgão)</text>
+
+  <line x1="408" y1="267" x2="451" y2="267" stroke="#475569" stroke-width="3.2" marker-end="url(#arrow-gray)"/>
+
+  <!-- Etapa 2 -->
+  <rect x="457" y="128" width="360" height="278" rx="14" ry="14" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2.5"/>
+  <rect x="471" y="142" width="332" height="46" rx="8" ry="8" fill="#1E40AF"/>
+  <text x="637" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">2. Itens e Cotação</text>
+  <text x="637" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Especificação de lotes/itens,</text>
+  <text x="637" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">quantidades e pesquisa prévia</text>
+  <text x="637" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">de preços de referência para</text>
+  <text x="637" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">balizar o certame.</text>
+  <rect x="471" y="344" width="332" height="46" rx="8" ry="8" fill="#DBEAFE"/>
+  <text x="637" y="364" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#1E3A8A">SICOM: itemLicitacao.csv</text>
+  <text x="637" y="381" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#1E3A8A">e cotacaoLicitacao.csv</text>
+
+  <line x1="823" y1="267" x2="866" y2="267" stroke="#475569" stroke-width="3.2" marker-end="url(#arrow-gray)"/>
+
+  <!-- Etapa 3 -->
+  <rect x="872" y="128" width="360" height="278" rx="14" ry="14" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <rect x="886" y="142" width="332" height="46" rx="8" ry="8" fill="#B45309"/>
+  <text x="1052" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">3. Habilitação e QSA</text>
+  <text x="1052" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Qualificação das empresas e</text>
+  <text x="1052" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">registro societário. No SICOM,</text>
+  <text x="1052" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">sócios vêm anonimizados;</text>
+  <text x="1052" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">supridos via BrasilAPI (QSA).</text>
+  <rect x="886" y="344" width="332" height="46" rx="8" ry="8" fill="#FEF3C7"/>
+  <text x="1052" y="364" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#92400E">SICOM: habLicitacao.csv</text>
+  <text x="1052" y="381" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#92400E">e quadroSocLicitacao.csv</text>
+
+  <line x1="1238" y1="267" x2="1281" y2="267" stroke="#475569" stroke-width="3.2" marker-end="url(#arrow-gray)"/>
+
+  <!-- Etapa 4 -->
+  <rect x="1287" y="128" width="360" height="278" rx="14" ry="14" fill="#FEF2F2" stroke="#EF4444" stroke-width="2.5"/>
+  <rect x="1301" y="142" width="332" height="46" rx="8" ry="8" fill="#B91C1C"/>
+  <text x="1467" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">4. Disputa e Julgamento</text>
+  <text x="1467" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Envio de propostas e lances</text>
+  <text x="1467" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">por item. Ponto crítico onde</text>
+  <text x="1467" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">ocorre concorrência simulada</text>
+  <text x="1467" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">(cover bidding) entre ligadas.</text>
+  <rect x="1301" y="344" width="332" height="46" rx="8" ry="8" fill="#FEE2E2"/>
+  <text x="1467" y="364" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#991B1B">SICOM: julgLicitacao.csv</text>
+  <text x="1467" y="381" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#991B1B">(Projeção Concorreu_Contra)</text>
+
+  <line x1="1653" y1="267" x2="1696" y2="267" stroke="#475569" stroke-width="3.2" marker-end="url(#arrow-gray)"/>
+
+  <!-- Etapa 5 -->
+  <rect x="1702" y="128" width="360" height="278" rx="14" ry="14" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+  <rect x="1716" y="142" width="332" height="46" rx="8" ry="8" fill="#047857"/>
+  <text x="1882" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">5. Homologação</text>
+  <text x="1882" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Adjudicação do vencedor por</text>
+  <text x="1882" y="240" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">item e encerramento formal.</text>
+  <text x="1882" y="262" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">Base para futura mensuração</text>
+  <text x="1882" y="284" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#1E293B">de dano e sobrepreço.</text>
+  <rect x="1716" y="344" width="332" height="46" rx="8" ry="8" fill="#D1FAE5"/>
+  <text x="1882" y="364" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#065F46">SICOM: homologLicitacao.csv</text>
+  <text x="1882" y="381" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#065F46">(Extensão: Valor Homologado)</text>
+
+  <!-- Setas para o bloco de auditoria -->
+  <line x1="222" y1="410" x2="222" y2="471" stroke="#1E40AF" stroke-width="2.8" marker-end="url(#arrow-blue)"/>
+  <line x1="1052" y1="410" x2="1052" y2="471" stroke="#B45309" stroke-width="3.0" marker-end="url(#arrow-amber)"/>
+  <line x1="1467" y1="410" x2="1467" y2="471" stroke="#B91C1C" stroke-width="3.0" marker-end="url(#arrow-red)"/>
+
+  <!-- Bloco inferior: Atuação do Modelo em Grafos -->
+  <rect x="42" y="475" width="2016" height="212" rx="14" ry="14" fill="#F8FAFC" stroke="#94A3B8" stroke-width="2.2" stroke-dasharray="8,5"/>
+  <text x="68" y="510" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0F172A">ATUAÇÃO DO MODELO EM GRAFOS MULTICAMADA SOBRE AS ETAPAS DO CERTAME</text>
+
+  <rect x="68" y="531" width="520" height="136" rx="10" ry="10" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
+  <text x="84" y="562" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1E40AF">Camada Institucional (Etapas 1 e 3)</text>
+  <text x="84" y="592" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Liga 674 empresas aos 2 órgãos (Participou_Licitacao)</text>
+  <text x="84" y="615" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">e mapeia 1.112 sócios reais via QSA (É_Dono_De).</text>
+
+  <line x1="594" y1="599" x2="638" y2="599" stroke="#64748B" stroke-width="2.8" marker-end="url(#arrow-gray)"/>
+
+  <rect x="644" y="531" width="620" height="136" rx="10" ry="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="2"/>
+  <text x="660" y="562" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#B45309">Camada de Vínculos &amp; Disputa (Etapas 3 e 4)</text>
+  <text x="660" y="592" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Cruza 4.059 pares concorrentes (Concorreu_Contra) com</text>
+  <text x="660" y="615" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">sócios, endereço, telefone, e-mail e sobrenomes (Score).</text>
+
+  <line x1="1270" y1="599" x2="1314" y2="599" stroke="#B91C1C" stroke-width="3.2" marker-end="url(#arrow-red)"/>
+
+  <rect x="1320" y="531" width="712" height="136" rx="10" ry="10" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="2"/>
+  <text x="1336" y="562" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#B91C1C">Detecção Estrutural: E* = E_disputa ∩ E_vínculo</text>
+  <text x="1336" y="592" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Filtra Vinculo_Suspeito (Score &gt;= 2,00) + 1-Core + Union-Find.</text>
+  <text x="1336" y="615" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#334155">Resultado: 6 núcleos críticos isolados e 3 triângulos K₃.</text>
+</svg>
+

@@ -21,34 +21,34 @@ $(STAMP): requirements.txt
 setup: $(STAMP)
 
 step1: $(STAMP)
-	@echo ">>> [Etapa 1/3] Executando data_cleaning.py..."
-	$(PYTHON) data_cleaning.py
+	@echo ">>> [Etapa 1/3] Executando src/01_limpeza_dados.py..."
+	$(PYTHON) src/01_limpeza_dados.py
 
 step2: $(STAMP)
-	@echo ">>> [Etapa 2/3] Executando enriquecimento_socios.py..."
-	$(PYTHON) enriquecimento_socios.py
+	@echo ">>> [Etapa 2/3] Executando src/02_enriquecimento_socios.py..."
+	$(PYTHON) src/02_enriquecimento_socios.py
 
 step3: $(STAMP)
-	@echo ">>> [Etapa 3/3] Executando reduzir_grafo.py..."
-	$(PYTHON) reduzir_grafo.py
+	@echo ">>> [Etapa 3/3] Executando src/03_reduzir_grafo.py..."
+	$(PYTHON) src/03_reduzir_grafo.py
 
 run: $(STAMP)
-	@echo ">>> [Etapa 1/3] Executando data_cleaning.py..."
-	$(PYTHON) data_cleaning.py
-	@echo ">>> [Etapa 2/3] Executando enriquecimento_socios.py..."
-	$(PYTHON) enriquecimento_socios.py
-	@echo ">>> [Etapa 3/3] Executando reduzir_grafo.py..."
-	$(PYTHON) reduzir_grafo.py
-	@echo ">>> Pipeline concluído! Arquivos gerados em resultados/"
+	@echo ">>> [Etapa 1/3] Executando src/01_limpeza_dados.py..."
+	$(PYTHON) src/01_limpeza_dados.py
+	@echo ">>> [Etapa 2/3] Executando src/02_enriquecimento_socios.py..."
+	$(PYTHON) src/02_enriquecimento_socios.py
+	@echo ">>> [Etapa 3/3] Executando src/03_reduzir_grafo.py..."
+	$(PYTHON) src/03_reduzir_grafo.py
+	@echo ">>> Pipeline concluído! Arquivos gerados em results/"
 
 clean:
-	@echo ">>> Removendo pasta resultados/ e caches __pycache__..."
-	rm -rf resultados
+	@echo ">>> Removendo pasta results/ e caches __pycache__..."
+	rm -rf results
 	find . -type d -name "__pycache__" -exec rm -rf {} +
 
 clean-csv:
-	@echo ">>> Removendo CSVs de resultados/ (mantendo cache da BrasilAPI)..."
-	rm -f resultados/*.csv
+	@echo ">>> Removendo CSVs de results/ (mantendo cache da BrasilAPI)..."
+	rm -f results/*.csv
 
 distclean: clean
 	@echo ">>> Removendo ambiente virtual $(VENV)..."
@@ -58,10 +58,9 @@ help:
 	@echo "Alvos disponíveis:"
 	@echo "  make run        - Cria .venv (se necessário), instala dependências e roda as 3 etapas"
 	@echo "  make setup      - Apenas cria .venv e instala requirements.txt"
-	@echo "  make step1      - Executa apenas data_cleaning.py"
-	@echo "  make step2      - Executa apenas enriquecimento_socios.py"
-	@echo "  make step3      - Executa apenas reduzir_grafo.py"
-	@echo "  make clean      - Apaga a pasta resultados/ e __pycache__"
-	@echo "  make clean-csv  - Apaga resultados/*.csv mantendo cache_qsa_brasilapi.json"
+	@echo "  make step1      - Executa apenas src/01_limpeza_dados.py"
+	@echo "  make step2      - Executa apenas src/02_enriquecimento_socios.py"
+	@echo "  make step3      - Executa apenas src/03_reduzir_grafo.py"
+	@echo "  make clean      - Apaga a pasta results/ e __pycache__"
+	@echo "  make clean-csv  - Apaga results/*.csv mantendo cache_qsa_brasilapi.json"
 	@echo "  make distclean  - Executa clean e remove também .venv/"
-

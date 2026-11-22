@@ -2,25 +2,26 @@
 ETAPA 2: Enriquecimento do Quadro Societário via API e Geração do Grafo "Cheio"
 ===============================================================================
 
-Entrada (gerada pelo data_cleaning.py):
-  - resultados/tabela_nos_gephi.csv
-  - resultados/tabela_arestas_gephi.csv
+Entrada (gerada por src/01_limpeza_dados.py):
+  - results/tabela_nos_gephi.csv
+  - results/tabela_arestas_gephi.csv
 
 Processamento:
-  1. Lê as empresas da tabela de nós gerada pelo data_cleaning.py.
+  1. Lê as empresas da tabela de nós gerada por src/01_limpeza_dados.py.
   2. Consulta o Quadro de Sócios e Administradores (QSA) da Receita Federal via
      BrasilAPI (https://brasilapi.com.br/api/cnpj/v1/{cnpj}) para vincular os
      CPFs/CNPJs e nomes reais dos sócios a cada empresa.
   3. Analisa os pares de empresas que possuem aresta 'Concorreu_Contra' na
-     tabela de arestas do data_cleaning.py, verificando sócios e sobrenomes em comum.
+     tabela de arestas de src/01_limpeza_dados.py, verificando sócios, dados cadastrais
+     e sobrenomes em comum.
   4. Substitui os nós 'Sócio_ID_' anônimos pelos Sócios Reais e adiciona as
      arestas 'Vinculo_Suspeito', gerando o Grafo Cheio completo.
 
 Saída:
-  - resultados/grafo_cheio_nos.csv
-  - resultados/grafo_cheio_arestas.csv
-  - resultados/socios_reais.csv
-  - resultados/alertas_vinculos_concorrentes.csv
+  - results/grafo_cheio_nos.csv
+  - results/grafo_cheio_arestas.csv
+  - results/socios_reais.csv
+  - results/alertas_vinculos_concorrentes.csv
 """
 
 import json
@@ -40,10 +41,10 @@ socket.setdefaulttimeout(30)
 # ==========================================
 # 0. CONFIGURAÇÕES E CAMINHOS
 # ==========================================
-PASTA_DESTINO = 'resultados'
+PASTA_DESTINO = 'results'
 os.makedirs(PASTA_DESTINO, exist_ok=True)
 
-# Entradas vindas diretamente do data_cleaning.py
+# Entradas vindas diretamente de src/01_limpeza_dados.py
 ARQ_NOS_ENTRADA = os.path.join(PASTA_DESTINO, 'tabela_nos_gephi.csv')
 ARQ_ARESTAS_ENTRADA = os.path.join(PASTA_DESTINO, 'tabela_arestas_gephi.csv')
 
@@ -191,7 +192,7 @@ def obter_qsa(cnpjs):
 # ==========================================
 if not os.path.exists(ARQ_NOS_ENTRADA) or not os.path.exists(ARQ_ARESTAS_ENTRADA):
     raise FileNotFoundError(
-        "Planilhas de entrada não encontradas! Execute primeiro: python data_cleaning.py"
+        "Planilhas de entrada não encontradas! Execute primeiro: python src/01_limpeza_dados.py"
     )
 
 df_nos_base = pd.read_csv(ARQ_NOS_ENTRADA, dtype=str)

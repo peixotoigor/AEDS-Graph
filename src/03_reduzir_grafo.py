@@ -2,9 +2,9 @@
 ETAPA 3: Redução Algorítmica do Grafo Cheio para o Subgrafo de Fraudes
 ======================================================================
 
-Entrada (gerada pelo enriquecimento_socios.py):
-  - resultados/grafo_cheio_nos.csv
-  - resultados/grafo_cheio_arestas.csv
+Entrada (gerada por src/02_enriquecimento_socios.py):
+  - results/grafo_cheio_nos.csv
+  - results/grafo_cheio_arestas.csv
 
 Algoritmos de Teoria dos Grafos Aplicados:
   1. Subgrafo Induzido por Arestas (Edge-Induced Subgraph) — O(V + E):
@@ -21,15 +21,15 @@ Algoritmos de Teoria dos Grafos Aplicados:
      Identifica formalmente os ciclos fechados (Sócio -> Empresa A <-> Empresa B <- Sócio).
 
 Saída:
-  - resultados/subgrafos_fraudes_nos.csv
-  - resultados/subgrafos_fraudes_arestas.csv
+  - results/subgrafos_fraudes_nos.csv
+  - results/subgrafos_fraudes_arestas.csv
 """
 
 import os
 from collections import defaultdict, deque
 import pandas as pd
 
-PASTA_DESTINO = 'resultados'
+PASTA_DESTINO = 'results'
 os.makedirs(PASTA_DESTINO, exist_ok=True)
 ARQ_GRAFO_CHEIO_NOS = os.path.join(PASTA_DESTINO, 'grafo_cheio_nos.csv')
 ARQ_GRAFO_CHEIO_ARESTAS = os.path.join(PASTA_DESTINO, 'grafo_cheio_arestas.csv')
@@ -164,7 +164,7 @@ class GrafoMulticamada:
 def main():
     if not os.path.exists(ARQ_GRAFO_CHEIO_NOS) or not os.path.exists(ARQ_GRAFO_CHEIO_ARESTAS):
         raise FileNotFoundError(
-            "Grafo cheio não encontrado! Execute primeiro: python enriquecimento_socios.py"
+            "Grafo cheio não encontrado! Execute primeiro: python src/02_enriquecimento_socios.py"
         )
 
     df_nos = pd.read_csv(ARQ_GRAFO_CHEIO_NOS, dtype=str)

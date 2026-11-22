@@ -1,18 +1,17 @@
+# Python / Ambiente virtual
 .venv/
 venv/
 __pycache__/
 *.py[cod]
 *$py.class
 
-resultados/
-arquivos modificados/
-
+# Saídas geradas, rascunhos locais e artigo (mantidos apenas localmente)
+results/
 backup/
-
-*.md
-!README.md
 documentacao/
+report/
 
+# Sistema operacional e ferramentas
 .DS_Store
 Thumbs.db
 *.gephi~
