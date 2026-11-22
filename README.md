@@ -23,7 +23,7 @@ O projeto executa um pipeline determinístico em **3 etapas sequenciais**:
 1. **Etapa 1 — Higienização e Grafo Base (`src/01_limpeza_dados.py`)**
    - Lê as tabelas do SICOM/TCE-MG em `data/raw/` (`licitacao`, `habLicitacao`, `quadroSocLicitacao`, `julgLicitacao`).
    - Recupera CNPJs/CPFs corrompidos por notação científica (ex.: `2.71E+13`) e restaura zeros à esquerda (14 dígitos para CNPJ e 11 para CPF).
-   - Constrói as relações `Participou_Licitacao` (Empresa $\leftrightarrow$ Órgão) e a projeção de disputa `Concorreu_Contra` (soma de certames e itens disputados em comum).
+   - Constrói as relações `Participou_Licitacao` (Empresa ↔ Órgão) e a projeção de disputa `Concorreu_Contra` (soma de certames e itens disputados em comum).
 
 2. **Etapa 2 — Enriquecimento Societário via BrasilAPI e Grafo Completo (`src/02_enriquecimento_socios.py`)**
    - Supera a supressão de CPFs/nomes da tabela `quadroSocLicitacao.csv` consultando os 673 CNPJs na BrasilAPI (`https://brasilapi.com.br/api/cnpj/v1/{cnpj}`), com controle de vazão (*rate limiting*) e cache persistente em `results/cache_qsa_brasilapi.json`.
@@ -38,12 +38,12 @@ O projeto executa um pipeline determinístico em **3 etapas sequenciais**:
      - Sobrenome comum em comum (dicionário de 53 sobrenomes frequentes no Brasil): `+0,25`
    - Classifica cada par em **`ALTO`**, **`MEDIO`** ou **`BAIXO`** e gera o **Grafo Completo** (`results/grafo_cheio_nos.csv` e `results/grafo_cheio_arestas.csv`, retendo arestas `Vinculo_Suspeito` das faixas `MEDIO` e `ALTO`).
 
-3. **Etapa 3 — Redução Topológica e Detecção de Motivos $K_3$ (`src/03_reduzir_grafo.py`)**
+3. **Etapa 3 — Redução Topológica e Detecção de Motivos K₃ (`src/03_reduzir_grafo.py`)**
    - Carrega o grafo completo em uma estrutura de **Lista de Adjacência** (`GrafoMulticamada`) e executa quatro algoritmos em grafos:
-     1. **Filtragem por Predicado de Arestas** — $O(|V| + |E|)$: mantém apenas arestas `Vinculo_Suspeito` com `Score >= 2,00` e as arestas `É_Dono_De` incidentes às empresas selecionadas.
-     2. **Remoção de Vértices Isolados (*1-Core*)** — $O(|V| + |E|)$: remove os 1.762 vértices de grau zero.
-     3. **Componentes Conexas via *Union-Find*** (*Path Compression* + *Union by Rank*) — $O((|V| + |E|)\,\alpha(|V|))$: isola as componentes não triviais ($|C_i| \ge 2$).
-     4. **Enumeração de Motivos Triangulares ($K_3$)** — $O(|E_s|\,d_{\max})$: identifica ciclos fechados (*Integrante do QSA $\to$ Empresa A $\leftrightarrow$ Empresa B $\leftarrow$ Integrante do QSA*).
+     1. **Filtragem por Predicado de Arestas** — `O(|V| + |E|)`: mantém apenas arestas `Vinculo_Suspeito` com `Score >= 2,00` e as arestas `É_Dono_De` incidentes às empresas selecionadas.
+     2. **Remoção de Vértices Isolados (*1-Core*)** — `O(|V| + |E|)`: remove os 1.762 vértices de grau zero.
+     3. **Componentes Conexas via *Union-Find*** (*Path Compression* + *Union by Rank*) — `O((|V| + |E|) · α(|V|))`: isola as componentes não triviais (`|Cᵢ| >= 2`).
+     4. **Enumeração de Motivos Triangulares (K₃)** — `O(|Eₛ| · d_max)`: identifica ciclos fechados (*Integrante do QSA → Empresa A ↔ Empresa B ← Integrante do QSA*).
 
 ---
 
@@ -136,7 +136,7 @@ Validação sobre os registros de **Divinópolis/MG (exercício de 2025)**:
 
 - **Grafo Completo:** `1.788` vértices (`2` órgãos públicos: Prefeitura com `245` certames / `628` ligações e Câmara com `19` certames / `52` ligações; `674` empresas licitantes = `673` PJ + `1` PF; `1.112` integrantes do QSA = `1.044` PF + `68` PJ) e `5.914` arestas (`680` `Participou_Licitacao`, `4.059` `Concorreu_Contra`, `1.132` `É_Dono_De` e `43` `Vinculo_Suspeito`).
 - **Estratificação (`alertas_vinculos_concorrentes.csv`):** de `4.059` pares co-disputantes, `202` (`4,98%`) apresentaram sobreposição positiva: **`6` `ALTO`**, **`37` `MEDIO`** e **`159` `BAIXO`**.
-- **Subgrafo Reduzido (`subgrafos_fraudes`):** redução de `98,55%` dos vértices e `99,61%` das arestas, isolando **`26` vértices** (`12` empresas e `14` integrantes do QSA/MEI), **`23` arestas** (`17` `É_Dono_De` e `6` `Vinculo_Suspeito`), **`6` componentes conexas independentes** e **`3` motivos triangulares ($K_3$)** concentrados em duas componentes.
+- **Subgrafo Reduzido (`subgrafos_fraudes`):** redução de `98,55%` dos vértices e `99,61%` das arestas, isolando **`26` vértices** (`12` empresas e `14` integrantes do QSA/MEI), **`23` arestas** (`17` `É_Dono_De` e `6` `Vinculo_Suspeito`), **`6` componentes conexas independentes** e **`3` motivos triangulares (K₃)** concentrados em duas componentes.
 
 ---
 
