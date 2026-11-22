@@ -5,9 +5,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Saídas geradas, rascunhos locais e artigo (mantidos apenas localmente)
+# Saídas geradas, documentação auxiliar e artigo (mantidos apenas localmente)
 results/
 backup/
+docs/
 documentacao/
 report/
 

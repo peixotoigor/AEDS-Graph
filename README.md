@@ -12,7 +12,6 @@ Pipeline computacional em Python para modelagem e mineração de redes heterogê
 - [Como Usar o Makefile](#como-usar-o-makefile)
 - [Arquivos Gerados (`results/`)](#arquivos-gerados-results)
 - [Síntese dos Resultados Empíricos](#síntese-dos-resultados-empíricos)
-- [Documentação Técnica](#documentação-técnica)
 - [Nota Ética e LGPD](#nota-ética-e-lgpd)
 
 ---
@@ -58,7 +57,6 @@ AEDS-Graph/
 │   ├── 01_limpeza_dados.py              # Etapa 1: saneamento cadastral e grafo base
 │   ├── 02_enriquecimento_socios.py      # Etapa 2: BrasilAPI, escores e grafo completo
 │   └── 03_reduzir_grafo.py              # Etapa 3: redução topológica (1-Core, Union-Find, K_3)
-├── docs/                                # Documentação técnica, explicação do escore e diagramas (.md / .svg)
 ├── results/                             # Gerado automaticamente pelo pipeline (ignorado pelo Git)
 ├── Makefile                             # Automação de execução e limpeza no Ubuntu/Linux
 ├── requirements.txt                     # Dependências Python (pandas e numpy)
@@ -142,14 +140,6 @@ Validação sobre os registros de **Divinópolis/MG (exercício de 2025)**:
 
 ---
 
-## Documentação Técnica
-
-- [`docs/explicacao_grafo_e_algoritmos.md`](docs/explicacao_grafo_e_algoritmos.md) — formulação teórica, pipeline e algoritmos de redução.
-- [`docs/explicacao_calculo_score.md`](docs/explicacao_calculo_score.md) — detalhamento dos pesos, filtros e decomposição dos escores.
-- [`docs/explicacao_alertas_vinculos_concorrentes.md`](docs/explicacao_alertas_vinculos_concorrentes.md) — dicionário de colunas e análise dos 202 alertas.
-
----
-
 ## Nota Ética e LGPD
 
-Os nomes civis, razões sociais, CNPJs, endereços completos e telefones recuperados na execução ficam restritos à pasta local `results/` (ignorada pelo `.gitignore`). Todo o material público em `docs/` utiliza identificadores pseudonimizados (`E1`–`E6` e `S1`–`S6`). Os resultados têm caráter exclusivamente **indiciário para triagem de auditoria**, não constituindo comprovação automática de fraude ou conluio.
+Os nomes civis, razões sociais, CNPJs, endereços completos e telefones recuperados na execução ficam restritos à pasta local `results/` (ignorada pelo `.gitignore`). Os resultados têm caráter exclusivamente **indiciário para triagem de auditoria**, não constituindo comprovação automática de fraude ou conluio.
